@@ -1,0 +1,99 @@
+.Introduction-background{
+    background-image: url("img/img\ for\ taibah\ 2.jpg");
+    height:300px;
+    filter:opacity(90%); 
+}
+.Introduction-p{
+    font-size: 60px;
+    font-weight: bold;
+    text-align:center;
+    padding-top: 120px;
+    margin: 0px;
+}
+.About-website{
+display: grid;
+grid-template-columns: 1fr 1fr;
+height:450px;
+margin-bottom: 30px;
+}
+
+.img-for-taibah{
+    width: 90%;
+    height: 90%;
+    padding: 40px 0px 0px 40px;
+    max-height:400px;
+}
+.About-website-right{
+    display: grid;
+    grid-template-columns: 1fr ;
+}
+
+.p-About-website-title{
+    font-size: 46px;
+    padding: 0px 50px 0px 0px;
+}
+.p-About-website{
+    font-size: 28px;
+    line-height: 45px;
+    padding: 0px 50px 0px 0px;
+}
+.div-button-About-website{
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+.button-About-website{
+    border: 1.5px solid rgb(255, 255, 255);
+    border-radius: 4px;
+    width: max-content;
+    background-color:rgba(255, 255, 255, 0);
+    color: white;
+    font-size:  32px;
+    padding: 3px 12px 3px 12px;
+}
+.button-About-website:hover{
+    background-color:rgb(117, 107, 102);
+    color:white;
+}
+
+.View-training-opportunities{
+    background-color:rgb(117, 107, 102);
+    display: grid;
+    height:700px;
+    grid-template-columns: 1fr;
+}
+
+.website-bottom{
+    margin: 10px 0px 0px 0px;
+    background-color:white;
+    height:300px;
+}
+
+@media(max-width: 800px) {
+    .Introduction-p{
+        font-size: 50px;
+    }
+
+    .p-About-website-title{
+        font-size: 35px; 
+    }
+
+    .p-About-website{
+        font-size: 24px;
+        line-height: 35px;
+    }
+}
+@media(max-width: 600px) {
+    .Introduction-p{
+        font-size: 40px;
+    }
+
+    .p-About-website-title{
+        font-size: 30px; 
+    }
+
+    .p-About-website{
+        font-size: 20px;
+        line-height: 35px;
+    }
+}
