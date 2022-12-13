@@ -1,5 +1,6 @@
 .Introduction-background{
     background-image: url("img/img\ for\ taibah\ 2.jpg");
+    background-position: center;
     height:300px;
     filter:opacity(90%); 
 }
@@ -23,6 +24,7 @@ margin-bottom: 30px;
     padding: 40px 0px 0px 40px;
     max-height:400px;
 }
+
 .About-website-right{
     display: grid;
     grid-template-columns: 1fr ;
@@ -59,17 +61,95 @@ margin-bottom: 30px;
 .View-training-opportunities{
     background-color:rgb(117, 107, 102);
     display: grid;
-    height:700px;
-    grid-template-columns: 1fr;
+    grid-template-rows: 1fr ;
+    height: 500px; ;
+}
+.training-opportunity{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr ;
+    justify-items: center;
+    margin:0% 2% 0% 2%;
+}
+
+.training-opportunity-box{
+    background-color:rgb(77, 70, 67);
+    width: 300px;
+    height: 300px;
+    margin: 20px 0px 15px 0px;
+}
+
+.training-opportunity-switch{
+    display: flex;
+    flex: content;
+    justify-content: center;
+    margin-bottom: 120px;
+}
+
+.ol-switch{
+    width: 11px;
+    height: 11px;
+    border: 0px ;
+    border-radius: 5.5px;
+    margin: 0px 5px 10px 5px;
 }
 
 .website-bottom{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     margin: 10px 0px 0px 0px;
     background-color:white;
     height:300px;
+    justify-items: center;
+    align-items: center;
+}
+
+.bottom-lift{
+padding-left: 50%;
+}
+
+.taibah-logo{
+    width: 100%;
+    height: 100%;   
+}
+
+.bottom-right{
+padding-right: 50%;
+}
+
+.p-bottom-right{
+    color: rgb(77, 70, 67);
+    text-align:center;
+}
+@media(max-width: 1430px) {
+    .View-training-opportunities{
+        height:fit-content ;
+    }
+
+    .training-opportunity{
+        grid-template-columns: 1fr 1fr 1fr ;
+    }
+}
+
+@media(max-width: 1430px) {
+    .View-training-opportunities{
+        height:fit-content ;
+    }
+
+    .training-opportunity{
+        grid-template-columns: 1fr 1fr ;
+    }
 }
 
 @media(max-width: 800px) {
+
+    .View-training-opportunities{
+        height:fit-content ;
+    }
+
+    .training-opportunity{
+        grid-template-columns: 1fr ;
+    }
+
     .Introduction-p{
         font-size: 50px;
     }
