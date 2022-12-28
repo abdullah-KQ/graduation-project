@@ -1,170 +1,218 @@
-.Introduction-background{
+.Introduction-background {
     background-image: url("img/img\ for\ taibah\ 2.jpg");
     background-position: center;
-    height:300px;
-    filter:opacity(90%); 
+    height: 300px;
+    filter: opacity(90%);
 }
-.Introduction-p{
+
+.Introduction-p {
     font-size: 60px;
     font-weight: bold;
-    text-align:center;
+    text-align: center;
     padding-top: 120px;
     margin: 0px;
 }
-.About-website{
-display: grid;
-grid-template-columns: 1fr 1fr;
-height:450px;
-margin-bottom: 30px;
+
+.About-website {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 450px;
+    margin-bottom: 30px;
 }
 
-.img-for-taibah{
+.img-for-taibah {
     width: 90%;
     height: 90%;
     padding: 40px 0px 0px 40px;
-    max-height:400px;
+    max-height: 400px;
 }
 
-.About-website-right{
+.About-website-right {
     display: grid;
-    grid-template-columns: 1fr ;
+    grid-template-columns: 1fr;
 }
 
-.p-About-website-title{
+.p-About-website-title {
     font-size: 46px;
     padding: 0px 50px 0px 0px;
 }
-.p-About-website{
+
+.p-About-website {
     font-size: 28px;
     line-height: 45px;
     padding: 0px 50px 0px 0px;
 }
-.div-button-About-website{
+
+.div-button-About-website {
     display: grid;
     justify-items: center;
     align-items: center;
 }
-.button-About-website{
+
+.button-About-website {
     border: 1.5px solid rgb(255, 255, 255);
     border-radius: 4px;
     width: max-content;
-    background-color:rgba(255, 255, 255, 0);
+    background-color: rgba(255, 255, 255, 0);
     color: white;
-    font-size:  32px;
+    font-size: 32px;
     padding: 3px 12px 3px 12px;
 }
-.button-About-website:hover{
-    background-color:rgb(117, 107, 102);
-    color:white;
+
+.button-About-website:hover {
+    background-color: rgb(117, 107, 102);
+    color: white;
 }
 
-.View-training-opportunities{
-    background-color:rgb(117, 107, 102);
+.View-training-opportunities {
+    background-color: rgb(117, 107, 102);
     display: grid;
-    grid-template-rows: 1fr ;
-    height: 500px; ;
+    grid-template-rows: 1fr;
+    height: 500px;
+    ;
 }
-.training-opportunity{
+
+.training-opportunity {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr ;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     justify-items: center;
-    margin:0% 2% 0% 2%;
+    margin: 0% 2% 0% 2%;
 }
 
-.training-opportunity-box{
-    background-color:rgb(77, 70, 67);
+.training-opportunity-box {
+    background-color: rgb(77, 70, 67);
     width: 300px;
     height: 300px;
     margin: 20px 0px 15px 0px;
 }
 
-.training-opportunity-switch{
+.training-opportunity-switch {
     display: flex;
     flex: content;
     justify-content: center;
     margin-bottom: 120px;
 }
 
-.website-bottom{
+.connect-with-us {
+    padding: 40px 0px 40px 0px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.connect-with-us-questions-div {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.connect-with-us-questions-button {
+    border: none;
+    background-color: rgb(77, 70, 67);
+    color: white;
+    font-size: 48px;
+    margin: 6px 8% 0px 0px;
+    width: fit-content;
+}
+
+.material-symbols-outlined {
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 700,
+        'GRAD' 200,
+        'opsz' 48
+}
+
+.p-connect-with-us-questions {
+    color: white;
+    margin: 4px 10% 4px 0px;
+    font-size: 26px;
+}
+
+.website-Footer {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 0.95fr 1fr;
     margin: 10px 0px 0px 0px;
-    background-color:white;
-    height:300px;
+    background-color: white;
+    height: 300px;
     justify-items: center;
     align-items: center;
 }
 
-.bottom-lift{
-padding-left: 50%;
+.Footer-lift {
+    padding-left: 40%;
 }
 
-.taibah-logo{
+.taibah-logo {
     width: 100%;
-    height: 100%;   
+    height: 100%;
 }
 
-.bottom-right{
-padding-right: 50%;
+.Footer-right {
+    padding-right: 50%;
 }
 
-.p-bottom-right{
+.p-Footer-right {
     color: rgb(77, 70, 67);
-    text-align:center;
-}
-@media(max-width: 1430px) {
-    .View-training-opportunities{
-        height:fit-content ;
-    }
-
-    .training-opportunity{
-        grid-template-columns: 1fr 1fr 1fr ;
-    }
+    text-align: center;
 }
 
 @media(max-width: 1430px) {
-    .View-training-opportunities{
-        height:fit-content ;
+    .View-training-opportunities {
+        height: fit-content;
     }
 
-    .training-opportunity{
-        grid-template-columns: 1fr 1fr ;
+    .training-opportunity {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media(max-width: 1430px) {
+    .View-training-opportunities {
+        height: fit-content;
+    }
+
+    .training-opportunity {
+        grid-template-columns: 1fr 1fr;
     }
 }
 
 @media(max-width: 800px) {
 
-    .View-training-opportunities{
-        height:fit-content ;
+    .View-training-opportunities {
+        height: fit-content;
     }
 
-    .training-opportunity{
-        grid-template-columns: 1fr ;
+    .training-opportunity {
+        grid-template-columns: 1fr;
     }
 
-    .Introduction-p{
+    .Introduction-p {
         font-size: 50px;
     }
 
-    .p-About-website-title{
-        font-size: 35px; 
+    .p-About-website-title {
+        font-size: 35px;
     }
 
-    .p-About-website{
+    .p-About-website {
         font-size: 24px;
         line-height: 35px;
     }
 }
+
 @media(max-width: 600px) {
-    .Introduction-p{
+    .Introduction-p {
         font-size: 40px;
     }
 
-    .p-About-website-title{
-        font-size: 30px; 
+    .p-About-website-title {
+        font-size: 30px;
     }
 
-    .p-About-website{
+    .p-About-website {
         font-size: 20px;
         line-height: 35px;
     }
