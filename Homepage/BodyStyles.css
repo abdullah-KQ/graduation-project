@@ -165,16 +165,6 @@
     }
 
     .training-opportunity {
-        grid-template-columns: 1fr 1fr 1fr;
-    }
-}
-
-@media(max-width: 1430px) {
-    .View-training-opportunities {
-        height: fit-content;
-    }
-
-    .training-opportunity {
         grid-template-columns: 1fr 1fr;
     }
 }
