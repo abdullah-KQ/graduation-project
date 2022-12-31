@@ -1,0 +1,89 @@
+.registr-main-box{
+    display: grid;
+    grid-template-columns:  auto auto auto;
+  }
+.L-registr-box,.M-registr-box,.R-registr-box{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    width: 80%;
+    height: 600px;
+    border-radius: 10px;
+    justify-items: center;
+    align-items: center;
+  }
+.L-registr-box{
+    margin: 150px 0px 150px auto;
+  }
+.M-registr-box{
+    margin: 150px auto 150px auto;
+  }
+.R-registr-box{
+    margin: 150px auto 150px 0px;
+  }
+.icon{
+    margin-top: 10%;
+    width: 70%;
+    height: 60%;
+}
+.registerButton{
+    border: 1.5px solid black;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    width: max-content;
+    font-size: 28px;
+    background-color:white;
+    padding: 4px 8px 4px 8px;
+    margin-top: 10%;
+    }
+    .registerButton:hover{
+        background-color:rgb(77, 70, 67);
+        color:white;
+        opacity: 0.75;
+        transition: opacity 0.3s;  
+    }
+.website-Footer {
+    display: grid;
+    grid-template-columns: 0.95fr 1fr;
+    margin: 10px 0px 0px 0px;
+    background-color: white;
+    height: 300px;
+    justify-items: center;
+    align-items: center;
+  }
+  
+  .Footer-lift {
+    padding-left: 40%;
+  }
+  
+  .taibah-logo {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .Footer-right {
+    padding-right: 50%;
+  }
+  
+  .p-Footer-right {
+    color: rgb(77, 70, 67);
+    text-align: center;
+  }
+
+  @media(max-width: 1330px) {
+.registr-main-box{
+    grid-template-columns:  auto ;
+  }
+  .L-registr-box,.M-registr-box,.R-registr-box{
+    width: 40%;
+  }
+.L-registr-box{
+    margin: 50px auto 50px auto;
+  }
+.M-registr-box{
+    margin: 50px auto 50px auto;
+  }
+.R-registr-box{
+    margin: 50px auto 50px auto;
+  }
+  }
+  
