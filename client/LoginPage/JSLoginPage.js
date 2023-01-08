@@ -1,5 +1,5 @@
 function RegisterButton() {
-    location.replace("../registerPage/registerpage.html");
+    location.replace("../registerPage/register.html");
 }
 
 function HomeButton() {

@@ -1,9 +1,9 @@
 function LoginButton() {
-    location.replace("../LoginPage/LoginPage.html");
+    location.replace("../LoginPage/Login.html");
 }
 
 function RegisterButton() {
-    location.replace("../registerPage/registerpage.html");
+    location.replace("../registerPage/register.html");
 }
 
 const links = document.querySelectorAll(".header-button");

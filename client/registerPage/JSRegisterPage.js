@@ -1,5 +1,5 @@
 function LoginButton() {
-    location.replace("../LoginPage/LoginPage.html");
+    location.replace("../LoginPage/Login.html");
 }
 
 function HomeButton() {
