@@ -4,5 +4,5 @@ from .models import student
 
 
 def say_hello(request):
-    all_studnt = student.objects.all
-    return HttpResponse(all_studnt)
+    
+    return HttpResponse()
