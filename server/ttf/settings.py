@@ -31,6 +31,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'rest_framework',
+    'corsheaders',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -38,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'Homepage',
-    'register'
+    'register',
 ]
 
 MIDDLEWARE = [
@@ -49,7 +51,13 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
+
+REST_FRAMEWORK = {'DEFAULT_PERMISSION_CLASSES':
+['rest_framework.permissions.AllowAny']}
+
+CORS_ORIGIN_ALLOW_ALL = True
 
 ROOT_URLCONF = 'ttf.urls'
 
@@ -84,10 +92,10 @@ WSGI_APPLICATION = 'ttf.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'ttf',
+        'NAME': 'TTF',
         'USER': 'admin',
         'PASSWORD': '12345678',
-        'HOST': 'database-02.cr7xxbtormrg.us-east-1.rds.amazonaws.com',
+        'HOST': 'ttf.cm74qkv1kbg3.us-east-1.rds.amazonaws.com',
         
     }
 }
