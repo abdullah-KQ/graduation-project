@@ -2,17 +2,15 @@ import React, { Component } from "react";
 import "./HeaderStyles.css";
 import "./general.css";
 import imgTaibah from "../img/Taibah Training Platform.png";
-
+import { useNavigate } from "react-router-dom";
 
 
 class Header extends Component {
-     
-  LoginButton() {
-    window.location.replace("../LoginPage/Login.html");
-  }
-
-  RegisterButton() {
-    window.location.replace("../registerPage/register.html");
+  
+    navigate = useNavigate(); 
+    routeChange = () =>{ 
+    let path = ""; 
+    navigate(path);
   }
 /*
   links = document.querySelectorAll(".header-button");
@@ -28,12 +26,12 @@ class Header extends Component {
       <div className="header">
         <div className="header-lift">
           <div>
-            <button className="login-button"  onClick={Header.LoginButton} >
+            <button className="login-button"  onClick={Header.routeChange("http://localhost:3000/register")} >
               تسجيل دخول
             </button>
           </div>
           <div>
-            <button className="register-button" onClick={Header.RegisterButton}>
+            <button className="register-button" onClick={Header.routeChange("http://localhost:3000/register")} >
               حساب جديد
             </button>
           </div>
