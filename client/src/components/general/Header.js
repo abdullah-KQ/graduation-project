@@ -6,13 +6,13 @@ import { useNavigate } from "react-router-dom";
 
 
 class Header extends Component {
-  
+ /* 
     navigate = useNavigate(); 
     routeChange = () =>{ 
     let path = ""; 
     navigate(path);
   }
-/*
+
   links = document.querySelectorAll(".header-button");
   links.forEach(function (item) {
       item.addEventListener("click", function () {
@@ -26,12 +26,12 @@ class Header extends Component {
       <div className="header">
         <div className="header-lift">
           <div>
-            <button className="login-button"  onClick={Header.routeChange("http://localhost:3000/register")} >
+            <button className="login-button"   /*onClick={Header.routeChange("http://localhost:3000/register")}*/ >
               تسجيل دخول
             </button>
           </div>
           <div>
-            <button className="register-button" onClick={Header.routeChange("http://localhost:3000/register")} >
+            <button className="register-button"  /*onClick={Header.routeChange("http://localhost:3000/register")}*/>
               حساب جديد
             </button>
           </div>
