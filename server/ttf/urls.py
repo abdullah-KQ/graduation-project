@@ -20,7 +20,10 @@ from register.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('register/', registerViow.as_view(),name="register"),
-    path('Homepage/', include('Homepage.urls')),
+   
+   # Start with Homepage 
+    path('', include('Homepage.urls')),
+    
     
 
 ]
