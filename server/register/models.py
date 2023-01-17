@@ -8,6 +8,9 @@ class student(models.Model):
     Password = models.CharField(max_length=35)
     University_ID = models.IntegerField()
     College = models.CharField(max_length=50)
+    # To show the name in the data base 
+    def __str__ (self):
+        return self.Fullname
 
 class Supervisor(models.Model):
     Fullname = models.CharField(max_length=30)
@@ -17,6 +20,9 @@ class Supervisor(models.Model):
     Department = models.CharField(max_length=50)
     College = models.CharField(max_length=50)
     Phone_num = models.CharField(max_length=20)
+    # To show the name in the data base 
+    def __str__ (self):
+        return self.Fullname
 
 class TrainingBody(models.Model):
     Fullname = models.CharField(max_length=30)
@@ -27,6 +33,9 @@ class TrainingBody(models.Model):
     Phone_num = models.CharField(max_length=20)
     Position = models.CharField(max_length=50)
     Website = models.URLField(max_length=256)
+    # To show the name in the data base 
+    def __str__ (self):
+        return self.Fullname
 
 
 
