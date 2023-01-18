@@ -6,7 +6,8 @@ from .serializer import *
 
 class registerViow(APIView):
     def get(self, request):
-        output = [{"Fullname":output.Fullname}
+        output = [{"Fullname":output.Fullname,
+           "Phone_num":output.Phone_num}
         for output in student.objects.all()]
         return Response(output)
         
