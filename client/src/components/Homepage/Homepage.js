@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import Header from "../general/Header.js";
 import Introduction from "./Introduction.js";
 import ViewTrainingOpportunities from "./ViewTrainingOpportunities.js";
-import ConnectWithUs from "./ConnectWithUs.js";
+import CommonQuestions from "./CommonQuestions.js";
 import WebsiteFooter from "../general/WebsiteFooter.js";
 
 class Homepage extends Component {
@@ -37,7 +37,7 @@ class Homepage extends Component {
         <Header />
         <Introduction />
         <ViewTrainingOpportunities />
-        <ConnectWithUs />
+        <CommonQuestions />
         <WebsiteFooter />
       </div>
     );
