@@ -2,10 +2,9 @@ import React, { Component } from "react";
 import "../general/general.css";
 import imgTaibah from "../img/img for taibah.jpg";
 import "./BodyStyles.css";
-import Header from "../general/Header";
+import { Link } from "react-router-dom";
 
 class Introduction extends Component {
-
   render() {
     return (
       <div>
@@ -29,12 +28,9 @@ class Introduction extends Component {
               </p>
             </div>
             <div className="div-button-About-website">
-              <button
-                className="button-About-website"
-                onClick={Header.LoginButton}
-              >
-                تسجيل دخول
-              </button>
+              <Link to="/Login">
+                <button className="button-About-website">تسجيل دخول</button>
+              </Link>
             </div>
           </div>
         </div>

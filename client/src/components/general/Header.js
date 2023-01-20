@@ -2,67 +2,59 @@ import React, { Component } from "react";
 import "./HeaderStyles.css";
 import "./general.css";
 import imgTaibah from "../img/Taibah Training Platform.png";
-import { useNavigate } from "react-router-dom";
-
+import { Link } from "react-router-dom";
 
 class Header extends Component {
- /* 
-    navigate = useNavigate(); 
-    routeChange = () =>{ 
-    let path = ""; 
-    navigate(path);
-  }
-
-  links = document.querySelectorAll(".header-button");
-  links.forEach(function (item) {
-      item.addEventListener("click", function () {
-         const element = document.getElementById(item.getAttribute("data-link"));
-         element.scrollIntoView()
-      })
-  })
-*/
   render() {
     return (
       <div className="header">
         <div className="header-lift">
           <div>
-            <button className="login-button"   /*onClick={Header.routeChange("http://localhost:3000/register")}*/ >
-              تسجيل دخول
-            </button>
+            <Link to="/Login">
+              <button className="login-button">تسجيل دخول</button>
+            </Link>
           </div>
           <div>
-            <button className="register-button"  /*onClick={Header.routeChange("http://localhost:3000/register")}*/>
-              حساب جديد
-            </button>
+            <Link to="/register">
+              <button className="register-button">حساب جديد</button>
+            </Link>
           </div>
         </div>
         <div className="header-mid">
           <div>
-            <button className="header-button" data-link="connect-with-us">
-              اتصل بنا
-            </button>
+            <Link to="/">
+              <button className="header-button" data-link="connect-with-us">
+                اتصل بنا
+              </button>
+            </Link>
           </div>
           <div>
-            <button
-              className="header-button"
-              data-link="View-training-opportunities"
-            >
-              جهات التدريب
-            </button>
+            <Link to="/">
+              <button
+                className="header-button"
+                data-link="View-training-opportunities"
+              >
+                جهات التدريب
+              </button>
+            </Link>
           </div>
           <div>
-            <button className="header-button" data-link="About-website">
-              عن الموقع
-            </button>
+            <Link to="/">
+              <button className="header-button" data-link="About-website">
+                عن الموقع
+              </button>
+            </Link>
           </div>
           <div>
-            <button className="header-button" data-link="Introduction">
-              الرئيسية
-            </button>
+            <Link to="/">
+              <button className="header-button" data-link="Introduction">
+                الرئيسية
+              </button>
+            </Link>
           </div>
         </div>
         <div className="header-right">
-          <img src={imgTaibah} className="img-logo" alt="Taibah traing icon"/>
+          <img src={imgTaibah} className="img-logo" alt="Taibah traing icon" />
         </div>
       </div>
     );
