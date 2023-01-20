@@ -1,6 +1,39 @@
-frontend
+frontend: 
+
+Header :
+Activate the links between pages ==> abdullah khaled
+
+homepage:
+Activate the link Login in the introduction ==>
+
+LoginPage:
+Active login (Verify from data) ==>
+
+RegisterPage:
+Activate the links to Register pages ==>
+
+Register student :
+Create a new student registration page ==> 
+
+Register supervisor:
+Create a new page for the supervisor registration ==>
+
+Register training body:
+Create a new page for the training body registration ==>
+
+Student user interface:
+design Student page ==>
+Create a student page ==>
+
+supervisors  user interface:
+design supervisors page ==>
+Create a supervisors page ==>
+
+training body user interface:
+design training body page ==>
+Create a training body page ==>
 
 
 
-backend
--اضافة 
+
+backend:
