@@ -3,9 +3,6 @@ frontend:
 LoginPage:
 Active login (Verify from data) ==>
 
-RegisterPage:
-Activate the links to Register pages ==>
-
 Register student :
 Create a new student registration page ==> 
 
