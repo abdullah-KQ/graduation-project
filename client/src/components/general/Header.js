@@ -1,11 +1,10 @@
-import React, { Component } from "react";
+import React from "react";
 import "./HeaderStyles.css";
 import "./general.css";
 import imgTaibah from "../img/Taibah Training Platform.png";
 import { Link } from "react-router-dom";
 
-class Header extends Component {
-  render() {
+function Header()  {
     return (
       <div className="header">
         <div className="header-lift">
@@ -59,6 +58,5 @@ class Header extends Component {
       </div>
     );
   }
-}
 
 export default Header;

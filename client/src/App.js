@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import "./App.css";
 import Homepage from "./components/Homepage/Homepage";
 import LoginPage from "./components/LoginPage/LoginPage";
@@ -8,8 +8,7 @@ import RegisterSupervisor from "./components/RegisterPage/RegisterSupervisor/Reg
 import RegisterTrainingBody from "./components/RegisterPage/RegisterTrainingBody/RegisterTrainingBody";
 import { Routes, Route } from "react-router-dom";
 
-class App extends Component {
-  render() {
+function App() {
     return (
       <div>
         <Routes>
@@ -23,6 +22,5 @@ class App extends Component {
       </div>
     );
   }
-}
 
 export default App;

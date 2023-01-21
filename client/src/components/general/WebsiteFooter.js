@@ -1,12 +1,11 @@
-import React, { Component } from "react";
+import React from "react";
 import "./general.css";
 import imgTaibah from "../img/taibah universty logo.jpg";
 import "../Homepage/BodyStyles.css";
 
 
-class websiteFooter extends Component {
+function websiteFooter() {
 
-  render() {
     return (
         <div className="website-Footer" id="website-Footer">
     <div className="Footer-lift">
@@ -23,6 +22,5 @@ class websiteFooter extends Component {
   </div>
     );
   }
-}
 
 export default websiteFooter;

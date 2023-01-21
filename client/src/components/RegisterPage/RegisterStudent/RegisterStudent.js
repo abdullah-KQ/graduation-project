@@ -1,11 +1,11 @@
-import React, { Component } from "react";
-import Header from "../general/Header.js";
-import WebsiteFooter from "../general/WebsiteFooter.js";
+import React from "react";
+import Header from "../../general/Header";
+import WebsiteFooter from "../../general/WebsiteFooter.js";
 
 
-class RegisterStudent extends Component {
+function RegisterStudent() {
   
-  render() {
+
     return (
       <div>
         <Header />
@@ -14,6 +14,5 @@ class RegisterStudent extends Component {
       </div>
     );
   }
-}
 
 export default RegisterStudent;

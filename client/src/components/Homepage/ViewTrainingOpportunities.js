@@ -1,11 +1,11 @@
-import React, { Component } from "react";
+import React from "react";
 import "../general/general.css";
 import "./BodyStyles.css";
 
 
-class ViewTrainingOpportunities extends Component {
+function ViewTrainingOpportunities() {
 
-  render() {
+
     return (
 
     <div className="View-training-opportunities" id="View-training-opportunities">
@@ -31,6 +31,5 @@ class ViewTrainingOpportunities extends Component {
 
     );
   }
-}
 
 export default ViewTrainingOpportunities;

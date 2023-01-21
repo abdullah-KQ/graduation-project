@@ -94,7 +94,7 @@
 }
 
 .CommonQuestions {
-    padding: 40px 0px 40px 0px;
+    padding: 25px 0px 40px 0px;
     display: flex;
     flex-direction: column;
 
@@ -113,7 +113,7 @@
     background-color: rgb(77, 70, 67);
     color: white;
     font-size: 48px;
-    margin: 6px 8% 0px 0px;
+    margin: 30px 8% 5px 0px;
     width: fit-content;
 }
 
@@ -127,7 +127,7 @@
 
 .p-CommonQuestions {
     color: white;
-    margin: 4px 10% 4px 0px;
+    margin: 4px 10% 8px 0px;
     font-size: 26px;
 }
 

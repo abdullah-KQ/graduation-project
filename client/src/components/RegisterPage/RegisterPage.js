@@ -1,11 +1,11 @@
-import React, { Component } from "react";
+import React from "react";
 import Header from "../general/Header.js";
 import WebsiteFooter from "../general/WebsiteFooter.js";
 import RegistrMainBox from "./RegistrMainBox.js";
 
-class RegisterPage extends Component {
+function RegisterPage() {
   
-  render() {
+
     return (
       <div>
         <Header />
@@ -13,7 +13,6 @@ class RegisterPage extends Component {
         <WebsiteFooter />
       </div>
     );
-  }
 }
 
 export default RegisterPage;

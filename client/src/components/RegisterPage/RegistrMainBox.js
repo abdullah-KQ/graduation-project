@@ -1,12 +1,12 @@
-import React, { Component } from "react";
+import React from "react";
+import { Link } from "react-router-dom";
 import studentIcon from "../img/student-icon.jpg";
 import supervisorIcon from "../img/supervisor-icon.png";
 import trainingBodyIcon from "../img/training-body-icon.webp";
 import "./registerPageBody.css"
 
-class RegistrMainBox extends Component {
+function RegistrMainBox(){
   
-  render() {
     return (
 <div className="registr-main-box">
   <div className="L-registr-box">
@@ -35,7 +35,6 @@ class RegistrMainBox extends Component {
   </div>
 </div>
     );
-  }
 }
 
 export default RegistrMainBox;

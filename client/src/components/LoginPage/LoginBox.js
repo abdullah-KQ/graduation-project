@@ -1,11 +1,10 @@
-import React, { Component } from "react";
+import React from "react";
 import "./BodyStyles.css"
 import "../general/general.css"
 import imgTTF from "../img/Taibah Training Platform.png";
 
-class LoginBox extends Component {
+function LoginBox() {
 
-    render() {
         return (
             <div className="login-box">
                 <img src={imgTTF} className="logo-img" alt="imgTTF" />
@@ -21,6 +20,5 @@ class LoginBox extends Component {
             </div>
         );
     }
-}
 
 export default LoginBox;

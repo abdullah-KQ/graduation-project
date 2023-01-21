@@ -1,11 +1,10 @@
-import React, { Component } from "react";
+import React from "react";
 import Header from "../general/Header.js";
 import WebsiteFooter from "../general/WebsiteFooter.js";
 import LoginBox from "./LoginBox.js";
 
-class LoginPage extends Component {
+function LoginPage() {
   
-  render() {
     return (
       <div>
         <Header />
@@ -14,6 +13,6 @@ class LoginPage extends Component {
       </div>
     );
   }
-}
+
 
 export default LoginPage;

@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 //import axios from "axios";
 import Header from "../general/Header.js";
 import Introduction from "./Introduction.js";
@@ -6,7 +6,7 @@ import ViewTrainingOpportunities from "./ViewTrainingOpportunities.js";
 import CommonQuestions from "./CommonQuestions.js";
 import WebsiteFooter from "../general/WebsiteFooter.js";
 
-class Homepage extends Component {
+function Homepage() {
   /*
   state = { details: [], };
 
@@ -22,7 +22,6 @@ class Homepage extends Component {
       .catch((err) => {});
   }
   */
-  render() {
     return (
       /*     استدعاع للمعلومات
       <div>
@@ -42,6 +41,6 @@ class Homepage extends Component {
       </div>
     );
   }
-}
+
 
 export default Homepage;

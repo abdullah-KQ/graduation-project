@@ -1,11 +1,11 @@
-import React, { Component } from "react";
+import React from "react";
 import "../general/general.css";
 import imgTaibah from "../img/img for taibah.jpg";
 import "./BodyStyles.css";
 import { Link } from "react-router-dom";
 
-class Introduction extends Component {
-  render() {
+function Introduction()  {
+
     return (
       <div>
         <div className="Introduction" id="Introduction">
@@ -37,6 +37,5 @@ class Introduction extends Component {
       </div>
     );
   }
-}
 
 export default Introduction;
