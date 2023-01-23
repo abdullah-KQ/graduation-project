@@ -1,0 +1,218 @@
+.register-box {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    width: 35%;
+    height: max-content ;
+    border-radius: 10px;
+    margin: 150px auto 150px auto;
+    align-items: flex-end;
+  }
+  .register-success{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    margin-top: 50px;
+  }
+  
+  .register-img {
+    width: 90%;
+    margin: 20px auto 0px auto;
+  }
+  .p-success{
+    color: rgb(77, 70, 67);
+    font-size: 32px;
+  }
+
+  .register-form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  
+  .username,
+  .password {
+    margin: auto;
+    padding: 5px 5px 5px 100px;
+    text-align: right;
+  }
+  
+  .username::placeholder,
+  .password::placeholder {
+    font-family: 'Times New Roman';
+    font-size: 20px;
+    text-align: right;
+    color: rgb(77, 70, 67);
+    opacity: 0.3;
+  }
+  .label-User,
+  .label-password,
+  .label-confirm-password{ 
+    width: max-content;
+    margin: 30px auto auto auto;
+  }
+
+  .label-User {
+    margin-top: 50px;
+    padding-left: 155px;
+  }
+
+  .label-password {
+    padding-left: 160px;
+  }
+  
+  .label-confirm-password {
+    padding-left: 115px;
+  }
+  
+  .instructions {
+    border-radius: 10px;
+    background: #c84448;
+    color: rgb(255, 255, 255);
+    font-size: large;
+    padding: 5px;
+    position: relative;
+    margin: 10px auto auto auto;
+  }
+
+
+
+  .submit_button{
+    border: 1.5px solid black;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    width: max-content;
+    color: rgb(77, 70, 67);
+    background-color: white;
+    padding: 8px 12px 8px 12px;
+    margin: 30px auto 50px auto;
+    font-size: 24px;
+    font-weight: 550;
+  }
+  .submit_button:hover{
+    background-color: rgb(77, 70, 67);
+    color: white;
+    opacity: 0.75;
+    transition: opacity 0.3s;
+  }
+  
+  .website-Footer {
+    display: grid;
+    grid-template-columns: 0.95fr 1fr;
+    margin: 10px 0px 0px 0px;
+    background-color: white;
+    height: 300px;
+    justify-items: center;
+    align-items: center;
+  }
+  
+  .Footer-lift {
+    padding-left: 40%;
+  }
+  
+  .taibah-logo {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .Footer-right {
+    padding-right: 50%;
+  }
+  
+  .p-Footer-right {
+    color: rgb(77, 70, 67);
+    text-align: center;
+  }
+ 
+.offscreen {
+    position: absolute;
+    left: -9999px;
+}
+
+.hide {
+    display: none;
+}
+
+.valid {
+    color: limegreen;
+    margin-left: 0.25rem;
+}
+
+.invalid {
+    color: red;
+    margin-left: 0.25rem;
+}
+
+.errmag {
+    background-color: lightpink;
+    color: firebrick;
+    font-weight: bold;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.line {
+    display: inline-block;
+}
+
+
+  
+  @media(max-width: 1430px) {
+    .register-box {
+      width: 50%;
+    }
+  
+    .username,
+    .password {
+      padding: 5px 5px 5px 70px;
+    }
+    .label-User {
+      padding-left: 120px;
+    }
+  
+    .label-password {
+      padding-left: 125px;
+    }
+    
+    .label-confirm-password {
+      padding-left: 85px;
+    }
+  }
+  
+  @media(max-width: 800px) {
+    .register-box {
+      width: 60%;
+    }
+  
+    .username,
+    .password {
+      margin: 10px 50px 10px 0px;
+      padding: 5px 5px 5px 50px;
+    }
+    .label-User {
+      padding-left: 170px;
+    }
+  
+    .label-password {
+      padding-left: 175px;
+    }
+    
+    .label-confirm-password {
+      padding-left: 135px;
+    }
+    
+  }
+  
+  @media(max-width: 600px) {
+    .register-box {
+      width: 70%;
+    }
+  
+    .username,
+    .password {
+      margin: 10px 30px 10px 0px;
+      padding: 5px 5px 5px 30px;
+    }
+    
+  }

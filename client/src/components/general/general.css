@@ -20,29 +20,10 @@ p {
     color: white;
 }
 
-label,
-input[type='submit'] {
+label{
     display: block;
     font-family: 'Times New Roman';
     font-size: 26px;
-    margin-top: 30px;
-    margin-right: 100px;
     text-align: right;
     color: rgb(77, 70, 67);
-}
-
-input[type='submit'] {
-    border: 1.5px solid black;
-    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-    width: max-content;
-    background-color: white;
-    padding: 4px 8px 4px 8px;
-    cursor: pointer;
-}
-
-input[type='submit']:hover {
-    background-color: rgb(77, 70, 67);
-    color: white;
-    opacity: 0.75;
-    transition: opacity 0.3s;
 }
