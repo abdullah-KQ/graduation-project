@@ -4,13 +4,14 @@ import { Link } from "react-router-dom";
 import "../../general/general.css";
 import "./RegisterStudent.css";
 import imgTTF from "../../img/Taibah Training Platform.png";
-//import axios from "../../../api/axios";
+import axios from "../../../api/axios";
 
 const USER_REGEX = /^[a-zA-Z][a-zA-Z0-9-_]{3,24}$/;
 const fullName_REGEX = /[a-zA-Zا-ي ]{3,100}$/;
-const email_REGEX = /^[a-zA-Z0-9_-]+@[a-zA-Z0-9]+\.[A-Za-z]+$/;
+const phoneNum_REGEX = /[0-9]{9,11}$/;
+const email_REGEX = /^[a-zA-Z0-9_.-]+@[a-zA-Z0-9]+\.[A-Za-z]+$/;
 const PASSWORD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{8,24}$/;
-//const REGISTER_URL = "/register";
+const REGISTER_URL = "student/";
 
 const RegisterStudentBox = () => {
   const userRef = useRef();
@@ -24,6 +25,10 @@ const RegisterStudentBox = () => {
   const [validfullName, setvalidFullName] = useState(false);
   const [fullNameFocus, setFullNameFocus] = useState(false);
 
+  const [phoneNum, setPhoneNum] = useState("");
+  const [validPhoneNum, setValidPhoneNum] = useState(false);
+  const [phoneNumFocus, setPhoneNumFocus] = useState(false);
+
   const [email, setemail] = useState("");
   const [validEmail, setvalidEmail] = useState(false);
   const [emailFocus, setEmailFocus] = useState(false);
@@ -36,6 +41,8 @@ const RegisterStudentBox = () => {
   const [validMatchPassword, setValidMatchPassword] = useState(false);
   const [matchPasswordFocus, setMatchPasswordFocus] = useState(false);
 
+  const [college, setCollege] = useState("");
+
   const [errMag, setErrMag] = useState("");
   const [success, setSuccess] = useState(false);
 
@@ -45,29 +52,24 @@ const RegisterStudentBox = () => {
 
   useEffect(() => {
     setValidName(USER_REGEX.test(user));
-    //to Print the data in console --- delete it after activate post function
-    console.log(user);
   }, [user]);
 
   useEffect(() => {
     setvalidFullName(fullName_REGEX.test(fullName));
-    //to Print the data in console --- delete it after activate post function
-    console.log(fullName);
   }, [fullName]);
 
   useEffect(() => {
+    setValidPhoneNum(phoneNum_REGEX.test(phoneNum));
+  }, [phoneNum]);
+
+  useEffect(() => {
     setvalidEmail(email_REGEX.test(email));
-    //to Print the data in console --- delete it after activate post function
-    console.log(email);
   }, [email]);
 
   useEffect(() => {
     setValidPassword(PASSWORD_REGEX.test(password));
     const match = password === matchpassword;
     setValidMatchPassword(match);
-    //to Print the data in console --- delete it after activate post function
-    console.log(password);
-    console.log(matchpassword);
   }, [password, matchpassword]);
 
   useEffect(() => {
@@ -76,37 +78,28 @@ const RegisterStudentBox = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    //to Print the data in console --- delete it after activate post function >>>>>
-    console.log("user :" + user);
-    console.log("fullName :" + fullName);
-    console.log("email :" + email);
-    console.log("password :" + password);
-    console.log("matchpassword :" + matchpassword);
-    // <<<<<
-    setSuccess(true);
-    /*
-        const respnse = await axios.post(REGISTER_URL,
-            JSON.stringify({
-            username : user, 
-            password 
-            }),
-            {
-            headers: { 'Content-Type': 'application/json' },
-            withCredentials: true
-            }
-        );
-        setSuccess(true)
-    }catch (err) {
-        if (!err?.response) {
-            setErrMag('No Server Response');
-        } else if (err.response?.status === 409) {
-            setErrMag('Username Taken');
-        } else {
-            setErrMag('Registration Failed')
-        }
-        errRef.current.focus();
+    try {
+      const response = await axios.post(REGISTER_URL,{
+        UserName: user,
+        Fullname: fullName,
+        Email: email,
+        Phone_num: 593696468,
+        Password: password,
+        College: college,
+      });
+      console.log(response);
+      
+      setSuccess(true);
+    } catch (err) {
+      if (!err?.response) {
+        setErrMag("No Server Response");
+      } else if (err.response?.status === 409) {
+        setErrMag("Username Taken");
+      } else {
+        setErrMag("Registration Failed");
+      }
+      errRef.current.focus();
     }
-    */
   };
 
   return (
@@ -124,15 +117,10 @@ const RegisterStudentBox = () => {
       ) : (
         <div className="register-box">
           <img src={imgTTF} className="register-img" alt="imgTTF" />
-          <p
-            ref={errRef}
-            className={errMag ? "errmag" : "offscreen"}
-            aria-live="assertive"
-          >
+          <p ref={errRef} className={errMag ? "errmag" : "offscreen"}>
             {errMag}
           </p>
           <form onSubmit={handleSubmit} className="register-form">
-
             <label htmlFor="username" className="label-User">
               : اسم المستخدم
             </label>
@@ -144,12 +132,9 @@ const RegisterStudentBox = () => {
               onChange={(e) => setUser(e.target.value)}
               required
               placeholder="اسم المستخدم"
-              aria-invalid={validName ? "false" : "true"}
-              aria-describedby="uidnote"
               onFocus={() => setUserFocus(true)}
             />
             <p
-              id="uidnote"
               className={
                 userFocus && user && !validName ? "instructions" : "offscreen"
               }
@@ -179,6 +164,28 @@ const RegisterStudentBox = () => {
               }
             >
               يجب ان لا يحتوي الاسم على ارقام او رموز
+            </p>
+
+            <label htmlFor="phoneNum" className="label-User">
+              : رقم الجوال
+            </label>
+            <input
+              type="text"
+              id="phoneNum"
+              className="username"
+              onChange={(e) => setPhoneNum(e.target.value)}
+              required
+              placeholder=": رقم الجوال "
+              onFocus={() => setPhoneNumFocus(true)}
+            />
+            <p
+              className={
+                phoneNumFocus && phoneNum && !validPhoneNum
+                  ? "instructions"
+                  : "offscreen"
+              }
+            >
+              يجب ان يحتوي الرقم على ارقام فقط
             </p>
 
             <label htmlFor="email" className="label-User">
@@ -211,14 +218,11 @@ const RegisterStudentBox = () => {
               className="password"
               id="password"
               onChange={(e) => setPassword(e.target.value)}
-              aria-invalid={validPassword ? "false" : "true"}
-              aria-describedby="pwdnote"
               onFocus={() => setPasswordFocus(true)}
               required
               placeholder="كلمة المرور"
             />
             <p
-              id="pwdnote"
               className={
                 passwordFocus && password && !validPassword
                   ? "instructions"
@@ -242,13 +246,10 @@ const RegisterStudentBox = () => {
               className="password"
               onChange={(e) => setMatchPassword(e.target.value)}
               required
-              aria-invalid={validMatchPassword ? "false" : "true"}
-              aria-describedby="confirmnote"
               onFocus={() => setMatchPasswordFocus(true)}
               placeholder="تأكيد كلمة المرور "
             />
             <p
-              id="confirmnote"
               className={
                 matchPasswordFocus && matchpassword && !validMatchPassword
                   ? "instructions"
@@ -258,10 +259,42 @@ const RegisterStudentBox = () => {
               . يجب ان تكون كلمة المرور مطابقة
             </p>
 
+            <label htmlFor="college" className="label-User">
+            : القسم
+            </label>
+            <select
+              id="college"
+              className="password"
+              required
+            >
+            <option value="cs" onChange={(e) => setCollege("cs")}>
+              cs
+            </option>
+            <option value="cs2" onChange={(e) => setCollege("cs2")}>
+              cs2
+            </option>
+            <option value="cs3" onChange={(e) => setCollege("cs3")}>
+              cs3
+            </option>
+            </select>
+            <p
+              className={
+                phoneNumFocus && phoneNum && !validPhoneNum
+                  ? "instructions"
+                  : "offscreen"
+              }
+            >
+              يجب ان يحتوي الرقم على ارقام فقط
+            </p>
+
             <button
               className="submit_button"
               disabled={
-                !validName || !validPassword || !validMatchPassword ||!validfullName ||!validEmail
+                !validName ||
+                !validPassword ||
+                !validMatchPassword ||
+                !validfullName ||
+                !validEmail
                   ? true
                   : false
               }
