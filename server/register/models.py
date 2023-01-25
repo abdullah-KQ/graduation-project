@@ -3,7 +3,7 @@ from django.db import models
 class student(models.Model):
     UserName = models.CharField(max_length=30,primary_key=True)
     Fullname = models.CharField(max_length=50)
-    Phone_num = models.IntegerField()
+    Phone_num = models.CharField(max_length=20)
     Email = models.EmailField(max_length=150)
     Password = models.CharField(max_length=35)
     College = models.CharField(max_length=80)
@@ -20,7 +20,7 @@ class Supervisor(models.Model):
     Password = models.CharField(max_length=35)
     Department = models.CharField(max_length=80)
     College = models.CharField(max_length=80)
-    Phone_num = models.IntegerField()
+    Phone_num = models.CharField(max_length=20)
     # ------
     # S_UID = models.ForeignKey('student',on_delete=models.CASCADE,null=True)
     # ------
@@ -34,7 +34,7 @@ class TrainingBody(models.Model):
     Fullname = models.CharField(max_length=100)
     Email = models.EmailField(max_length=150)
     Password = models.CharField(max_length=35)
-    Phone_num = models.IntegerField()
+    Phone_num = models.CharField(max_length=20)
     Website = models.URLField(max_length=256)
     Address = models.CharField(max_length=256)
     Contact_Person = models.CharField(max_length=50)
