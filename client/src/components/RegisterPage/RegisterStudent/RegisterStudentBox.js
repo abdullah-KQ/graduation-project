@@ -42,6 +42,8 @@ const RegisterStudentBox = () => {
   const [matchPasswordFocus, setMatchPasswordFocus] = useState(false);
 
   const [college, setCollege] = useState("");
+  const [validCollege, setvalidCollege] = useState(false);
+  const [collegeFocus, setCollegeFocus] = useState(false);
 
   const [errMag, setErrMag] = useState("");
   const [success, setSuccess] = useState(false);
@@ -71,6 +73,14 @@ const RegisterStudentBox = () => {
     const match = password === matchpassword;
     setValidMatchPassword(match);
   }, [password, matchpassword]);
+
+  useEffect(() => {
+    if (college === "choose"){
+      setvalidCollege(false)
+    }else{
+      setvalidCollege(true)
+    }
+  }, [college]);
 
   useEffect(() => {
     setErrMag("");
@@ -266,25 +276,28 @@ const RegisterStudentBox = () => {
               id="college"
               className="password"
               required
+              onChange={(e) => setCollege(e.target.value)}
+              onFocus={() => setCollegeFocus(true)}
             >
-            <option value="cs" onChange={(e) => setCollege("cs")}>
+            <option value="choose"> -- اختر القسم -- </option>
+            <option value="cs">
               cs
             </option>
-            <option value="cs2" onChange={(e) => setCollege("cs2")}>
+            <option value="cs2" >
               cs2
             </option>
-            <option value="cs3" onChange={(e) => setCollege("cs3")}>
+            <option value="cs3">
               cs3
             </option>
             </select>
             <p
               className={
-                phoneNumFocus && phoneNum && !validPhoneNum
+                college && collegeFocus && !validCollege
                   ? "instructions"
                   : "offscreen"
               }
             >
-              يجب ان يحتوي الرقم على ارقام فقط
+              يجب اختيار القسم 
             </p>
 
             <button
@@ -294,7 +307,9 @@ const RegisterStudentBox = () => {
                 !validPassword ||
                 !validMatchPassword ||
                 !validfullName ||
-                !validEmail
+                !validEmail ||
+                !validPhoneNum ||
+                !validCollege
                   ? true
                   : false
               }
