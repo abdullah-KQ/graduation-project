@@ -83,7 +83,7 @@ const RegisterStudentBox = () => {
         UserName: user,
         Fullname: fullName,
         Email: email,
-        Phone_num: 593696468,
+        Phone_num: phoneNum,
         Password: password,
         College: college,
       });
