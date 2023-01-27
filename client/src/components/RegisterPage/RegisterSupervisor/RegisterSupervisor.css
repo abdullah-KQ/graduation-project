@@ -34,7 +34,7 @@
 
 .username,
 .password {
-  margin: auto;
+  margin: 10px 100px 10px 0px;
   padding: 5px 5px 5px 100px;
   text-align: right;
 }

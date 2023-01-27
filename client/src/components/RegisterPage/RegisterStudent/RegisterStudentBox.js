@@ -106,7 +106,8 @@ const RegisterStudentBox = () => {
       } else if (err.response?.status === 409) {
         setErrMag("Username Taken");
       } else {
-        setErrMag("Registration Failed");
+        //Registration Failed
+        setErrMag("Username Taken");
       }
       errRef.current.focus();
     }
