@@ -1,4 +1,3 @@
-from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework.parsers import JSONParser
 from django.http.response import JsonResponse
@@ -6,13 +5,37 @@ from django.http.response import JsonResponse
 # from rest_framework.response import Response
 # from .models import *
 # from .serializer import *
-from register.models import student,Supervisor, TrainingBody
-from register.serializers import studentSerializers,SupervisorSerializers,TrainingBodySerializers
+from register.models import student,Supervisor,TrainingBody,Opportunity,Forms
+from register.serializers import studentSerializers,SupervisorSerializers,TrainingBodySerializers,OpportunitySerializers,FormsSerializers
 from django.core.files.storage import default_storage
 
 from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
+from django.core.files.storage import default_storage
+from django.shortcuts import  render , redirect
+from django.contrib.auth import authenticate, login, logout
+from django.contrib import messages
+
+#---------------- student Login and Logout ----------------
+
+def student_Login (request):
+    if request.method == 'POST':
+        username = request.POST['Username']
+        password = request.POST['Password']
+        user = authenticate(request, Username=username, Password=password) # ممكن نتأكد من الاسامي (U u , P p)
+        if user is not None:
+             login(request, user)
+             return redirect('HomepageForStudent') # يرسله لصفحة الطالب
+        else:
+             messages.success(request, ("there is error logging in")) 
+             return redirect('student_Login') # نفس الصفحة
+    else:
+     return render(request, 'Project\client\src\components\LoginPage\LoginBox.js') #  المفروض Html ???? 
+
+def student_Logout (request):
+    logout(request)
+    return redirect('Homepage')
 
 
 #---------------- student ----------------
@@ -75,15 +98,15 @@ def Supervisor_detail(request, pk):
     
     try:
         Supervisors = Supervisor.objects.get(pk=pk)
-    except student.DoesNotExist:
+    except Supervisor.DoesNotExist:
         return Response(status=status.HTTP_404_NOT_FOUND)
 
     if request.method == 'GET':
-        serializer = studentSerializers(student)
+        serializer = SupervisorSerializers(Supervisor)
         return Response(serializer.data)
 
     elif request.method == 'PUT':
-        serializer = studentSerializers(student, data=request.data)
+        serializer = SupervisorSerializers(Supervisor, data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data)
@@ -114,15 +137,15 @@ def TrainingBody_detail(request, pk):
     
     try:
         TrainingBodys = TrainingBody.objects.get(pk=pk)
-    except student.DoesNotExist:
+    except TrainingBody.DoesNotExist:
         return Response(status=status.HTTP_404_NOT_FOUND)
 
     if request.method == 'GET':
-        serializer = TrainingBodySerializers(student)
+        serializer = TrainingBodySerializers(TrainingBody)
         return Response(serializer.data)
 
     elif request.method == 'PUT':
-        serializer = TrainingBodySerializers(student, data=request.data)
+        serializer = TrainingBodySerializers(TrainingBody, data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data)
@@ -131,6 +154,93 @@ def TrainingBody_detail(request, pk):
     elif request.method == 'DELETE':
         TrainingBodys.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
+
+#---------------- Opportunity ----------------
+@api_view(['GET', 'POST'])
+def Opportunity_list(request):
+    
+    if request.method == 'GET':
+        Opportunitys = Opportunity.objects.all()
+        serializer = OpportunitySerializers(Opportunitys, many=True)
+        return Response(serializer.data)
+
+    elif request.method == 'POST':
+        serializer = OpportunitySerializers(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        
+@api_view(['GET', 'PUT', 'DELETE'])
+def Opportunity_detail(request, pk):
+    
+    try:
+        Opportunitys = Opportunity.objects.get(pk=pk)
+    except Opportunity.DoesNotExist:
+        return Response(status=status.HTTP_404_NOT_FOUND)
+
+    if request.method == 'GET':
+        serializer = OpportunitySerializers(Opportunity)
+        return Response(serializer.data)
+
+    elif request.method == 'PUT':
+        serializer = OpportunitySerializers(Opportunity, data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    elif request.method == 'DELETE':
+        Opportunitys.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
+
+#---------------- Forms ----------------
+@api_view(['GET', 'POST'])
+def Forms_list(request):
+    
+    if request.method == 'GET':
+        Formss = Forms.objects.all()
+        serializer = FormsSerializers(Formss, many=True)
+        return Response(serializer.data)
+
+    elif request.method == 'POST':
+        serializer = FormsSerializers(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        
+@api_view(['GET', 'PUT', 'DELETE'])
+def Forms_detail(request, pk):
+    
+    try:
+        Formss = Forms.objects.get(pk=pk)
+    except Forms.DoesNotExist:
+        return Response(status=status.HTTP_404_NOT_FOUND)
+
+    if request.method == 'GET':
+        serializer = FormsSerializers(Forms)
+        return Response(serializer.data)
+
+    elif request.method == 'PUT':
+        serializer = FormsSerializers(Forms, data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    elif request.method == 'DELETE':
+        Formss.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
+
+
+# for Forms Images
+@csrf_exempt
+def SaveFile(request):
+    file=request.FILES['file']
+    file_name=default_storage.save(file.name,file)
+    return JsonResponse(file_name,safe=False)
+
 
 # class registerViow(APIView):
 #     def get(self, request):

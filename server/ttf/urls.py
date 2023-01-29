@@ -23,7 +23,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     # path('register', registerViow.as_view(),name="register"),
     # path('Homepage/', include('Homepage.urls')),
-     path ('',include('register.urls')),
+     path ('',include('django.contrib.auth.urls')), # register or login page?
+    path ('',include('register.urls')),
+
     
     # Start with Homepage -- not now
     # path('', include('Homepage.urls')),

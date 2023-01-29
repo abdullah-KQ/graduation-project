@@ -4,3 +4,5 @@ from .models import *
 admin.site.register(student)
 admin.site.register(Supervisor)
 admin.site.register(TrainingBody)
+admin.site.register(Opportunity)
+admin.site.register(Forms)

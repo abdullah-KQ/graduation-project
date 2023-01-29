@@ -13,6 +13,11 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 from pathlib import Path
 import os
 
+# for Forms Images
+BASE_DIR=Path(__file__).resolve(strict=True).parent.parent
+MEDIA_URL='/FormsImage/'
+MEDIA_ROOT=os.path.join(BASE_DIR,"FormsImage")
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -35,7 +40,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
     'django.contrib.admin',
-    'django.contrib.auth',
+    'django.contrib.auth', #contains the core of the authentication framework, and its default models.
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
@@ -48,8 +53,8 @@ INSTALLED_APPS = [
 # This is not recommended in production. Instead, just add only those domains that needs to be whitelisted.
  
 MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.security.SecurityMiddleware', # manages sessions across requests.
+    'django.contrib.sessions.middleware.SessionMiddleware', # associates users with requests using sessions
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
