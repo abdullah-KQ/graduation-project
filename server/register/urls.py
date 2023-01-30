@@ -6,15 +6,19 @@ from register import views
 from django.conf.urls.static import static
 from django.conf import settings
 
-from django.urls import path,include
+from django.urls import path
 from rest_framework.urlpatterns import format_suffix_patterns
 from register import views
 from . import views
 
 urlpatterns = [
-
+#---------------- Login and Logout ----------------
     path('student_Login/', views.student_Login, name="student_Login"),
     path('student_Logout/', views.student_Logout, name="student_Logout"),
+
+#--------------- ----------------
+    path('User/', views.User_list),
+    path('User/<int:pk>/', views.User_detail), # Not sure what it is for
 
     path('student/', views.student_list),
     path('student/<int:pk>/', views.student_detail), # Not sure what it is for

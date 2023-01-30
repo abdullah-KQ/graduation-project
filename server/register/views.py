@@ -5,8 +5,8 @@ from django.http.response import JsonResponse
 # from rest_framework.response import Response
 # from .models import *
 # from .serializer import *
-from register.models import student,Supervisor,TrainingBody,Opportunity,Forms
-from register.serializers import studentSerializers,SupervisorSerializers,TrainingBodySerializers,OpportunitySerializers,FormsSerializers
+from register.models import User,student,Supervisor,TrainingBody,Opportunity,Forms
+from register.serializers import UserSerializers,studentSerializers,SupervisorSerializers,TrainingBodySerializers,OpportunitySerializers,FormsSerializers
 from django.core.files.storage import default_storage
 
 from rest_framework import status
@@ -36,6 +36,45 @@ def student_Login (request):
 def student_Logout (request):
     logout(request)
     return redirect('Homepage')
+
+#---------------- User ----------------
+@api_view(['GET', 'POST'])
+def User_list(request):
+    
+    if request.method == 'GET':
+        Users = User.objects.all()
+        serializer = UserSerializers(Users, many=True)
+        return Response(serializer.data)
+
+    elif request.method == 'POST':
+        serializer = UserSerializers(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        
+@api_view(['GET', 'PUT', 'DELETE'])
+def User_detail(request, pk):
+    
+    try:
+        Users = User.objects.get(pk=pk)
+    except User.DoesNotExist:
+        return Response(status=status.HTTP_404_NOT_FOUND)
+
+    if request.method == 'GET':
+        serializer = UserSerializers(User)
+        return Response(serializer.data)
+
+    elif request.method == 'PUT':
+        serializer = UserSerializers(User, data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    elif request.method == 'DELETE':
+        Users.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
 
 
 #---------------- student ----------------
