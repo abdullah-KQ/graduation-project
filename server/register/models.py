@@ -14,7 +14,7 @@ class User (models.Model):
 
 class student(models.Model):
     UserName = models.ForeignKey('User',on_delete=models.CASCADE,null=True)
-    Uni_id = models.CharField(max_length=10,primary_key=True)
+    Uni_id = models.CharField(max_length=10,primary_key=True)  #uni_id not primary_key
     Department = models.CharField(max_length=80)
     College = models.CharField(max_length=80) 
     # To show the name in the database 

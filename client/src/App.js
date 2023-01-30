@@ -6,6 +6,9 @@ import RegisterPage from "./components/RegisterPage/RegisterPage";
 import RegisterStudent from "./components/RegisterPage/RegisterStudent/RegisterStudent";
 import RegisterSupervisor from "./components/RegisterPage/RegisterSupervisor/RegisterSupervisor";
 import RegisterTrainingBody from "./components/RegisterPage/RegisterTrainingBody/RegisterTrainingBody";
+import StudentHomepage from "./components/StudentUI/Homepage"
+import SupervisorHomepage from "./components/SupervisorUI/Homepage" 
+import TrainingBodyHomepage from "./components/TrainingBodyUI/Homepage" 
 import { Routes, Route } from "react-router-dom";
 
 function App() {
@@ -18,6 +21,9 @@ function App() {
           <Route path="/register/Student" element={<RegisterStudent />} />
           <Route path="/register/Supervisor" element={<RegisterSupervisor />} />
           <Route path="/register/TrainingBody" element={<RegisterTrainingBody />} />
+          <Route path="/Student" element={<StudentHomepage />} />
+          <Route path="/Supervisor" element={<SupervisorHomepage />} />
+          <Route path="/TrainingBody" element={<TrainingBodyHomepage />} />
         </Routes>
       </div>
     );

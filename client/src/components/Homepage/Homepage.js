@@ -32,13 +32,13 @@ function Homepage() {
         ))}
       </div>
       */
-      <div>
+      <>
         <Header />
         <Introduction />
         <ViewTrainingOpportunities />
         <CommonQuestions />
         <WebsiteFooter />
-      </div>
+      </>
     );
   }
 
