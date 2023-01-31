@@ -18,7 +18,7 @@ function HeaderUser()  {
         <div className="header-mid">
           
         </div>
-        <div className="header-right">
+        <div className="header-u-right">
           <img src={imgTaibah} className="img-logo" alt="Taibah traing icon" />
         </div>
       </div>

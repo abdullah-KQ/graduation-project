@@ -17,6 +17,7 @@
     border: none;
     background-color: white;
     font-size: 24px;
+    width: 150px;
 }
 
 .material-symbols-outlined {
@@ -39,7 +40,7 @@
     align-items: center;
 }
 
-.header-right {
+.header-u-right {
     flex: 0.20;
     min-width: 200px;
     padding-right: 2%;
@@ -48,15 +49,4 @@
 .img-logo {
     width: 100%;
     height: 100%;
-}
-
-@media(max-width: 450px) {
-    .header-right {
-        display: none;
-    }
-
-    .header {
-        display: grid;
-        grid-template-columns: 0.5fr 1fr;
-    }
 }

@@ -7,12 +7,53 @@
     margin-bottom: 100px;
 }
 
+.info-box{
+    display: flex;
+    flex-direction: row;
+    align-items:flex-end;
+    background-color: rgb(255, 255, 255);
+    height: 100%;
+    width: 90%;
+    max-width: 800px;
+    margin: auto;
+    border-radius: 5px;
+}
+
+.user-info{
+    display: flex;
+    flex-direction: column;
+    align-items:flex-end;
+    height: 100%;
+    width: 100%;
+    margin-right: 6%;
+}
+
+.p-info{
+color: black;
+font-size:24px;
+}
+
+.user-info-button{
+    border: 1.5px solid black;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    width: max-content;
+    background-color: white;
+    padding: 5px;
+} 
+.user-info-button:hover{
+    background-color: rgb(77, 70, 67);
+    color: white;
+    opacity: 0.75;
+    transition: opacity 0.3s;
+}
+
+
 .guide-box{
     display: flex;
     flex-direction: column;
     margin: auto;
     height: 400px;
-    width: 300px;
+    width: 280px;
     background-color: rgb(58, 52, 50);
     opacity: 0.9;
     justify-content:top;
@@ -26,6 +67,7 @@
     border: none;
     width: fit-content;
     margin-top: 20px;
+    margin-right: 25px;
     background-color: rgb(58, 52, 50);
     color: white;
 }
