@@ -4,15 +4,19 @@ import { Link } from "react-router-dom";
 import "../../general/general.css";
 import "./RegisterTrainingBody.css";
 import imgTTF from "../../img/Taibah Training Platform.png";
-//import axios from "../../../api/axios";
+import axios from "../../../api/axios";
 
 const USER_REGEX = /^[a-zA-Z][a-zA-Z0-9-_]{3,24}$/;
 const fullName_REGEX = /[a-zA-Zا-ي ]{3,100}$/;
-const email_REGEX = /^[a-zA-Z0-9_-]+@[a-zA-Z0-9]+\.[A-Za-z]+$/;
+const phoneNum_REGEX = /[0-9]{9,11}$/;
+const email_REGEX = /^[a-zA-Z0-9_.-]+@[a-zA-Z0-9]+\.[A-Za-z]+$/;
+const Website_REGEX = /^[a-zA-Z][a-zA-Z0-9.-_ ]{3,50}$/;
+const Address_REGEX = /[a-zA-Z0-9.-_ا-ي ]{3,50}$/;
 const PASSWORD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{8,24}$/;
-//const REGISTER_URL = "/register";
+const User_URL = "user/";
+const TrainingBody_URL = "TrainingBody/";
 
-const RegisterStudentBox = () => {
+const RegisterTrainingBodyBox = () => {
   const userRef = useRef();
   const errRef = useRef();
 
@@ -24,9 +28,21 @@ const RegisterStudentBox = () => {
   const [validfullName, setvalidFullName] = useState(false);
   const [fullNameFocus, setFullNameFocus] = useState(false);
 
+  const [phoneNum, setPhoneNum] = useState("");
+  const [validPhoneNum, setValidPhoneNum] = useState(false);
+  const [phoneNumFocus, setPhoneNumFocus] = useState(false);
+
   const [email, setemail] = useState("");
   const [validEmail, setvalidEmail] = useState(false);
   const [emailFocus, setEmailFocus] = useState(false);
+
+  const [Website, setWebsite] = useState("");
+  const [validWebsite, setValidWebsite] = useState(false);
+  const [WebsiteFocus, setWebsiteFocus] = useState(false);
+
+  const [Address, setAddress] = useState("");
+  const [validAddress, setValidAddress] = useState(false);
+  const [AddressFocus, setAddressFocus] = useState(false);
 
   const [password, setPassword] = useState("");
   const [validPassword, setValidPassword] = useState(false);
@@ -45,29 +61,32 @@ const RegisterStudentBox = () => {
 
   useEffect(() => {
     setValidName(USER_REGEX.test(user));
-    //to Print the data in console --- delete it after activate post function
-    console.log(user);
   }, [user]);
 
   useEffect(() => {
     setvalidFullName(fullName_REGEX.test(fullName));
-    //to Print the data in console --- delete it after activate post function
-    console.log(fullName);
   }, [fullName]);
 
   useEffect(() => {
+    setValidPhoneNum(phoneNum_REGEX.test(phoneNum));
+  }, [phoneNum]);
+
+  useEffect(() => {
     setvalidEmail(email_REGEX.test(email));
-    //to Print the data in console --- delete it after activate post function
-    console.log(email);
   }, [email]);
+
+  useEffect(() => {
+    setValidWebsite(Website_REGEX.test(Website));
+  }, [Website]);
+
+  useEffect(() => {
+    setValidAddress(Address_REGEX.test(Address));
+  }, [Address]);
 
   useEffect(() => {
     setValidPassword(PASSWORD_REGEX.test(password));
     const match = password === matchpassword;
     setValidMatchPassword(match);
-    //to Print the data in console --- delete it after activate post function
-    console.log(password);
-    console.log(matchpassword);
   }, [password, matchpassword]);
 
   useEffect(() => {
@@ -76,37 +95,35 @@ const RegisterStudentBox = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    //to Print the data in console --- delete it after activate post function >>>>>
-    console.log("user :" + user);
-    console.log("fullName :" + fullName);
-    console.log("email :" + email);
-    console.log("password :" + password);
-    console.log("matchpassword :" + matchpassword);
-    // <<<<<
-    setSuccess(true);
-    /*
-        const respnse = await axios.post(REGISTER_URL,
-            JSON.stringify({
-            username : user, 
-            password 
-            }),
-            {
-            headers: { 'Content-Type': 'application/json' },
-            withCredentials: true
-            }
-        );
-        setSuccess(true)
-    }catch (err) {
-        if (!err?.response) {
-            setErrMag('No Server Response');
-        } else if (err.response?.status === 409) {
-            setErrMag('Username Taken');
-        } else {
-            setErrMag('Registration Failed')
-        }
-        errRef.current.focus();
+    try {
+      const response = await axios.post(User_URL, {
+        UserName: user,
+        Fullname: fullName,
+        Phone_num: phoneNum,
+        Email: email,
+        Password: password,
+        Role: "3",
+      });
+      console.log(response);
+      const response2 = await axios.post(TrainingBody_URL, {
+        UserName: user,
+        Website: Website,
+        Address: Address,
+      });
+      console.log(response2);
+
+      setSuccess(true);
+    } catch (err) {
+      if (!err?.response) {
+        setErrMag("No Server Response");
+      } else if (err.response?.status === 409) {
+        setErrMag("Username Taken");
+      } else {
+        //Registration Failed
+        setErrMag("Username Taken");
+      }
+      errRef.current.focus();
     }
-    */
   };
 
   return (
@@ -132,7 +149,6 @@ const RegisterStudentBox = () => {
             {errMag}
           </p>
           <form onSubmit={handleSubmit} className="register-form">
-
             <label htmlFor="username" className="label-User">
               : اسم المستخدم
             </label>
@@ -160,7 +176,7 @@ const RegisterStudentBox = () => {
             </p>
 
             <label htmlFor="fullName" className="label-User">
-              : الأسم الثلاثي
+              : اسم جهة التدريب
             </label>
             <input
               type="text"
@@ -168,7 +184,7 @@ const RegisterStudentBox = () => {
               className="username"
               onChange={(e) => setFullName(e.target.value)}
               required
-              placeholder=": الأسم الثلاثي"
+              placeholder=" : اسم جهة التدريب "
               onFocus={() => setFullNameFocus(true)}
             />
             <p
@@ -179,6 +195,28 @@ const RegisterStudentBox = () => {
               }
             >
               يجب ان لا يحتوي الاسم على ارقام او رموز
+            </p>
+
+            <label htmlFor="phoneNum" className="label-User">
+              : رقم الجوال
+            </label>
+            <input
+              type="text"
+              id="phoneNum"
+              className="username"
+              onChange={(e) => setPhoneNum(e.target.value)}
+              required
+              placeholder=": رقم الجوال "
+              onFocus={() => setPhoneNumFocus(true)}
+            />
+            <p
+              className={
+                phoneNumFocus && phoneNum && !validPhoneNum
+                  ? "instructions"
+                  : "offscreen"
+              }
+            >
+              يجب ان يحتوي الرقم على ارقام فقط
             </p>
 
             <label htmlFor="email" className="label-User">
@@ -201,6 +239,50 @@ const RegisterStudentBox = () => {
               }
             >
               الرجاء ادخال بريد اكتروني صحيح
+            </p>
+
+            <label htmlFor="Website" className="label-User">
+              : الموقع الاكتروني
+            </label>
+            <input
+              type="text"
+              id="Website"
+              className="username"
+              onChange={(e) => setWebsite(e.target.value)}
+              required
+              placeholder=": الموقع الاكتروني "
+              onFocus={() => setWebsiteFocus(true)}
+            />
+            <p
+              className={
+                WebsiteFocus && Website && !validWebsite
+                  ? "instructions"
+                  : "offscreen"
+              }
+            >
+              . اضف الموقع الالكتروني
+            </p>
+
+            <label htmlFor="Address" className="label-User">
+              : العنوان
+            </label>
+            <input
+              type="text"
+              id="Address"
+              className="username"
+              onChange={(e) => setAddress(e.target.value)}
+              required
+              placeholder=": العنوان"
+              onFocus={() => setAddressFocus(true)}
+            />
+            <p
+              className={
+                AddressFocus && Address && !validAddress
+                  ? "instructions"
+                  : "offscreen"
+              }
+            >
+              اضف العنوان
             </p>
 
             <label htmlFor="password" className="label-password">
@@ -261,7 +343,13 @@ const RegisterStudentBox = () => {
             <button
               className="submit_button"
               disabled={
-                !validName || !validPassword || !validMatchPassword ||!validfullName ||!validEmail
+                !validName ||
+                !validPassword ||
+                !validMatchPassword ||
+                !validfullName ||
+                !validPhoneNum ||
+                !validEmail ||
+                !validAddress
                   ? true
                   : false
               }
@@ -275,4 +363,4 @@ const RegisterStudentBox = () => {
   );
 };
 
-export default RegisterStudentBox;
+export default RegisterTrainingBodyBox;

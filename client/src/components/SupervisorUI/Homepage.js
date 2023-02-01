@@ -1,5 +1,5 @@
 import React from 'react'
-import HeaderUser from '../general/HeaderUser'
+import HeaderUser from '../StudentUI/HeaderUser'
 import WebsiteFooter from '../general/WebsiteFooter'
 import PageContents from './PageContents'
 

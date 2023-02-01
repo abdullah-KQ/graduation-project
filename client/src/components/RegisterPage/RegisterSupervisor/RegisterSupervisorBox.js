@@ -11,7 +11,9 @@ const fullName_REGEX = /[a-zA-Zا-ي ]{3,100}$/;
 const phoneNum_REGEX = /[0-9]{9,11}$/;
 const email_REGEX = /^[a-zA-Z0-9_.-]+@[a-zA-Z0-9]+\.[A-Za-z]+$/;
 const PASSWORD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{8,24}$/;
-const REGISTER_URL = "Supervisor/";
+const SId_REGEX = /[0-9]{1,30}$/;
+const User_URL = "user/";
+const Supervisor_URL = "Supervisor/";
 
 const RegisterSupervisorBox = () => {
   const userRef = useRef();
@@ -40,6 +42,10 @@ const RegisterSupervisorBox = () => {
   const [matchpassword, setMatchPassword] = useState("");
   const [validMatchPassword, setValidMatchPassword] = useState(false);
   const [matchPasswordFocus, setMatchPasswordFocus] = useState(false);
+
+  const [SId, setSId] = useState("");
+  const [validSId, setvalidSId] = useState(false);
+  const [SIdFocus, setSIdFocus] = useState(false);
 
   const [department, setDepartment] = useState("");
   const [validDepartment, setvalidDepartment] = useState(false);
@@ -79,6 +85,10 @@ const RegisterSupervisorBox = () => {
   }, [password, matchpassword]);
 
   useEffect(() => {
+    setvalidSId(SId_REGEX.test(SId));
+  }, [SId]);
+
+  useEffect(() => {
     if (department === "choose"){
       setvalidDepartment(false)
     }else{
@@ -101,16 +111,22 @@ const RegisterSupervisorBox = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(REGISTER_URL,{
+      const response = await axios.post(User_URL,{
         UserName: user,
         Fullname: fullName,
+        Phone_num: phoneNum,
         Email: email,
         Password: password,
-        Department: department,
-        College: college,
-        Phone_num: phoneNum,
+        Role: "2",
       });
       console.log(response);
+      const response2 = await axios.post(Supervisor_URL,{
+        UserName: user,
+        S_id: SId,
+        Department: department,
+        College: college,
+      });
+      console.log(response2);
       
       setSuccess(true);
     } catch (err) {
@@ -282,6 +298,28 @@ const RegisterSupervisorBox = () => {
             . يجب ان تكون كلمة المرور مطابقة
           </p>
 
+          <label htmlFor="SId" className="label-User">
+              : الرقم الوظيفي
+            </label>
+            <input
+              type="text"
+              id="SId"
+              className="username"
+              onChange={(e) => setSId(e.target.value)}
+              required
+              placeholder=": رقم الجوال "
+              onFocus={() => setSIdFocus(true)}
+            />
+            <p
+              className={
+                SIdFocus && SId && !validSId
+                  ? "instructions"
+                  : "offscreen"
+              }
+            >
+              يجب ان يحتوي ارقام فقط
+            </p>
+
           <label htmlFor="Department" className="label-User">
           : الكلية
           </label>
@@ -354,6 +392,7 @@ const RegisterSupervisorBox = () => {
               !validEmail ||
               !validPhoneNum ||
               !validDepartment ||
+              !validSId ||
               !validCollege 
                 ? true
                 : false

@@ -11,7 +11,9 @@ const fullName_REGEX = /[a-zA-Zا-ي ]{3,100}$/;
 const phoneNum_REGEX = /[0-9]{9,11}$/;
 const email_REGEX = /^[a-zA-Z0-9_.-]+@[a-zA-Z0-9]+\.[A-Za-z]+$/;
 const PASSWORD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{8,24}$/;
-const REGISTER_URL = "student/";
+const uniId_REGEX = /[0-9]{1,20}$/;
+const User_URL = "user/";
+const student_URL = "student/";
 
 const RegisterStudentBox = () => {
   const userRef = useRef();
@@ -40,6 +42,14 @@ const RegisterStudentBox = () => {
   const [matchpassword, setMatchPassword] = useState("");
   const [validMatchPassword, setValidMatchPassword] = useState(false);
   const [matchPasswordFocus, setMatchPasswordFocus] = useState(false);
+
+  const [uniId, setUniId] = useState("");
+  const [validUniId, setvalidUniId] = useState(false);
+  const [uniIdFocus, setUniIdFocus] = useState(false);
+
+  const [department, setDepartment] = useState("");
+  const [validDepartment, setvalidDepartment] = useState(false);
+  const [departmentFocus, setDepartmentFocus] = useState(false);
 
   const [college, setCollege] = useState("");
   const [validCollege, setvalidCollege] = useState(false);
@@ -75,10 +85,22 @@ const RegisterStudentBox = () => {
   }, [password, matchpassword]);
 
   useEffect(() => {
-    if (college === "choose"){
-      setvalidCollege(false)
-    }else{
-      setvalidCollege(true)
+    setvalidUniId(uniId_REGEX.test(uniId));
+  }, [uniId]);
+
+  useEffect(() => {
+    if (department === "choose") {
+      setvalidDepartment(false);
+    } else {
+      setvalidDepartment(true);
+    }
+  }, [department]);
+
+  useEffect(() => {
+    if (college === "choose") {
+      setvalidCollege(false);
+    } else {
+      setvalidCollege(true);
     }
   }, [college]);
 
@@ -89,16 +111,23 @@ const RegisterStudentBox = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(REGISTER_URL,{
+      const response = await axios.post(User_URL, {
         UserName: user,
         Fullname: fullName,
-        Email: email,
         Phone_num: phoneNum,
+        Email: email,
         Password: password,
-        College: college,
+        Role: "1",
       });
       console.log(response);
-      
+      const response2 = await axios.post(student_URL, {
+        UserName: user,
+        Uni_id: uniId,
+        Department: department,
+        College: college,
+      });
+      console.log(response2);
+
       setSuccess(true);
     } catch (err) {
       if (!err?.response) {
@@ -270,8 +299,55 @@ const RegisterStudentBox = () => {
               . يجب ان تكون كلمة المرور مطابقة
             </p>
 
+            <label htmlFor="uniId" className="label-User">
+              : الرقم الجامعي
+            </label>
+            <input
+              type="text"
+              id="uniId"
+              className="username"
+              onChange={(e) => setUniId(e.target.value)}
+              required
+              placeholder=": رقم الجوال "
+              onFocus={() => setUniIdFocus(true)}
+            />
+            <p
+              className={
+                uniIdFocus && uniId && !validUniId
+                  ? "instructions"
+                  : "offscreen"
+              }
+            >
+              يجب ان يحتوي ارقام فقط
+            </p>
+
+            <label htmlFor="Department" className="label-User">
+              : الكلية
+            </label>
+            <select
+              id="Department"
+              className="password"
+              required
+              onChange={(e) => setDepartment(e.target.value)}
+              onFocus={() => setDepartmentFocus(true)}
+            >
+              <option value="choose"> -- اختر الكلية -- </option>
+              <option value="cs">cs</option>
+              <option value="math">math</option>
+              <option value="cs2">cs2</option>
+            </select>
+            <p
+              className={
+                department && departmentFocus && !validDepartment
+                  ? "instructions"
+                  : "offscreen"
+              }
+            >
+              يجب اختيار الكلية
+            </p>
+
             <label htmlFor="college" className="label-User">
-            : القسم
+              : القسم
             </label>
             <select
               id="college"
@@ -280,16 +356,10 @@ const RegisterStudentBox = () => {
               onChange={(e) => setCollege(e.target.value)}
               onFocus={() => setCollegeFocus(true)}
             >
-            <option value="choose"> -- اختر القسم -- </option>
-            <option value="cs">
-              cs
-            </option>
-            <option value="cs2" >
-              cs2
-            </option>
-            <option value="cs3">
-              cs3
-            </option>
+              <option value="choose"> -- اختر القسم -- </option>
+              <option value="cs">cs</option>
+              <option value="cs2">cs2</option>
+              <option value="cs3">cs3</option>
             </select>
             <p
               className={
@@ -298,7 +368,7 @@ const RegisterStudentBox = () => {
                   : "offscreen"
               }
             >
-              يجب اختيار القسم 
+              يجب اختيار القسم
             </p>
 
             <button
@@ -310,6 +380,8 @@ const RegisterStudentBox = () => {
                 !validfullName ||
                 !validEmail ||
                 !validPhoneNum ||
+                !validUniId ||
+                !validDepartment ||
                 !validCollege
                   ? true
                   : false

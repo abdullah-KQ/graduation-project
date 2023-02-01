@@ -1,5 +1,8 @@
 import React from "react";
 import "./PageContents.css";
+import { Link } from "react-router-dom";
+import GuideNav from "./GuideNav";
+
 
 const PageContents = () => {
   const fullname = "abdullah";
@@ -18,7 +21,9 @@ const PageContents = () => {
               {supervisor}
               <br />
               <br />
-              <button className="user-info-button">لمزيد من المعلومات </button>
+              <Link to={"./AddSupervisor"}>
+              <button className="user-info-button">للمزيد من المعلومات </button>
+              </Link>
               <br />
               <br />
             </p>
@@ -28,7 +33,9 @@ const PageContents = () => {
               لا يتوجد فرص تدريب
               <br />
               <br />
-              <button className="user-info-button"> للبحث عن فرص تدريب </button>
+              <Link to={"./CurrentTraining"}>
+              <button className="user-info-button"> للمزيد عن فرص التدريب </button>
+              </Link>
             </p>
           </div>
           <div className="user-info">
@@ -42,10 +49,11 @@ const PageContents = () => {
               {department}
               <br />
             </p>
+            <Link to={"./Profile"}>
             <button className="user-info-button">
-              {" "}
-              للمزيد عن الملف الشخصي{" "}
+              للمزيد عن الملف الشخصي
             </button>
+            </Link>
             <p className="p-info">
               <br />
               :النماذج المطلوب تعبئتها
@@ -53,19 +61,13 @@ const PageContents = () => {
               {form}
               <br />
             </p>
+            <Link to={"./FillForms"}>
             <button className="user-info-button"> لتعبئة النماذج </button>
+            </Link>
           </div>
         </div>
       </div>
-      <div className="guide-box">
-        <button className="guide-button"> ملف التعريف </button>
-        <button className="guide-button"> تسجيل طلب لاضافة مشرف </button>
-        <button className="guide-button"> البحث عن فرصة تدريبية </button>
-        <button className="guide-button"> التدريب الحالي </button>
-        <button className="guide-button"> تعبئة النماذج المطلوبة </button>
-        <button className="guide-button"> تقيم الفرصة التدريبية </button>
-        <button className="guide-button"> تسجيل الخروج </button>
-      </div>
+      <GuideNav />
     </div>
   );
 };
