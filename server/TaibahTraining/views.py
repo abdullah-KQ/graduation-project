@@ -70,16 +70,16 @@ def student_list(request):
 def student_detail(request, pk):
     
     try:
-        Users = User.objects.get(UserName=pk)
-    except User.DoesNotExist:
+        Users = student.objects.get(UserName=pk)
+    except student.DoesNotExist:
         return Response(status=status.HTTP_404_NOT_FOUND)
 
     if request.method == 'GET':
-        serializer = UserSerializers(Users)
+        serializer = studentSerializers(Users)
         return Response(serializer.data)
 
     elif request.method == 'PUT':
-        serializer = UserSerializers(Users, data=request.data)
+        serializer = studentSerializers(Users, data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data)
@@ -110,16 +110,16 @@ def Supervisor_list(request):
 def Supervisor_detail(request, pk):
     
     try:
-        Users = User.objects.get(UserName=pk)
-    except User.DoesNotExist:
+        Users = Supervisor.objects.get(UserName=pk)
+    except Supervisor.DoesNotExist:
         return Response(status=status.HTTP_404_NOT_FOUND)
 
     if request.method == 'GET':
-        serializer = UserSerializers(Users)
+        serializer = SupervisorSerializers(Users)
         return Response(serializer.data)
 
     elif request.method == 'PUT':
-        serializer = UserSerializers(Users, data=request.data)
+        serializer = SupervisorSerializers(Users, data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data)
@@ -150,16 +150,16 @@ def TrainingBody_list(request):
 def TrainingBody_detail(request, pk):
     
     try:
-        Users = User.objects.get(UserName=pk)
-    except User.DoesNotExist:
+        Users = TrainingBody.objects.get(UserName=pk)
+    except TrainingBody.DoesNotExist:
         return Response(status=status.HTTP_404_NOT_FOUND)
 
     if request.method == 'GET':
-        serializer = UserSerializers(Users)
+        serializer = TrainingBodySerializers(Users)
         return Response(serializer.data)
 
     elif request.method == 'PUT':
-        serializer = UserSerializers(Users, data=request.data)
+        serializer = TrainingBodySerializers(Users, data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data)

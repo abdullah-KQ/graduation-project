@@ -1,4 +1,4 @@
-import React, { useContext,useEffect } from "react";
+import React, { useContext } from "react";
 import "./HeaderStylesUser.css";
 import "../../components/general/general.css";
 import imgTaibah from "../img/Taibah Training Platform.png";
@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import  StudentContex  from "../../contex/StudentContex";
 
 
-function HeaderUser()  {
+function HeaderStudent()  {
 const {StudentInfo} =useContext(StudentContex)
 
     return (
@@ -29,4 +29,4 @@ const {StudentInfo} =useContext(StudentContex)
     );
   }
 
-export default HeaderUser;
+export default HeaderStudent;

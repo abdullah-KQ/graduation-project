@@ -1,5 +1,5 @@
 import React from "react";
-import HeaderUser from "../HeaderUser";
+import HeaderStudent from "../HeaderStudent";
 import GuideNav from "../GuideNav";
 import WebsiteFooter from "../../general/WebsiteFooter";
 
@@ -9,7 +9,7 @@ const SearchForOpportunity = () => {
     const handleSearchChange = (e) => {}
   return (
     <>
-    <HeaderUser />
+    <HeaderStudent />
     <form className="search" onSubmit={handleSubmit}>
       <input
         className="search__input"

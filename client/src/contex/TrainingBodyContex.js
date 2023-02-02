@@ -1,10 +1,10 @@
-import {  createContext, useState } from "react";
+import { createContext, useState, useEffect } from "react";
 
-
- const TrainingBodyContex = createContext();
-
-export function TrainingBodyProvider({children}){
-    const [TrainingBodyInfo,setTrainingBodyInfo] =useState({
+const getInitialState = () => {
+  const TrainingBodyInfo = localStorage.getItem("TrainingBodyInfo");
+  return TrainingBodyInfo
+    ? JSON.parse(TrainingBodyInfo)
+    : {
         UserName: "",
         Fullname: "",
         Phone_num: "",
@@ -12,15 +12,25 @@ export function TrainingBodyProvider({children}){
         Role: "",
         Website: "",
         Address: "",
-    })
+      };
+};
 
-    return(
-        <TrainingBodyContex.Provider value={{ TrainingBodyInfo ,setTrainingBodyInfo}}>
-            {children}
-        </TrainingBodyContex.Provider>
-    )
+const TrainingBodyContex = createContext();
+
+export function TrainingBodyProvider({ children }) {
+  const [TrainingBodyInfo, setTrainingBodyInfo] = useState(getInitialState);
+
+  useEffect(() => {
+    localStorage.setItem("TrainingBodyInfo", JSON.stringify(TrainingBodyInfo));
+  }, [TrainingBodyInfo]);
+
+  return (
+    <TrainingBodyContex.Provider
+      value={{ TrainingBodyInfo, setTrainingBodyInfo }}
+    >
+      {children}
+    </TrainingBodyContex.Provider>
+  );
 }
-    
-
 
 export default TrainingBodyContex;

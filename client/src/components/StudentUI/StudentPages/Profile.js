@@ -1,5 +1,5 @@
 import React, {useContext}from "react";
-import HeaderUser from "../HeaderUser";
+import HeaderStudent from "../HeaderStudent";
 import GuideNav from "../GuideNav";
 import WebsiteFooter from "../../general/WebsiteFooter";
 import "../PageContents.css";
@@ -9,17 +9,11 @@ import  StudentContex  from "../../../contex/StudentContex";
 const Profile = () => {
   const {StudentInfo} =useContext(StudentContex)
 
-  const fullname = StudentInfo.UserName;
-  const username = "abdullah_k";
-  const email ="abdullah@gmail.com"
-  const college = " college ";
-  const department = " department";
-  const UID = " 4001071";
   const supervisor = " لا يوجد ";
   const CurrentTraining = " لا يوجد ";
   return (
     <div>
-      <HeaderUser />
+      <HeaderStudent />
       <div className="main-div">
         <div>
           <div className="info-box">
@@ -27,7 +21,7 @@ const Profile = () => {
               <p className="p-info">
                 :الرقم الجامعي
                 <br />
-                {UID}
+                {StudentInfo.Uni_id}
                 <br />
                 <br />
                 :المشرف الجامعي
@@ -46,26 +40,26 @@ const Profile = () => {
               <p className="p-info">
                 :الاسم
                 <br />
-                {fullname}
+                {StudentInfo.Fullname}
                 <br />
                 <br />
                 :اسم المستخدم
                 <br />
-                {username}
+                {StudentInfo.UserName}
                 <br />
                 <br />
                 :البريد الاكتروني
                 <br />
-                {email}
+                {StudentInfo.Email}
                 <br />
                 <br />
                 :الكلية
                 <br />
-                {college}
+                {StudentInfo.College}
                 <br /> <br />
                 :التخصص
                 <br />
-                {department}
+                {StudentInfo.Department}
                 <br />
                 <br />
               </p>

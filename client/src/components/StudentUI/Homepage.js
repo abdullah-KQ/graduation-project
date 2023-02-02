@@ -1,6 +1,6 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import HeaderUser from "./HeaderUser";
+import HeaderStudent from "./HeaderStudent";
 import WebsiteFooter from "../general/WebsiteFooter";
 import PageContents from "./PageContents";
 import ViewTrainingOpportunities from "../Homepage/ViewTrainingOpportunities";
@@ -21,7 +21,7 @@ const Homepage = () => {
           path=""
           element={
             <>
-              <HeaderUser />
+              <HeaderStudent />
               <PageContents />
               <ViewTrainingOpportunities />
               <WebsiteFooter />

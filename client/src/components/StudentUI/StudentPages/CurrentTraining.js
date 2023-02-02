@@ -1,12 +1,12 @@
 import React from 'react'
-import HeaderUser from "../HeaderUser";
+import HeaderStudent from "../HeaderStudent";
 import GuideNav from "../GuideNav";
 import WebsiteFooter from "../../general/WebsiteFooter";
 
 const CurrentTraining = () => {
   return (
     <div>      
-    <HeaderUser />
+    <HeaderStudent />
     <GuideNav />
     <WebsiteFooter />
     </div>

@@ -1,10 +1,10 @@
-import {  createContext, useState } from "react";
+import { createContext, useState, useEffect } from "react";
 
-
- const SupervisorContex = createContext();
-
-export function SupervisorProvider({children}){
-    const [SupervisorInfo,setSupervisorInfo] =useState({
+const getInitialState = () => {
+  const SupervisorInfo = localStorage.getItem("SupervisorInfo");
+  return SupervisorInfo
+    ? JSON.parse(SupervisorInfo)
+    : {
         UserName: "",
         Fullname: "",
         Phone_num: "",
@@ -14,15 +14,23 @@ export function SupervisorProvider({children}){
         Department: "",
         College: "",
         Verified: false,
-    })
+      };
+};
 
-    return(
-        <SupervisorContex.Provider value={{ SupervisorInfo ,setSupervisorInfo}}>
-            {children}
-        </SupervisorContex.Provider>
-    )
+const SupervisorContex = createContext();
+
+export function SupervisorProvider({ children }) {
+  const [SupervisorInfo, setSupervisorInfo] = useState(getInitialState);
+
+  useEffect(() => {
+    localStorage.setItem("SupervisorInfo", JSON.stringify(SupervisorInfo));
+  }, [SupervisorInfo]);
+
+  return (
+    <SupervisorContex.Provider value={{ SupervisorInfo, setSupervisorInfo }}>
+      {children}
+    </SupervisorContex.Provider>
+  );
 }
-    
-
 
 export default SupervisorContex;

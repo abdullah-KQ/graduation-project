@@ -1,10 +1,10 @@
-import {  createContext, useState } from "react";
+import { createContext, useState, useEffect } from "react";
 
-
- const StudentContex = createContext();
-
-export function StudentProvider({children}){
-    const [StudentInfo,setStudentInfo] =useState({
+const getInitialState = () => {
+  const StudentInfo = localStorage.getItem("StudentInfo");
+  return StudentInfo
+    ? JSON.parse(StudentInfo)
+    : {
         UserName: "",
         Fullname: "",
         Phone_num: "",
@@ -13,17 +13,23 @@ export function StudentProvider({children}){
         Uni_id: "",
         Department: "",
         College: "",
-    })
+      };
+};
 
-    return(
-        <StudentContex.Provider value={{ StudentInfo ,setStudentInfo}}>
-            {children}
-        </StudentContex.Provider>
-    )
+const StudentContex = createContext();
+
+export function StudentProvider({ children }) {
+  const [StudentInfo, setStudentInfo] = useState(getInitialState);
+
+  useEffect(() => {
+    localStorage.setItem("StudentInfo", JSON.stringify(StudentInfo));
+  }, [StudentInfo]);
+
+  return (
+    <StudentContex.Provider value={{ StudentInfo, setStudentInfo }}>
+      {children}
+    </StudentContex.Provider>
+  );
 }
-    
-
 
 export default StudentContex;
-
-
