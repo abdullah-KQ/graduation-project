@@ -9,7 +9,7 @@ import FieldrFormTextarea from "./FieldrFormTextarea ";
 import "./AddTrainingOpp.css";
 import axios from "../../../../api/axios" 
 
-const User_URL = "user/";
+const Opportunity_URL = "Opportunity/";
 
 const AddTrainingOpp = () => {
   const [OpportName, setOpportName] = useState("");
@@ -39,10 +39,8 @@ const AddTrainingOpp = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(User_URL, {
+      const response = await axios.post(Opportunity_URL, {
         Opport_name:OpportName,
-        Supervisor:"",
-        student:"",
         Description:Description,
         Training_tasks:TrainingTasks,
         Gender:Gender,

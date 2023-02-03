@@ -19,7 +19,7 @@ class student(models.Model):
     College = models.CharField(max_length=80) 
     # To show the name in the database 
     def __str__ (self):
-        return self.Fullname        
+        return self.UserName        
 
 class Supervisor(models.Model):
     UserName = models.ForeignKey('User',on_delete=models.CASCADE,null=True)
@@ -29,7 +29,7 @@ class Supervisor(models.Model):
     Verified = models.BooleanField(default=False) 
     # To show the name in the database 
     def __str__ (self):
-        return self.Fullname
+        return self.UserName
 
 class TrainingBody(models.Model): 
     UserName = models.ForeignKey('User',on_delete=models.CASCADE,null=True)
@@ -37,24 +37,22 @@ class TrainingBody(models.Model):
     Address = models.CharField(max_length=256) 
     # To show the name in the database 
     def __str__ (self):
-        return self.Fullname
+        return self.UserName
 
 class Opportunity(models.Model): 
     Opport_name = models.CharField(max_length=50)
-    Supervisor = models.ForeignKey('Supervisor',on_delete=models.CASCADE,null=True)
-    student = models.ForeignKey('student',on_delete=models.CASCADE,null=True)
     Description = models.CharField(max_length=500)
     Training_tasks = models.CharField(max_length=256)
     Gender = models.CharField(max_length=30)
     Loaction = models.CharField(max_length=150)
     vacancies = models.CharField(max_length=20)
-    StartDate = models.DateField
-    FinishDate = models.DateField
+    StartDate = models.CharField(max_length=20)
+    FinishDate = models.CharField(max_length=20)
     Contact_Person = models.CharField(max_length=50)
     Position = models.CharField(max_length=50)
     # To show the name in the database 
     def __str__ (self):
-        return self.Fullname
+       return self.Opport_name
 
 class Forms (models.Model): 
     FormName = models.CharField(max_length=50)
@@ -65,4 +63,4 @@ class Forms (models.Model):
     
     # To show the name in the database 
     def __str__ (self):
-        return self.Fullname        
+       return self.FormName        

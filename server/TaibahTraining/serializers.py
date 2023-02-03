@@ -24,7 +24,7 @@ class TrainingBodySerializers(serializers.ModelSerializer):
 class OpportunitySerializers(serializers.ModelSerializer):
     class Meta:
         model = Opportunity
-        fields =['Opport_name','Supervisor','student','Description','Training_tasks',
+        fields =['Opport_name','Description','Training_tasks',
                 'Gender','Loaction','Contact_Person','Position','vacancies','StartDate','FinishDate']
         
 class FormsSerializers(serializers.ModelSerializer):
