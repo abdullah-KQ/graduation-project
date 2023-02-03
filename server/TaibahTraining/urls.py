@@ -30,4 +30,6 @@ urlpatterns = [
 
     path('TrainingBody/', views.TrainingBody_list),
     path('TrainingBody/<pk>/', views.TrainingBody_detail),
+
+    path('Opportunity/', views.Opportunity_list),
 ]

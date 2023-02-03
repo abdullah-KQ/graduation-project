@@ -5,7 +5,7 @@ import WebsiteFooter from "../general/WebsiteFooter";
 import PageContents from "./PageContents";
 import ViewTrainingOpportunities from "../Homepage/ViewTrainingOpportunities";
 import Profile from "./StudentPages/Profile"
-import AddSupervisor from "./StudentPages/AddSupervisor"
+import AddSupervisor from "./StudentPages/AddSupervisor/AddSupervisor"
 import SearchForOpportunity from "./StudentPages/SearchForOpportunity";
 import CurrentTraining from "./StudentPages/CurrentTraining"
 import FillForms from "./StudentPages/FillForms"

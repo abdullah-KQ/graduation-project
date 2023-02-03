@@ -1,6 +1,6 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import HeaderStudent from "../StudentUI/HeaderStudent";
+import HeaderSupervisor from "./HeaderSupervisor";
 import WebsiteFooter from "../general/WebsiteFooter";
 import PageContents from "./PageContents";
 import Profile from "./SupervisorUIPages/Profile";
@@ -13,7 +13,7 @@ const Homepage = () => {
           path=""
           element={
             <>
-              <HeaderStudent />
+              <HeaderSupervisor />
               <PageContents />
               <WebsiteFooter />
             </>

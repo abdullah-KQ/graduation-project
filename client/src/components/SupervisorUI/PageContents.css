@@ -7,10 +7,10 @@
     margin-bottom: 100px;
 }
 
-.guide-box{
+.guide-box-m{
     display: flex;
     flex-direction: column;
-    margin: auto;
+    margin: 50px auto auto auto;
     height: 400px;
     width: 300px;
     background-color: rgb(58, 52, 50);

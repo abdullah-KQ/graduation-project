@@ -17,7 +17,7 @@
     border: none;
     background-color: white;
     font-size: 24px;
-    width: 150px;
+    width:fit-content;
 }
 
 .material-symbols-outlined {

@@ -1,14 +1,15 @@
-import React from 'react'
+import React,{useContext} from 'react'
 import "./PageContents.css"
 import { Link } from "react-router-dom";
 import GuideNav from './GuideNav';
+import TrainingBodyContex from "../../contex/TrainingBodyContex";
 
 
 const PageContents = () => {
-  const fullname = "abdullah";
-  const supervisor = " khaled";
+  const {TrainingBodyInfo} =useContext(TrainingBodyContex)
+
+  const supervisor = " لا يوجد ";
   const form = " لا توجد ";
-  const department = " department";
 
   return (
     <div className="main-div">
@@ -16,13 +17,13 @@ const PageContents = () => {
         <div className="info-box">
           <div className="user-info">
             <p className="p-info">
-              :المشرف الجامعي
+              : المشرفين المنتسبين 
               <br />
               {supervisor}
               <br />
               <br />
               <Link to={"./AddSupervisor"}>
-              <button className="user-info-button">للمزيد من المعلومات </button>
+              <button className="user-info-button"> للمزيد عن معلومات المشرفين </button>
               </Link>
               <br />
               <br />
@@ -42,11 +43,11 @@ const PageContents = () => {
             <p className="p-info">
               :الاسم
               <br />
-              {fullname}
+              {TrainingBodyInfo.Fullname}
+              <br /><br />
+              : البريد الاكتروني
               <br />
-              :التخصص
-              <br />
-              {department}
+              {TrainingBodyInfo.Email}
               <br />
             </p>
             <Link to={"./Profile"}>

@@ -1,14 +1,14 @@
-import React from "react";
+import React,{useContext} from "react";
 import "./PageContents.css";
 import { Link } from "react-router-dom";
 import GuideNav from "./GuideNav";
-
+import StudentContex from "../../contex/StudentContex";
 
 const PageContents = () => {
-  const fullname = "abdullah";
+  const {StudentInfo} =useContext(StudentContex)
+
   const supervisor = " khaled";
   const form = " لا توجد ";
-  const department = " department";
 
   return (
     <div className="main-div">
@@ -42,11 +42,12 @@ const PageContents = () => {
             <p className="p-info">
               :الاسم
               <br />
-              {fullname}
+              {StudentInfo.Fullname}
+              <br />
               <br />
               :التخصص
               <br />
-              {department}
+              {StudentInfo.Department}
               <br />
             </p>
             <Link to={"./Profile"}>
@@ -55,7 +56,6 @@ const PageContents = () => {
             </button>
             </Link>
             <p className="p-info">
-              <br />
               :النماذج المطلوب تعبئتها
               <br />
               {form}

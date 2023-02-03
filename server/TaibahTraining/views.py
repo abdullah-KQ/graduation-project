@@ -169,3 +169,19 @@ def TrainingBody_detail(request, pk):
         Users.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
     
+
+@api_view(['GET', 'POST'])
+def Opportunity_list(request):
+    
+    if request.method == 'GET':
+        Users = Opportunity.objects.all()
+        serializer = OpportunitySerializers(Users, many=True)
+        return Response(serializer.data)
+
+    elif request.method == 'POST':
+        serializer = OpportunitySerializers(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    

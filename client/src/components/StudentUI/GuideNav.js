@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const GuideNav = () => {
   return (
-    <div className="guide-box">
+    <div className="guide-box-m">
         <Link to={"../../Student"}>
         <button className="guide-button"> الرئسية </button>
         </Link>

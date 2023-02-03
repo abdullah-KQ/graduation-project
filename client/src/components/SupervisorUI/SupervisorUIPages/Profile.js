@@ -1,6 +1,6 @@
 import React, {useContext}from "react";
-import HeaderStudent from "../../StudentUI/HeaderStudent";
-import GuideNav from "../../StudentUI/GuideNav";
+import HeaderSupervisor from "../HeaderSupervisor";
+import GuideNav from "../GuideNav";
 import WebsiteFooter from "../../general/WebsiteFooter";
 import "../PageContents.css";
 import  SupervisorContex  from "../../../contex/SupervisorContex";
@@ -13,7 +13,7 @@ const Profile = () => {
   const CurrentTraining = " لا يوجد ";
   return (
     <div>
-      <HeaderStudent />
+      <HeaderSupervisor />
       <div className="main-div">
         <div>
           <div className="info-box">
