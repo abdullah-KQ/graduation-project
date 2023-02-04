@@ -5,6 +5,7 @@ const getInitialState = () => {
   return StudentInfo
     ? JSON.parse(StudentInfo)
     : {
+        Id: 0,
         UserName: "",
         Fullname: "",
         Phone_num: "",

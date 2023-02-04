@@ -5,6 +5,7 @@ const getInitialState = () => {
   return SupervisorInfo
     ? JSON.parse(SupervisorInfo)
     : {
+        Id: 0,
         UserName: "",
         Fullname: "",
         Phone_num: "",

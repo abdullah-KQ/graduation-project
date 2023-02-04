@@ -1,14 +1,21 @@
-import React from 'react'
+import React,{useContext} from 'react'
 import "./PageContents.css"
 import { Link } from "react-router-dom";
 import GuideNav from './GuideNav';
+import SupervisorContex from "../../contex/SupervisorContex";
 
 
 const PageContents = () => {
-  const fullname = "abdullah";
-  const supervisor = " khaled";
+  const {SupervisorInfo} =useContext(SupervisorContex)
   const form = " لا توجد ";
-  const department = " department";
+
+  const isVerified = ()=>{
+    if(SupervisorInfo.Verified){
+    return <span>الحساب موثق</span>
+  }else{
+    return <span>الحساب غير موثق</span>
+  }
+}
 
   return (
     <div className="main-div">
@@ -16,25 +23,25 @@ const PageContents = () => {
         <div className="info-box">
           <div className="user-info">
             <p className="p-info">
-              :المشرف الجامعي
+              :الحساب موثق 
               <br />
-              {supervisor}
+              {isVerified()}
               <br />
               <br />
-              <Link to={"./AddSupervisor"}>
-              <button className="user-info-button">للمزيد من المعلومات </button>
+              <Link to={"./VerifiedSupervisor"}>
+              <button className="user-info-button"> للمزيد عن توثيق الحساب </button>
               </Link>
               <br />
               <br />
             </p>
             <p className="p-info">
-              :فرص التدريب
+              :الطلاب تحت الإشراف
               <br />
-              لا يتوجد فرص تدريب
-              <br />
+              لا يوجد طلاب تحت اشرافك
+                            <br />
               <br />
               <Link to={"./CurrentTraining"}>
-              <button className="user-info-button"> للمزيد عن فرص التدريب </button>
+              <button className="user-info-button"> للمزيد عن الطلاب </button>
               </Link>
             </p>
           </div>
@@ -42,11 +49,11 @@ const PageContents = () => {
             <p className="p-info">
               :الاسم
               <br />
-              {fullname}
-              <br />
+              {SupervisorInfo.Fullname}
+              <br /><br />
               :التخصص
               <br />
-              {department}
+              {SupervisorInfo.Department}
               <br />
             </p>
             <Link to={"./Profile"}>

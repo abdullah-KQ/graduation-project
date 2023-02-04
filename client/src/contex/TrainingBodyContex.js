@@ -5,6 +5,7 @@ const getInitialState = () => {
   return TrainingBodyInfo
     ? JSON.parse(TrainingBodyInfo)
     : {
+        Id: 0,
         UserName: "",
         Fullname: "",
         Phone_num: "",

@@ -1,0 +1,40 @@
+.main-div{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    height: fit-content;
+    margin-bottom: 30px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.SuperviseStudents-box{
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: flex-start;
+    background-color: rgb(255, 255, 255);
+    height: 100%;
+    width: 90%;
+    max-width: 800px;
+    margin: auto;
+    border-radius: 5px;
+}
+
+.Students-Card{
+    display: flex;
+    flex-direction: row;
+    align-items:right;
+    height: 150px;
+    width: 100%;
+    margin-top: 10px;
+    border: 0.1px solid black;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+.p-Students-Card{
+    color:black;
+    text-align: right;
+    font-size: 24px;
+    margin: 10px 30px auto auto;
+    }

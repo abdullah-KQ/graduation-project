@@ -21,9 +21,11 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('user/', views.User_list),
     path('user/<pk>/<password>/', views.User_detail),
+    path('user/<UserName>', views.User_UserName),
 
     path('student/', views.student_list),
-    path('student/<pk>/', views.student_detail),
+    path('student/<UserName>/', views.student_detail),
+    path('student/<id>', views.student_id),
 
     path('Supervisor/', views.Supervisor_list),
     path('Supervisor/<pk>/', views.Supervisor_detail),
@@ -32,4 +34,9 @@ urlpatterns = [
     path('TrainingBody/<pk>/', views.TrainingBody_detail),
 
     path('Opportunity/', views.Opportunity_list),
+
+    path('SuperviseStudents/', views.SuperviseStudents_list),
+    path('SuperviseStudents/<pk>/', views.SuperviseStudents_detail),
+
+    
 ]

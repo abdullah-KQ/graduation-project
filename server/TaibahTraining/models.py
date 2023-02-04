@@ -63,4 +63,14 @@ class Forms (models.Model):
     
     # To show the name in the database 
     def __str__ (self):
-       return self.FormName        
+       return self.FormName
+
+class SuperviseStudents (models.Model): 
+    Supervisor = models.ForeignKey('Supervisor',on_delete=models.CASCADE,null=True) 
+    student = models.ForeignKey('student',on_delete=models.CASCADE,null=True) 
+
+    # To show the name in the database 
+    def __str__ (self):
+       return self.Supervisor
+                
+                         

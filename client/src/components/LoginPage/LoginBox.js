@@ -45,6 +45,7 @@ function LoginBox() {
                 const response3 = await axios.get(LOGIN_student_URL+user+"/",{});
                 const infstudent = response3.data
                 setStudentInfo({
+                  Id: infstudent.id,
                   UserName:infuser.UserName,
                   Fullname: infuser.Fullname ,
                   Phone_num: infuser.Phone_num ,
@@ -61,6 +62,7 @@ function LoginBox() {
                   const response3 = await axios.get(LOGIN_Supervisor_URL+user+"/",{});
                   const infSupervisor = response3.data
                   setSupervisorInfo({
+                    Id: infSupervisor.id,
                     UserName:infuser.UserName,
                     Fullname: infuser.Fullname ,
                     Phone_num: infuser.Phone_num ,
@@ -77,6 +79,7 @@ function LoginBox() {
                   const response3 = await axios.get(LOGIN_TrainingBody_URL+user+"/",{});
                   const infTrainingBody = response3.data
                   setTrainingBodyInfo({
+                    Id: infTrainingBody.id,
                     UserName:infuser.UserName,
                     Fullname: infuser.Fullname ,
                     Phone_num: infuser.Phone_num ,

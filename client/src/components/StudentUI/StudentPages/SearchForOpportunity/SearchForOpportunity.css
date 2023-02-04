@@ -1,0 +1,85 @@
+.main-div{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    height: fit-content;
+    margin-bottom: 30px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+.form-box{
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    background-color:white;
+    height: fit-content;
+    width: 90%;
+    max-width: 1100px;
+    min-height: 500px;
+    margin: auto;
+    margin-left: 15%;
+    border-radius: 5px;  
+}
+
+.search-label{
+    margin: 30px auto 0px auto;
+}
+
+.search-for-Supervisor{
+    Width:40%;
+    height: 30px;
+    margin: 0px auto 30px auto;
+    border: 1.5px solid black;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    text-align: right;
+    resize: both;
+    }
+.Supervisor-Card{
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    height: 150px;
+    width: 100%;
+    margin-left: 14%;
+    margin-right: 6%;
+    margin-top: 10px;
+    border: 0.1px solid black;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+.button-Add-Supervisor{
+    border: 1.5px solid black;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    width: max-content;
+    background-color: white;
+    padding: 4px 8px 4px 8px;
+    margin: auto 30px auto 30px;
+    }
+    
+.button-Add-Supervisor:hover {
+    background-color: rgb(77, 70, 67);
+    color: white;
+    opacity: 0.75;
+    transition: opacity 0.3s;
+     }
+
+.p-Supervisor-Card{
+    color:black;
+    text-align: right;
+    font-size: 24px;
+    margin: 10px 30px auto auto;
+    }
+.R-Supervisor-Card{
+    margin-left: auto;
+    color:black;
+    text-align: center;
+    font-size: 24px;
+    
+}
+
+@media(max-width: 1800px) {
+    .form-box{
+        margin: auto;
+    }
+}
