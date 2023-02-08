@@ -1,5 +1,5 @@
 import React from "react";
-import { useRef, useState, useEffect } from "react";
+import { useContext, useState, useEffect } from "react";
 import HeaderTrainingBody from "../../HeaderTrainingBody";
 import GuideNav from "../../GuideNav";
 import WebsiteFooter from "../../../general/WebsiteFooter";
@@ -8,6 +8,7 @@ import FieldrFormInput from "./FieldrFormInput";
 import FieldrFormTextarea from "./FieldrFormTextarea ";
 import "./AddTrainingOpp.css";
 import axios from "../../../../api/axios" 
+import TrainingBodyContex from "../../../../contex/TrainingBodyContex";
 
 const Opportunity_URL = "Opportunity/";
 
@@ -25,6 +26,9 @@ const AddTrainingOpp = () => {
   const [Position, setPosition] = useState("");
 
   const [errMag, setErrMag] = useState("");
+  const [success, setsuccess] = useState(true)
+  
+  const {TrainingBodyInfo} =useContext(TrainingBodyContex)
   
   
   useEffect(() => {
@@ -40,6 +44,7 @@ const AddTrainingOpp = () => {
     e.preventDefault();
     try {
       const response = await axios.post(Opportunity_URL, {
+        TrainingBody:TrainingBodyInfo.Id,
         Opport_name:OpportName,
         Description:Description,
         Training_tasks:TrainingTasks,
@@ -53,6 +58,7 @@ const AddTrainingOpp = () => {
 
       });
       console.log(response);
+      setsuccess(false)
   }catch (err) {
     if (!err?.response) {
       setErrMag("No Server Response");
@@ -62,6 +68,17 @@ const AddTrainingOpp = () => {
   }
 }
 
+const isAdded = ()=> {
+  if(success){
+  return( <button className="submit_button" 
+  disabled={!validGender}
+  >
+  نشر اعلان التدريب
+</button>)
+}else{
+  return <p className="p-isAdded"> تمت نشر الاعلان </p>
+}
+}
   
   
 
@@ -176,11 +193,7 @@ const AddTrainingOpp = () => {
               set={setPosition}
             />
               {errMag}
-              <button className="submit_button" 
-              disabled={!validGender}
-              >
-              نشر اعلان التدريب
-            </button>
+              {isAdded()}
           </form>
         </div>
         <GuideNav />

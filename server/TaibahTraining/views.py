@@ -1,6 +1,6 @@
 from django.http import JsonResponse
 from .models import *
-from .serializers import UserSerializers,studentSerializers,SupervisorSerializers,TrainingBodySerializers,OpportunitySerializers,FormsSerializers,SuperviseStudentsSerializers
+from .serializers import UserSerializers,studentSerializers,SupervisorSerializers,TrainingBodySerializers,OpportunitySerializers,FormsSerializers,SuperviseStudentsSerializers,AddOpportunitySerializers
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
@@ -215,7 +215,30 @@ def TrainingBody_detail(request, pk):
     elif request.method == 'DELETE':
         Users.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
+
+@api_view(['GET', 'PUT', 'DELETE'])
+def TrainingBody_id(request, id):
     
+    try:
+        Users = TrainingBody.objects.get(id=id)
+    except TrainingBody.DoesNotExist:
+        return Response(status=status.HTTP_404_NOT_FOUND)
+
+    if request.method == 'GET':
+        serializer = TrainingBodySerializers(Users)
+        return Response(serializer.data)
+
+    elif request.method == 'PUT':
+        serializer = TrainingBodySerializers(Users, data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    elif request.method == 'DELETE':
+        Users.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
+
 
 @api_view(['GET', 'POST'])
 def Opportunity_list(request):
@@ -271,4 +294,49 @@ def SuperviseStudents_detail(request, pk):
     elif request.method == 'DELETE':
         Users.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
+    
+
+@api_view(['GET', 'POST'])
+def AddOpportunity_list(request):
+    
+    if request.method == 'GET':
+        Users = AddOpportunity.objects.all()
+        serializer = AddOpportunitySerializers(Users, many=True)
+        return Response(serializer.data)
+
+    elif request.method == 'POST':
+        serializer = AddOpportunitySerializers(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+
+@api_view(['GET', 'PUT', 'DELETE'])
+def AddOpportunity_detail(request, pk):
+    
+    try:
+        Users = AddOpportunity.objects.get(pk=pk)
+    except AddOpportunity.DoesNotExist:
+        return Response(status=status.HTTP_404_NOT_FOUND)
+
+    if request.method == 'GET':
+        serializer = AddOpportunitySerializers(Users)
+        return Response(serializer.data)
+
+    elif request.method == 'PUT':
+        serializer = AddOpportunitySerializers(Users, data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    elif request.method == 'DELETE':
+        Users.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
+
+
+
+
+
     

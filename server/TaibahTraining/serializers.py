@@ -24,7 +24,7 @@ class TrainingBodySerializers(serializers.ModelSerializer):
 class OpportunitySerializers(serializers.ModelSerializer):
     class Meta:
         model = Opportunity
-        fields =['id','Opport_name','Description','Training_tasks',
+        fields =['id','TrainingBody','Opport_name','Description','Training_tasks',
                 'Gender','Loaction','Contact_Person','Position','vacancies','StartDate','FinishDate']
         
 class FormsSerializers(serializers.ModelSerializer):
@@ -36,3 +36,9 @@ class SuperviseStudentsSerializers(serializers.ModelSerializer):
     class Meta:
         model = SuperviseStudents
         fields =['Supervisor','student' ]
+
+class AddOpportunitySerializers(serializers.ModelSerializer):
+    class Meta:
+        model = AddOpportunity
+        fields =['id','TrainingBody','Opportunity','Supervisor','student','IsItAccepted' ]
+

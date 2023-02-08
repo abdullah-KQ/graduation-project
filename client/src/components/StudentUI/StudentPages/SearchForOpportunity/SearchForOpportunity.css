@@ -6,7 +6,7 @@
     margin-top: 100px;
     margin-bottom: 100px;
 }
-.form-box{
+.Opp-box{
     display: flex;
     flex-direction: column;
     align-items:center;
@@ -24,7 +24,7 @@
     margin: 30px auto 0px auto;
 }
 
-.search-for-Supervisor{
+.search-for-Opp{
     Width:40%;
     height: 30px;
     margin: 0px auto 30px auto;
@@ -35,7 +35,7 @@
     text-align: right;
     resize: both;
     }
-.Supervisor-Card{
+.Opp-Card{
     display: flex;
     flex-direction: row;
     align-items:center;
@@ -48,29 +48,30 @@
     box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
 }
-.button-Add-Supervisor{
+.button-Add-Opp{
     border: 1.5px solid black;
     box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-    width: max-content;
+    width: 200px;
+    height: 40px;
     background-color: white;
-    padding: 4px 8px 4px 8px;
-    margin: auto 30px auto 30px;
+    margin: 30px 30px 30px 30px;
+    font-size: 24px;
     }
     
-.button-Add-Supervisor:hover {
+.button-Add-Opp:hover {
     background-color: rgb(77, 70, 67);
     color: white;
     opacity: 0.75;
     transition: opacity 0.3s;
      }
 
-.p-Supervisor-Card{
+.p-Opp-Card{
     color:black;
     text-align: right;
     font-size: 24px;
-    margin: 10px 30px auto auto;
+    margin: 10px 50px auto auto;
     }
-.R-Supervisor-Card{
+.R-Opp-Card{
     margin-left: auto;
     color:black;
     text-align: center;
@@ -78,8 +79,16 @@
     
 }
 
+.p-isAdded{
+    color:black;
+    text-align: center;
+    font-size: 24px;
+    padding-right: 40%;
+    padding-bottom: 50px;
+}
+
 @media(max-width: 1800px) {
-    .form-box{
+    .Opp-box{
         margin: auto;
     }
 }

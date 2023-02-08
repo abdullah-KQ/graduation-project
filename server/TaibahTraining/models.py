@@ -40,6 +40,7 @@ class TrainingBody(models.Model):
         return self.UserName
 
 class Opportunity(models.Model): 
+    TrainingBody = models.ForeignKey('TrainingBody',on_delete=models.CASCADE,null=True)
     Opport_name = models.CharField(max_length=50)
     Description = models.CharField(max_length=500)
     Training_tasks = models.CharField(max_length=256)
@@ -72,5 +73,16 @@ class SuperviseStudents (models.Model):
     # To show the name in the database 
     def __str__ (self):
        return self.Supervisor
+    
+class AddOpportunity (models.Model):
+    TrainingBody = models.ForeignKey('TrainingBody',on_delete=models.CASCADE,null=True)
+    Opportunity = models.ForeignKey('Opportunity',on_delete=models.CASCADE,null=True)
+    Supervisor = models.ForeignKey('Supervisor',on_delete=models.CASCADE,null=True) 
+    student = models.ForeignKey('student',on_delete=models.CASCADE,null=True) 
+    IsItAccepted = models.CharField(max_length=10)
+
+    # To show the name in the database 
+    def __str__ (self):
+       return self.TrainingBody
                 
                          

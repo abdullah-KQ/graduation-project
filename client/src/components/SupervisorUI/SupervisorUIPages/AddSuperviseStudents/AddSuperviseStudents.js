@@ -45,7 +45,7 @@ const AddSuperviseStudents = () => {
         <div>
           <div className="form-box">
             <label htmlFor="username" className="search-label">
-              : الرجاء ادخال معلومات المشرف
+              : الرجاء ادخال معلومات الطالب
             </label>
             <input
               type="search"

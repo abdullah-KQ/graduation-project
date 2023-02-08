@@ -11,6 +11,7 @@ import CurrentTraining from "./StudentPages/CurrentTraining"
 import FillForms from "./StudentPages/FillForms"
 import EvaluateOpportunity from "./StudentPages/EvaluateOpportunity"
 import SignOut from "./StudentPages/SignOut/SignOut"
+import OpportunityDetails from "./StudentPages/SearchForOpportunity/OpportunityDetails";
 
 
 const Homepage = () => {
@@ -31,6 +32,7 @@ const Homepage = () => {
         <Route path="/Profile/" element={<Profile />} />
         <Route path="/AddSupervisor/" element={<AddSupervisor />} />
         <Route path="/SearchForOpp/" element={<SearchForOpportunity />} />
+        <Route path="/SearchForOpp/OpportunityDetails/" element={<OpportunityDetails />}/>
         <Route path="/CurrentTraining/" element={<CurrentTraining />} />
         <Route path="/FillForms/" element={<FillForms />} />
         <Route path="/EvaluateOpportunity/" element={<EvaluateOpportunity />} />

@@ -40,14 +40,14 @@ const SearchForOpportunity = () => {
       <HeaderStudent />
       <div className="main-div">
         <div>
-          <div className="form-box">
+          <div className="Opp-box">
             <label htmlFor="search" className="search-label">
               : البحث عن فرصة تدريبية
             </label>
             <input
               type="search"
               id="search"
-              className="search-for-Supervisor"
+              className="search-for-Opp"
               onChange={handleSearchChange}
               placeholder=" البحث عن فرصة تدريبية "
             />

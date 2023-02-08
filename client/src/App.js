@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import { StudentProvider } from "./contex/StudentContex";
 import { SupervisorProvider } from "./contex/SupervisorContex";
 import { TrainingBodyProvider } from "./contex/TrainingBodyContex";
+import { OppInfoProvider } from "./contex/OppInfo";
 import "./App.css";
 import Homepage from "./components/Homepage/Homepage";
 import LoginPage from "./components/LoginPage/LoginPage";
@@ -20,17 +21,19 @@ function App() {
       <StudentProvider>
         <SupervisorProvider>
           <TrainingBodyProvider>
-            <Routes>
-              <Route path="/" element={<Homepage />} />
-              <Route path="/Login/" element={<LoginPage />} />
-              <Route path="/register/" element={<RegisterPage />} />
-              <Route path="/register/Student" element={<RegisterStudent />} />
-              <Route path="/register/Supervisor" element={<RegisterSupervisor />}/>
-              <Route path="/register/TrainingBody" element={<RegisterTrainingBody />} />
-              <Route path="/Student/*" element={<StudentHomepage />} />
-              <Route path="/Supervisor/*" element={<SupervisorHomepage />} />
-              <Route path="/TrainingBody/*" element={<TrainingBodyHomepage />}/>
-            </Routes>
+            <OppInfoProvider>
+              <Routes>
+                <Route path="/" element={<Homepage />} />
+                <Route path="/Login/" element={<LoginPage />} />
+                <Route path="/register/" element={<RegisterPage />} />
+                <Route path="/register/Student" element={<RegisterStudent />} />
+                <Route path="/register/Supervisor" element={<RegisterSupervisor />}/>
+                <Route path="/register/TrainingBody" element={<RegisterTrainingBody />} />
+                <Route path="/Student/*" element={<StudentHomepage />} />
+                <Route path="/Supervisor/*" element={<SupervisorHomepage />} />
+                <Route path="/TrainingBody/*" element={<TrainingBodyHomepage />}/>
+              </Routes>
+            </OppInfoProvider>
           </TrainingBodyProvider>
         </SupervisorProvider>
       </StudentProvider>
