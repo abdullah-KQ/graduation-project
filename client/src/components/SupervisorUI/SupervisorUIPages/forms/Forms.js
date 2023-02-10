@@ -9,6 +9,7 @@ import ListCards from "./ListCards";
 import axios from "../../../../api/axios";
 import SupervisorContex from "../../../../contex/SupervisorContex";
 import MainPageForm from "./FormsPages/MainPageForm";
+import Form1 from "./FormsPages/Form1";
 
 const URL_SuperviseStudents = "SuperviseStudents/";
 const URL_Students = "student/";
@@ -70,6 +71,7 @@ const Forms = () => {
           }
         />
         <Route path="/Forms/" element={<MainPageForm />} />
+        <Route path="/Forms/Form1" element={<Form1 />} />
       </Routes>
     </>
   );
