@@ -21,6 +21,7 @@ const ApplyCard = ({ apply }) => {
             Supervisor: apply.Supervisor,
             student: apply.student,
             IsItAccepted: "true",
+            notification: "false",
             });
             setsuccess(false)
           } catch (err) {

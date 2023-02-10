@@ -7,6 +7,7 @@ import Profile from "./SupervisorUIPages/Profile";
 import VerifyAccount from "./SupervisorUIPages/VerifyAccount/VerifyAccount";
 import AddSuperviseStudents from "./SupervisorUIPages/AddSuperviseStudents/AddSuperviseStudents";
 import SuperviseStudents from "./SupervisorUIPages/SuperviseStudents/SuperviseStudents";
+import Forms from "./SupervisorUIPages/forms/Forms";
 import SignOut from "./SupervisorUIPages/SignOut/SignOut";
 
 const Homepage = () => {
@@ -27,6 +28,7 @@ const Homepage = () => {
         <Route path="/VerifyAccount/" element={<VerifyAccount />} />
         <Route path="/AddSuperviseStudents/" element={<AddSuperviseStudents />} />
         <Route path="/SuperviseStudents/" element={<SuperviseStudents />} />
+        <Route path="/FillForms/*" element={<Forms />} />
         <Route path="/SignOut/" element={<SignOut />} />
       </Routes>
     </>

@@ -26,7 +26,7 @@ class Supervisor(models.Model):
     S_id = models.CharField(max_length=10)  
     Department = models.CharField(max_length=80)
     College = models.CharField(max_length=80)
-    Verified = models.BooleanField(default=False) 
+    Verified = models.CharField(max_length=10)
     # To show the name in the database 
     def __str__ (self):
         return self.UserName
@@ -80,6 +80,7 @@ class AddOpportunity (models.Model):
     Supervisor = models.ForeignKey('Supervisor',on_delete=models.CASCADE,null=True) 
     student = models.ForeignKey('student',on_delete=models.CASCADE,null=True) 
     IsItAccepted = models.CharField(max_length=10)
+    notification= models.CharField(max_length=10)
 
     # To show the name in the database 
     def __str__ (self):

@@ -71,6 +71,7 @@ function LoginBox() {
                     S_id: infSupervisor.S_id,
                     Department: infSupervisor.Department ,
                     College: infSupervisor.College,
+                    Verified: infSupervisor.Verified,
                   })
                   navigate("/Supervisor");
               }

@@ -1,0 +1,85 @@
+.main-div{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    height: fit-content;
+    margin-bottom: 30px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.Form-box{
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: flex-start;
+    background-color: rgb(255, 255, 255);
+    height: 100%;
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+    border-radius: 5px;
+}
+
+.Students-Card{
+    display: flex;
+    flex-direction: row;
+    align-items:right;
+    height: 170px;
+    width: 80%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 0.1px solid black;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+.Students-info{
+    display: flex;
+    flex-direction: row;
+    align-items:right;
+    height: fit-content;
+    width: 80%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.p-Students-Card{
+    color:black;
+    text-align: right;
+    font-size: 24px;
+    margin: 10px 30px auto auto;
+    }
+
+.button-Info-Students{
+    border: 1.5px solid black;
+    border-radius: 10px;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    background-color: white;
+    width: 200px;
+    
+} 
+
+.button-Info-Students:hover{
+    background-color: rgb(77, 70, 67);
+    color: white;
+    opacity: 0.75;
+    transition: opacity 0.3s;
+}
+
+
+.button-form{
+    border: 1.5px solid black;
+    border-radius: 10px;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    background-color: white;
+    width: 170px;
+    height: 45px;
+    margin: auto 0px auto 10px;
+}
+
+.button-form:hover{
+    background-color: rgb(77, 70, 67);
+    color: white;
+    opacity: 0.75;
+    transition: opacity 0.3s;
+}

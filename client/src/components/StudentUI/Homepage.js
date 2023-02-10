@@ -7,7 +7,7 @@ import ViewTrainingOpportunities from "../Homepage/ViewTrainingOpportunities";
 import Profile from "./StudentPages/Profile"
 import AddSupervisor from "./StudentPages/AddSupervisor/AddSupervisor"
 import SearchForOpportunity from "./StudentPages/SearchForOpportunity/SearchForOpportunity";
-import CurrentTraining from "./StudentPages/CurrentTraining"
+import CurrentTraining from "./StudentPages/CurrentTraining/CurrentTraining";
 import FillForms from "./StudentPages/FillForms"
 import EvaluateOpportunity from "./StudentPages/EvaluateOpportunity"
 import SignOut from "./StudentPages/SignOut/SignOut"

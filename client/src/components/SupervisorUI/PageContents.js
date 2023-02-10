@@ -10,7 +10,7 @@ const PageContents = () => {
   const form = " لا توجد ";
 
   const isVerified = ()=>{
-    if(SupervisorInfo.Verified){
+    if(SupervisorInfo.Verified== "true"){
     return <span>الحساب موثق</span>
   }else{
     return <span>الحساب غير موثق</span>

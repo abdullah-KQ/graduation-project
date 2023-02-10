@@ -14,7 +14,7 @@ const getInitialState = () => {
         S_id: "",
         Department: "",
         College: "",
-        Verified: false,
+        Verified: "",
       };
 };
 

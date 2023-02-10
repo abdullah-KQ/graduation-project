@@ -40,5 +40,5 @@ class SuperviseStudentsSerializers(serializers.ModelSerializer):
 class AddOpportunitySerializers(serializers.ModelSerializer):
     class Meta:
         model = AddOpportunity
-        fields =['id','TrainingBody','Opportunity','Supervisor','student','IsItAccepted' ]
+        fields =['id','TrainingBody','Opportunity','Supervisor','student','IsItAccepted','notification']
 

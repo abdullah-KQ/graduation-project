@@ -91,6 +91,14 @@
     font-size: 24px;
     
 }
+
+.p-Not-Success{
+    margin: auto;
+    color:black;
+    text-align: center;
+    font-size: 32px;
+    
+}
 .p-isAdded{
     color:black;
     text-align: center;
