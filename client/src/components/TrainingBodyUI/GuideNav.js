@@ -12,9 +12,6 @@ const GuideNav = () => {
         <Link to={"../../TrainingBody/Profile"}>
         <button className="guide-button"> ملف التعريف </button>
         </Link>
-        <Link to={"../../TrainingBody"}>
-        <button className="guide-button"> اضافة مشرف منتسب لجهة التدريب </button>
-        </Link>
         <Link to={"../../TrainingBody/AddTrainingOpp/"}>
         <button className="guide-button"> اضافة اعلان عن فرصة تدريبية جديدة </button>
         </Link>

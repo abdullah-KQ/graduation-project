@@ -365,4 +365,205 @@ def Form1(request,UserName):
        return HttpResponse('We had some errors <pre>' + html + '</pre>')
     return response
 
+def Form2(request,UserName):
+    studentinfo = get_object_or_404(student,UserName=UserName)
+    opplink = get_object_or_404(AddOpportunity,student_id=studentinfo.id)
+    Opport = get_object_or_404(Opportunity,id=opplink.Opportunity.id)
+
+
+    template_path = 'TaibahTraining/form2.html'
+    context = {'studentinfo': studentinfo,
+               'opplink':opplink,
+               'Opport':Opport}
+    # Create a Django response object, and specify content_type as pdf
+    response = HttpResponse(content_type='application/pdf')
+    response['Content-Disposition'] = 'filename="report.pdf"'
+    # find the template and render it.
+    template = get_template(template_path)
+    html = template.render(context)
+
+    # create a pdf
+    pisa_status = pisa.CreatePDF(
+       html, dest=response)
+    # if error then show some funny view
+    if pisa_status.err:
+       return HttpResponse('We had some errors <pre>' + html + '</pre>')
+    return response
+
+def Form3(request,UserName):
+    studentinfo = get_object_or_404(student,UserName=UserName)
+    opplink = get_object_or_404(AddOpportunity,student_id=studentinfo.id)
+    Opport = get_object_or_404(Opportunity,id=opplink.Opportunity.id)
+
+
+    template_path = 'TaibahTraining/form2.html'
+    context = {'studentinfo': studentinfo,
+               'opplink':opplink,
+               'Opport':Opport}
+    # Create a Django response object, and specify content_type as pdf
+    response = HttpResponse(content_type='application/pdf')
+    response['Content-Disposition'] = 'filename="report.pdf"'
+    # find the template and render it.
+    template = get_template(template_path)
+    html = template.render(context)
+
+    # create a pdf
+    pisa_status = pisa.CreatePDF(
+       html, dest=response)
+    # if error then show some funny view
+    if pisa_status.err:
+       return HttpResponse('We had some errors <pre>' + html + '</pre>')
+    return response
+
+def Form4(request,UserName):
+    studentinfo = get_object_or_404(student,UserName=UserName)
+    opplink = get_object_or_404(AddOpportunity,student_id=studentinfo.id)
+    Opport = get_object_or_404(Opportunity,id=opplink.Opportunity.id)
+
+
+    template_path = 'TaibahTraining/form2.html'
+    context = {'studentinfo': studentinfo,
+               'opplink':opplink,
+               'Opport':Opport}
+    # Create a Django response object, and specify content_type as pdf
+    response = HttpResponse(content_type='application/pdf')
+    response['Content-Disposition'] = 'filename="report.pdf"'
+    # find the template and render it.
+    template = get_template(template_path)
+    html = template.render(context)
+
+    # create a pdf
+    pisa_status = pisa.CreatePDF(
+       html, dest=response)
+    # if error then show some funny view
+    if pisa_status.err:
+       return HttpResponse('We had some errors <pre>' + html + '</pre>')
+    return response
+
+def Form5(request,UserName):
+    studentinfo = get_object_or_404(student,UserName=UserName)
+    opplink = get_object_or_404(AddOpportunity,student_id=studentinfo.id)
+    Opport = get_object_or_404(Opportunity,id=opplink.Opportunity.id)
+
+
+    template_path = 'TaibahTraining/form2.html'
+    context = {'studentinfo': studentinfo,
+               'opplink':opplink,
+               'Opport':Opport}
+    # Create a Django response object, and specify content_type as pdf
+    response = HttpResponse(content_type='application/pdf')
+    response['Content-Disposition'] = 'filename="report.pdf"'
+    # find the template and render it.
+    template = get_template(template_path)
+    html = template.render(context)
+
+    # create a pdf
+    pisa_status = pisa.CreatePDF(
+       html, dest=response)
+    # if error then show some funny view
+    if pisa_status.err:
+       return HttpResponse('We had some errors <pre>' + html + '</pre>')
+    return response
+
+def Form6(request,UserName):
+    studentinfo = get_object_or_404(student,UserName=UserName)
+    opplink = get_object_or_404(AddOpportunity,student_id=studentinfo.id)
+    Opport = get_object_or_404(Opportunity,id=opplink.Opportunity.id)
+
+
+    template_path = 'TaibahTraining/form2.html'
+    context = {'studentinfo': studentinfo,
+               'opplink':opplink,
+               'Opport':Opport}
+    # Create a Django response object, and specify content_type as pdf
+    response = HttpResponse(content_type='application/pdf')
+    response['Content-Disposition'] = 'filename="report.pdf"'
+    # find the template and render it.
+    template = get_template(template_path)
+    html = template.render(context)
+
+    # create a pdf
+    pisa_status = pisa.CreatePDF(
+       html, dest=response)
+    # if error then show some funny view
+    if pisa_status.err:
+       return HttpResponse('We had some errors <pre>' + html + '</pre>')
+    return response
+
+def Form7(request,UserName):
+    studentinfo = get_object_or_404(student,UserName=UserName)
+    opplink = get_object_or_404(AddOpportunity,student_id=studentinfo.id)
+    Opport = get_object_or_404(Opportunity,id=opplink.Opportunity.id)
+
+
+    template_path = 'TaibahTraining/form2.html'
+    context = {'studentinfo': studentinfo,
+               'opplink':opplink,
+               'Opport':Opport}
+    # Create a Django response object, and specify content_type as pdf
+    response = HttpResponse(content_type='application/pdf')
+    response['Content-Disposition'] = 'filename="report.pdf"'
+    # find the template and render it.
+    template = get_template(template_path)
+    html = template.render(context)
+
+    # create a pdf
+    pisa_status = pisa.CreatePDF(
+       html, dest=response)
+    # if error then show some funny view
+    if pisa_status.err:
+       return HttpResponse('We had some errors <pre>' + html + '</pre>')
+    return response
+
+def Form8(request,UserName):
+    studentinfo = get_object_or_404(student,UserName=UserName)
+    opplink = get_object_or_404(AddOpportunity,student_id=studentinfo.id)
+    Opport = get_object_or_404(Opportunity,id=opplink.Opportunity.id)
+
+
+    template_path = 'TaibahTraining/form2.html'
+    context = {'studentinfo': studentinfo,
+               'opplink':opplink,
+               'Opport':Opport}
+    # Create a Django response object, and specify content_type as pdf
+    response = HttpResponse(content_type='application/pdf')
+    response['Content-Disposition'] = 'filename="report.pdf"'
+    # find the template and render it.
+    template = get_template(template_path)
+    html = template.render(context)
+
+    # create a pdf
+    pisa_status = pisa.CreatePDF(
+       html, dest=response)
+    # if error then show some funny view
+    if pisa_status.err:
+       return HttpResponse('We had some errors <pre>' + html + '</pre>')
+    return response
+
+def Form9(request,UserName):
+    studentinfo = get_object_or_404(student,UserName=UserName)
+    opplink = get_object_or_404(AddOpportunity,student_id=studentinfo.id)
+    Opport = get_object_or_404(Opportunity,id=opplink.Opportunity.id)
+
+
+    template_path = 'TaibahTraining/form2.html'
+    context = {'studentinfo': studentinfo,
+               'opplink':opplink,
+               'Opport':Opport}
+    # Create a Django response object, and specify content_type as pdf
+    response = HttpResponse(content_type='application/pdf')
+    response['Content-Disposition'] = 'filename="report.pdf"'
+    # find the template and render it.
+    template = get_template(template_path)
+    html = template.render(context)
+
+    # create a pdf
+    pisa_status = pisa.CreatePDF(
+       html, dest=response)
+    # if error then show some funny view
+    if pisa_status.err:
+       return HttpResponse('We had some errors <pre>' + html + '</pre>')
+    return response
+
+
     

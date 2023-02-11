@@ -43,5 +43,13 @@ urlpatterns = [
     path('AddOpportunity/<pk>/', views.AddOpportunity_detail),
 
     path('form1/<UserName>', views.Form1),
+    path('form2/<UserName>', views.Form2),
+    path('form3/<UserName>', views.Form3),
+    path('form4/<UserName>', views.Form4),
+    path('form5/<UserName>', views.Form5),
+    path('form6/<UserName>', views.Form6),
+    path('form7/<UserName>', views.Form7),
+    path('form8/<UserName>', views.Form8),
+    path('form9/<UserName>', views.Form9),
     
 ]

@@ -11,9 +11,7 @@ const URL_Students = "student/";
 const MainPageForm = () => {
   const { StudentInfo } = useContext(StudentContex);
   const [Students, setStudents] = useState("");
-  let url_form1 = "http://127.0.0.1:8000/form1/"+StudentInfo.UserName
-
-  
+  let url_form1 = "http://127.0.0.1:8000/form1/" + StudentInfo.UserName;
 
   const getData = async (e) => {
     try {
@@ -33,7 +31,7 @@ const MainPageForm = () => {
 
   const handleClickShowForm1 = (e) => {
     e.preventDefault();
-    window.open(url_form1,'_blank')
+    window.open(url_form1, "_blank");
   };
 
   return (
@@ -84,7 +82,9 @@ const MainPageForm = () => {
             </p>
           </div>
           <div className="Students-Card">
-            <button className="button-form" onClick={handleClickShowForm1}>عرض النموذج</button>
+            <button className="button-form" onClick={handleClickShowForm1}>
+              عرض النموذج
+            </button>
 
             <p className="p-Students-Card">
               : النموذج الاول
@@ -112,11 +112,115 @@ const MainPageForm = () => {
               غير مكتمل
             </p>
           </div>
+          <div className="Students-Card">
+            <button className="button-form">ارسال النموذج</button>
+            <button className="button-form">عرض النموذج</button>
+
+            <p className="p-Students-Card">
+              : النموذج الثالث
+              <br />
+              Trainee Regulation & Commitment
+              <br />
+              <br />
+              : الحالة
+              <br />
+              غير مكتمل
+            </p>
+          </div>
+          <div className="Students-Card">
+            <button className="button-form">ارسال النموذج</button>
+            <button className="button-form">عرض النموذج</button>
+
+            <p className="p-Students-Card">
+              : النموذج الرابع
+              <br />
+              Trainer Evaluates Trainee - First Report
+              <br />
+              <br />
+              : الحالة
+              <br />
+              غير مكتمل
+            </p>
+          </div>
+          <div className="Students-Card">
+            <button className="button-form">ارسال النموذج</button>
+            <button className="button-form">عرض النموذج</button>
+
+            <p className="p-Students-Card">
+              : النموذج الخامس
+              <br />
+              Trainer Evaluates Trainee - Final Report
+              <br />
+              <br />
+              : الحالة
+              <br />
+              غير مكتمل
+            </p>
+          </div>
+          <div className="Students-Card">
+            <button className="button-form">ارسال النموذج</button>
+            <button className="button-form">عرض النموذج</button>
+
+            <p className="p-Students-Card">
+              : النموذج السادس
+              <br />
+              Academic Supervisor Evaluation Form
+              <br />
+              <br />
+              : الحالة
+              <br />
+              غير مكتمل
+            </p>
+          </div>
+          <div className="Students-Card">
+            <button className="button-form">ارسال النموذج</button>
+            <button className="button-form">عرض النموذج</button>
+
+            <p className="p-Students-Card">
+              : النموذج السابع
+              <br />
+              Student Evaluation for the Trainig Progarm
+              <br />
+              <br />
+              : الحالة
+              <br />
+              غير مكتمل
+            </p>
+          </div>
+          <div className="Students-Card">
+            <button className="button-form">ارسال النموذج</button>
+            <button className="button-form">عرض النموذج</button>
+
+            <p className="p-Students-Card">
+              : النموذج الثامن
+              <br />
+              Complaint Form
+              <br />
+              <br />
+              : الحالة
+              <br />
+              غير مكتمل
+            </p>
+          </div>
+          <div className="Students-Card">
+            <button className="button-form">ارسال النموذج</button>
+            <button className="button-form">عرض النموذج</button>
+
+            <p className="p-Students-Card">
+              : النموذج التاسع
+              <br />
+              Weekly Report Form
+              <br />
+              <br />
+              : الحالة
+              <br />
+              غير مكتمل
+            </p>
+          </div>
         </div>
         <GuideNav />
       </div>
       <WebsiteFooter />
-      مسؤولمسؤولمسؤولمسؤولمسؤول
     </div>
   );
 };

@@ -24,9 +24,6 @@ const GuideNav = () => {
         <Link to={"../../../Supervisor/FillForms/"}>
         <button className="guide-button"> تعبئة النماذج المطلوبة </button>
         </Link>
-        <Link to={"../../../Supervisor/EvaluateOpportunity/"}>
-        <button className="guide-button"> تقيم الفرص التدريبية </button>
-        </Link>
         <Link to={"../../../Supervisor/SignOut/"}>
         <button className="guide-button"> تسجيل الخروج </button>
         </Link>
