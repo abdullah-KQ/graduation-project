@@ -4,6 +4,10 @@ from .serializers import UserSerializers,studentSerializers,SupervisorSerializer
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
+from django.shortcuts import render, get_object_or_404
+from django.http import HttpResponse
+from django.template.loader import get_template
+from xhtml2pdf import pisa
 
 
 @api_view(['GET', 'POST'])
@@ -336,7 +340,29 @@ def AddOpportunity_detail(request, pk):
         return Response(status=status.HTTP_204_NO_CONTENT)
 
 
+def Form1(request,UserName):
+    studentinfo = get_object_or_404(student,UserName=UserName)
+    opplink = get_object_or_404(AddOpportunity,student_id=studentinfo.id)
+    Opport = get_object_or_404(Opportunity,id=opplink.Opportunity.id)
 
 
+    template_path = 'TaibahTraining/form1.html'
+    context = {'studentinfo': studentinfo,
+               'opplink':opplink,
+               'Opport':Opport}
+    # Create a Django response object, and specify content_type as pdf
+    response = HttpResponse(content_type='application/pdf')
+    response['Content-Disposition'] = 'filename="report.pdf"'
+    # find the template and render it.
+    template = get_template(template_path)
+    html = template.render(context)
+
+    # create a pdf
+    pisa_status = pisa.CreatePDF(
+       html, dest=response)
+    # if error then show some funny view
+    if pisa_status.err:
+       return HttpResponse('We had some errors <pre>' + html + '</pre>')
+    return response
 
     

@@ -84,6 +84,6 @@ class AddOpportunity (models.Model):
 
     # To show the name in the database 
     def __str__ (self):
-       return self.TrainingBody
+       return self.Opportunity
                 
                          

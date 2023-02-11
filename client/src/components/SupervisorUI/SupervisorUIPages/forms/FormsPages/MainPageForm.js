@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import HeaderSupervisor from "../../../HeaderSupervisor";
-import GuideNav from "../../../GuideNav";
+import GuideNav from "./GuideNav";
 import WebsiteFooter from "../../../../general/WebsiteFooter";
 import StudentContex from "../../../../../contex/StudentContex";
 import axios from "../../../../../api/axios";
@@ -12,8 +11,9 @@ const URL_Students = "student/";
 const MainPageForm = () => {
   const { StudentInfo } = useContext(StudentContex);
   const [Students, setStudents] = useState("");
+  let url_form1 = "http://127.0.0.1:8000/form1/"+StudentInfo.UserName
 
-  const navigate = useNavigate();
+  
 
   const getData = async (e) => {
     try {
@@ -33,7 +33,7 @@ const MainPageForm = () => {
 
   const handleClickShowForm1 = (e) => {
     e.preventDefault();
-    navigate("./Form1");
+    window.open(url_form1,'_blank')
   };
 
   return (
@@ -84,7 +84,6 @@ const MainPageForm = () => {
             </p>
           </div>
           <div className="Students-Card">
-            <button className="button-form">ارسال النموذج</button>
             <button className="button-form" onClick={handleClickShowForm1}>عرض النموذج</button>
 
             <p className="p-Students-Card">
