@@ -1,4 +1,15 @@
+.container{
+    text-align: center;
+    color: rgb(5, 5, 5);
+
+}
+
 .p-p{
 font-size: 32px;
-color: #ff0000;
+
+}
+
+.Formimg{
+width:100%;
+height: 100%;
 }

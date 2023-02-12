@@ -85,5 +85,122 @@ class AddOpportunity (models.Model):
     # To show the name in the database 
     def __str__ (self):
        return self.Opportunity
+    
+class Form2 (models.Model):
+    student = models.ForeignKey('student',on_delete=models.CASCADE,null=True) 
+    AcademicYear = models.CharField(max_length=50)
+    Semester= models.CharField(max_length=50)
+    Major= models.CharField(max_length=50)
+    CGPA= models.CharField(max_length=50)
+    HoursEarned= models.CharField(max_length=50)
+    HoursRegistered= models.CharField(max_length=50)
+    HoursRemaining= models.CharField(max_length=50)
+    descriptionAboutCompany= models.CharField(max_length=100)
+    IsItCompleted = models.CharField(max_length=10)
+
+    # To show the name in the database 
+    def __str__ (self):
+       return self.student
+    
+class Form4 (models.Model):
+    TrainingBody = models.ForeignKey('TrainingBody',on_delete=models.CASCADE,null=True)
+    AttendanceAccuracy  = models.CharField(max_length=3)
+    GeneralAppearance = models.CharField(max_length=3)
+    Enthusiasm  = models.CharField(max_length=3)
+    AbilityToAnalyze  = models.CharField(max_length=3)
+    AccuracyOutput = models.CharField(max_length=3)
+    AbilityPresent  = models.CharField(max_length=3)
+    AbilityReport = models.CharField(max_length=3)
+    RelationshipTrainer  = models.CharField(max_length=3)
+    RelationshipCoWorkers   = models.CharField(max_length=3)
+    Flexibility  = models.CharField(max_length=3)
+    AbilityLearn  = models.CharField(max_length=3)
+    AbilityDecision   = models.CharField(max_length=3)
+    GeneralPerformance = models.CharField(max_length=10)
+    Strengths = models.CharField(max_length=100)
+    Weaknesses = models.CharField(max_length=100)
+    AreTraineeSkills = models.CharField(max_length=100)
+    Comments = models.CharField(max_length=100)
+    IsItCompleted = models.CharField(max_length=10)
+
+    # To show the name in the database 
+    def __str__ (self):
+       return self.TrainingBody
+    
+class Form5 (models.Model):
+    TrainingBody = models.ForeignKey('TrainingBody',on_delete=models.CASCADE,null=True)
+    AttendanceAccuracy  = models.CharField(max_length=3)
+    GeneralAppearance = models.CharField(max_length=3)
+    Enthusiasm  = models.CharField(max_length=3)
+    AbilityToAnalyze  = models.CharField(max_length=3)
+    AccuracyOutput = models.CharField(max_length=3)
+    AbilityPresent  = models.CharField(max_length=3)
+    AbilityReport = models.CharField(max_length=3)
+    RelationshipTrainer  = models.CharField(max_length=3)
+    RelationshipCoWorkers   = models.CharField(max_length=3)
+    Flexibility  = models.CharField(max_length=3)
+    AbilityLearn  = models.CharField(max_length=3)
+    AbilityDecision   = models.CharField(max_length=3)
+    GeneralPerformance = models.CharField(max_length=10)
+    Strengths = models.CharField(max_length=100)
+    Weaknesses = models.CharField(max_length=100)
+    AreTraineeSkills = models.CharField(max_length=100)
+    Comments = models.CharField(max_length=100)
+    IsItCompleted = models.CharField(max_length=10)
+
+    # To show the name in the database 
+    def __str__ (self):
+       return self.TrainingBody
+    
+class Form6 (models.Model):
+    Supervisor = models.ForeignKey('Supervisor',on_delete=models.CASCADE,null=True)
+    Course = models.CharField(max_length=20)
+    Term  = models.CharField(max_length=20)
+    PunctualityFrist  = models.CharField(max_length=3)
+    QualityFrist   = models.CharField(max_length=3)
+    PunctualityFinal  = models.CharField(max_length=3)
+    QualityFinal  = models.CharField(max_length=3)
+    IsItCompleted = models.CharField(max_length=10)
+
+    # To show the name in the database 
+    def __str__ (self):
+       return self.Supervisor
+    
+class Form7 (models.Model):
+    student = models.ForeignKey('student',on_delete=models.CASCADE,null=True)
+    SeriousTraining = models.CharField(max_length=20)
+    ExperienceProvided  = models.CharField(max_length=20)
+    SuitableTrainingPlace  = models.CharField(max_length=3)
+    ExperienceTrainer   = models.CharField(max_length=3)
+    HelpWorkingStaff   = models.CharField(max_length=3)
+    FollowingPlan  = models.CharField(max_length=3)
+    AdvantagesProgram  = models.CharField(max_length=3)
+    TheCompatibility   = models.CharField(max_length=3)
+    benefits = models.CharField(max_length=100)
+    problems  = models.CharField(max_length=100)
+    expectations   = models.CharField(max_length=100)
+    suggestions    = models.CharField(max_length=100)
+    recommend  = models.CharField(max_length=10)
+    IsItCompleted = models.CharField(max_length=10)
+
+    # To show the name in the database 
+    def __str__ (self):
+       return self.student
+
+class Form9 (models.Model):
+    TrainingBody = models.ForeignKey('TrainingBody',on_delete=models.CASCADE,null=True)   
+    WeekNo  = models.CharField(max_length=20)
+    StudentAttendenceSunday = models.CharField(max_length=20)
+    StudentAttendenceMonday = models.CharField(max_length=20)
+    StudentAttendenceTuesday = models.CharField(max_length=20)
+    StudentAttendenceWednesday = models.CharField(max_length=20)
+    StudentAttendenceThursday = models.CharField(max_length=20)
+    TasksThisWeek = models.CharField(max_length=100)
+    SoftwarUsedThisWeek = models.CharField(max_length=100)
+    IsItCompleted = models.CharField(max_length=10)
+
+    # To show the name in the database 
+    def __str__ (self):
+       return self.TrainingBody
                 
                          

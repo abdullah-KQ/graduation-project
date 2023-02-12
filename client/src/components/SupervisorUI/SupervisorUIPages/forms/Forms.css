@@ -111,3 +111,10 @@
     opacity: 0.9back-button;
     transition: opacity 0.3s;
 }
+
+.p-isSend{
+    color:black;
+    text-align: center;
+    font-size: 24px;
+    padding-top: 45px;
+    }

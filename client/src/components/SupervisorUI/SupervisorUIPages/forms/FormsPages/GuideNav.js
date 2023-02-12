@@ -22,7 +22,7 @@ const GuideNav = () => {
         <button className="guide-button"> الطلاب تحت الإشراف </button>
         </Link>
         <Link to={"../../../Supervisor/FillForms/"}>
-        <button className="guide-button"> تعبئة النماذج المطلوبة </button>
+        <button className="guide-button"> ارسال النماذج المطلوبة </button>
         </Link>
         <Link to={"../../../Supervisor/SignOut/"}>
         <button className="guide-button"> تسجيل الخروج </button>

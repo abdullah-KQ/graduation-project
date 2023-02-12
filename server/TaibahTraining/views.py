@@ -1,6 +1,9 @@
 from django.http import JsonResponse
 from .models import *
-from .serializers import UserSerializers,studentSerializers,SupervisorSerializers,TrainingBodySerializers,OpportunitySerializers,FormsSerializers,SuperviseStudentsSerializers,AddOpportunitySerializers
+from .serializers import UserSerializers,studentSerializers,SupervisorSerializers,TrainingBodySerializers
+from .serializers import OpportunitySerializers,FormsSerializers,SuperviseStudentsSerializers
+from .serializers import AddOpportunitySerializers,Form2Serializers,Form4Serializers
+from .serializers import Form5Serializers,Form6Serializers,Form7Serializers,Form9Serializers
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
@@ -339,8 +342,31 @@ def AddOpportunity_detail(request, pk):
         Users.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
 
+@api_view(['GET', 'PUT', 'DELETE'])
+def AddOpportunity_student(request, student):
+    
+    try:
+        Users = AddOpportunity.objects.get(student=student)
+    except AddOpportunity.DoesNotExist:
+        return Response(status=status.HTTP_404_NOT_FOUND)
 
-def Form1(request,UserName):
+    if request.method == 'GET':
+        serializer = AddOpportunitySerializers(Users)
+        return Response(serializer.data)
+
+    elif request.method == 'PUT':
+        serializer = AddOpportunitySerializers(Users, data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    elif request.method == 'DELETE':
+        Users.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
+
+
+def form1(request,UserName):
     studentinfo = get_object_or_404(student,UserName=UserName)
     opplink = get_object_or_404(AddOpportunity,student_id=studentinfo.id)
     Opport = get_object_or_404(Opportunity,id=opplink.Opportunity.id)
@@ -365,13 +391,13 @@ def Form1(request,UserName):
        return HttpResponse('We had some errors <pre>' + html + '</pre>')
     return response
 
-def Form2(request,UserName):
+def form2(request,UserName):
     studentinfo = get_object_or_404(student,UserName=UserName)
     opplink = get_object_or_404(AddOpportunity,student_id=studentinfo.id)
     Opport = get_object_or_404(Opportunity,id=opplink.Opportunity.id)
 
 
-    template_path = 'TaibahTraining/form2.html'
+    template_path = 'TaibahTraining/form1.html'
     context = {'studentinfo': studentinfo,
                'opplink':opplink,
                'Opport':Opport}
@@ -390,13 +416,52 @@ def Form2(request,UserName):
        return HttpResponse('We had some errors <pre>' + html + '</pre>')
     return response
 
-def Form3(request,UserName):
+@api_view(['GET', 'POST'])
+def form2_list(request):
+    
+    if request.method == 'GET':
+        Users = Form2.objects.all()
+        serializer = Form2Serializers(Users, many=True)
+        return Response(serializer.data)
+
+    elif request.method == 'POST':
+        serializer = Form2Serializers(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+
+@api_view(['GET', 'PUT', 'DELETE'])
+def form2_detail(request, pk):
+    
+    try:
+        Users = Form2.objects.get(student=pk)
+    except Form2.DoesNotExist:
+        return Response(status=status.HTTP_404_NOT_FOUND)
+
+    if request.method == 'GET':
+        serializer = Form2Serializers(Users)
+        return Response(serializer.data)
+
+    elif request.method == 'PUT':
+        serializer = Form2Serializers(Users, data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    elif request.method == 'DELETE':
+        Users.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
+
+def form3(request,UserName):
     studentinfo = get_object_or_404(student,UserName=UserName)
     opplink = get_object_or_404(AddOpportunity,student_id=studentinfo.id)
     Opport = get_object_or_404(Opportunity,id=opplink.Opportunity.id)
 
 
-    template_path = 'TaibahTraining/form2.html'
+    template_path = 'TaibahTraining/form1.html'
     context = {'studentinfo': studentinfo,
                'opplink':opplink,
                'Opport':Opport}
@@ -415,13 +480,13 @@ def Form3(request,UserName):
        return HttpResponse('We had some errors <pre>' + html + '</pre>')
     return response
 
-def Form4(request,UserName):
+def form4(request,UserName):
     studentinfo = get_object_or_404(student,UserName=UserName)
     opplink = get_object_or_404(AddOpportunity,student_id=studentinfo.id)
     Opport = get_object_or_404(Opportunity,id=opplink.Opportunity.id)
 
 
-    template_path = 'TaibahTraining/form2.html'
+    template_path = 'TaibahTraining/form1.html'
     context = {'studentinfo': studentinfo,
                'opplink':opplink,
                'Opport':Opport}
@@ -440,13 +505,53 @@ def Form4(request,UserName):
        return HttpResponse('We had some errors <pre>' + html + '</pre>')
     return response
 
-def Form5(request,UserName):
+@api_view(['GET', 'POST'])
+def form4_list(request):
+    
+    if request.method == 'GET':
+        Users = Form4.objects.all()
+        serializer = Form4Serializers(Users, many=True)
+        return Response(serializer.data)
+
+    elif request.method == 'POST':
+        serializer = Form4Serializers(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+
+@api_view(['GET', 'PUT', 'DELETE'])
+def form4_detail(request, pk):
+    
+    try:
+        Users = Form4.objects.get(TrainingBody=pk)
+    except Form4.DoesNotExist:
+        return Response(status=status.HTTP_404_NOT_FOUND)
+
+    if request.method == 'GET':
+        serializer = Form4Serializers(Users)
+        return Response(serializer.data)
+
+    elif request.method == 'PUT':
+        serializer = Form4Serializers(Users, data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    elif request.method == 'DELETE':
+        Users.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
+
+
+def form5(request,UserName):
     studentinfo = get_object_or_404(student,UserName=UserName)
     opplink = get_object_or_404(AddOpportunity,student_id=studentinfo.id)
     Opport = get_object_or_404(Opportunity,id=opplink.Opportunity.id)
 
 
-    template_path = 'TaibahTraining/form2.html'
+    template_path = 'TaibahTraining/form1.html'
     context = {'studentinfo': studentinfo,
                'opplink':opplink,
                'Opport':Opport}
@@ -465,13 +570,52 @@ def Form5(request,UserName):
        return HttpResponse('We had some errors <pre>' + html + '</pre>')
     return response
 
-def Form6(request,UserName):
+@api_view(['GET', 'POST'])
+def form5_list(request):
+    
+    if request.method == 'GET':
+        Users = Form5.objects.all()
+        serializer = Form5Serializers(Users, many=True)
+        return Response(serializer.data)
+
+    elif request.method == 'POST':
+        serializer = Form5Serializers(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+
+@api_view(['GET', 'PUT', 'DELETE'])
+def form5_detail(request, pk):
+    
+    try:
+        Users = Form5.objects.get(TrainingBody=pk)
+    except Form5.DoesNotExist:
+        return Response(status=status.HTTP_404_NOT_FOUND)
+
+    if request.method == 'GET':
+        serializer = Form5Serializers(Users)
+        return Response(serializer.data)
+
+    elif request.method == 'PUT':
+        serializer = Form5Serializers(Users, data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    elif request.method == 'DELETE':
+        Users.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
+    
+def form6(request,UserName):
     studentinfo = get_object_or_404(student,UserName=UserName)
     opplink = get_object_or_404(AddOpportunity,student_id=studentinfo.id)
     Opport = get_object_or_404(Opportunity,id=opplink.Opportunity.id)
 
 
-    template_path = 'TaibahTraining/form2.html'
+    template_path = 'TaibahTraining/form1.html'
     context = {'studentinfo': studentinfo,
                'opplink':opplink,
                'Opport':Opport}
@@ -490,13 +634,52 @@ def Form6(request,UserName):
        return HttpResponse('We had some errors <pre>' + html + '</pre>')
     return response
 
-def Form7(request,UserName):
+@api_view(['GET', 'POST'])
+def form6_list(request):
+    
+    if request.method == 'GET':
+        Users = Form6.objects.all()
+        serializer = Form6Serializers(Users, many=True)
+        return Response(serializer.data)
+
+    elif request.method == 'POST':
+        serializer = Form6Serializers(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+
+@api_view(['GET', 'PUT', 'DELETE'])
+def form6_detail(request, pk):
+    
+    try:
+        Users = Form6.objects.get(Supervisor=pk)
+    except Form6.DoesNotExist:
+        return Response(status=status.HTTP_404_NOT_FOUND)
+
+    if request.method == 'GET':
+        serializer = Form6Serializers(Users)
+        return Response(serializer.data)
+
+    elif request.method == 'PUT':
+        serializer = Form6Serializers(Users, data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    elif request.method == 'DELETE':
+        Users.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
+    
+def form7(request,UserName):
     studentinfo = get_object_or_404(student,UserName=UserName)
     opplink = get_object_or_404(AddOpportunity,student_id=studentinfo.id)
     Opport = get_object_or_404(Opportunity,id=opplink.Opportunity.id)
 
 
-    template_path = 'TaibahTraining/form2.html'
+    template_path = 'TaibahTraining/form1.html'
     context = {'studentinfo': studentinfo,
                'opplink':opplink,
                'Opport':Opport}
@@ -515,13 +698,52 @@ def Form7(request,UserName):
        return HttpResponse('We had some errors <pre>' + html + '</pre>')
     return response
 
-def Form8(request,UserName):
+@api_view(['GET', 'POST'])
+def form7_list(request):
+    
+    if request.method == 'GET':
+        Users = Form7.objects.all()
+        serializer = Form7Serializers(Users, many=True)
+        return Response(serializer.data)
+
+    elif request.method == 'POST':
+        serializer = Form7Serializers(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+
+@api_view(['GET', 'PUT', 'DELETE'])
+def form7_detail(request, pk):
+    
+    try:
+        Users = Form7.objects.get(student=pk)
+    except Form7.DoesNotExist:
+        return Response(status=status.HTTP_404_NOT_FOUND)
+
+    if request.method == 'GET':
+        serializer = Form7Serializers(Users)
+        return Response(serializer.data)
+
+    elif request.method == 'PUT':
+        serializer = Form7Serializers(Users, data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    elif request.method == 'DELETE':
+        Users.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
+    
+def form8(request,UserName):
     studentinfo = get_object_or_404(student,UserName=UserName)
     opplink = get_object_or_404(AddOpportunity,student_id=studentinfo.id)
     Opport = get_object_or_404(Opportunity,id=opplink.Opportunity.id)
 
 
-    template_path = 'TaibahTraining/form2.html'
+    template_path = 'TaibahTraining/form1.html'
     context = {'studentinfo': studentinfo,
                'opplink':opplink,
                'Opport':Opport}
@@ -540,13 +762,13 @@ def Form8(request,UserName):
        return HttpResponse('We had some errors <pre>' + html + '</pre>')
     return response
 
-def Form9(request,UserName):
+def form9(request,UserName):
     studentinfo = get_object_or_404(student,UserName=UserName)
     opplink = get_object_or_404(AddOpportunity,student_id=studentinfo.id)
     Opport = get_object_or_404(Opportunity,id=opplink.Opportunity.id)
 
 
-    template_path = 'TaibahTraining/form2.html'
+    template_path = 'TaibahTraining/form1.html'
     context = {'studentinfo': studentinfo,
                'opplink':opplink,
                'Opport':Opport}
@@ -565,5 +787,44 @@ def Form9(request,UserName):
        return HttpResponse('We had some errors <pre>' + html + '</pre>')
     return response
 
+@api_view(['GET', 'POST'])
+def form9_list(request):
+    
+    if request.method == 'GET':
+        Users = Form9.objects.all()
+        serializer = Form9Serializers(Users, many=True)
+        return Response(serializer.data)
+
+    elif request.method == 'POST':
+        serializer = Form9Serializers(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+
+@api_view(['GET', 'PUT', 'DELETE'])
+def form9_detail(request, pk):
+    
+    try:
+        Users = Form9.objects.get(TrainingBody=pk)
+    except Form9.DoesNotExist:
+        return Response(status=status.HTTP_404_NOT_FOUND)
+
+    if request.method == 'GET':
+        serializer = Form9Serializers(Users)
+        return Response(serializer.data)
+
+    elif request.method == 'PUT':
+        serializer = Form9Serializers(Users, data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    elif request.method == 'DELETE':
+        Users.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
+    
 
     
