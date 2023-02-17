@@ -5,12 +5,16 @@ import WebsiteFooter from '../../../general/WebsiteFooter';
 import OppInfoContex from '../../../../contex/OppInfo';
 import StudentContex from '../../../../contex/StudentContex';
 import axios from '../../../../api/axios';
+import StudentsCard from './StudentsCard';
 
 
 const URL_User = "user/";
 const URL_TrainingBody = "TrainingBody/";
 const URL_SuperviseStudents = "SuperviseStudents/";
 const URL_AddOpportunity = "AddOpportunity/";
+const URL_Students = "student/";
+const URL_form7 = "form7/";
+
 
 
 const OpportunityDetails = () => {
@@ -20,6 +24,12 @@ const OpportunityDetails = () => {
   const [UTBinfo, setUTBinfo] = useState({})
   const [Supervisorid, setSupervisorid] = useState({})
   const [success, setsuccess] = useState(true)
+
+  const [card, setCard] = useState([]);
+  const [card2, setCard2] = useState([]);
+  const [card3, setCard3] = useState([]);
+  let content;
+
 
   const getData = async (e) => {
     try {
@@ -74,6 +84,73 @@ const OpportunityDetails = () => {
   }else{
     return <p className="p-isAdded"> تم تقديم الطلب بنجاح </p>
   }
+  }
+
+  const getData2 = async () => {
+    try {
+      const response = await axios.get(URL_AddOpportunity, {});
+      
+      const Data = response.data.filter(
+        (Data) => Data.TrainingBody == OppInfo.Id
+      );
+      const Data2 = Data.filter(
+        (Data) => Data.IsItAccepted == "true"
+      );
+      Data2.map((student) => {
+            if (!card2.includes(student.student)) {
+              setCard2((prevState) => [...prevState, student.student]);
+            }}
+            ); 
+
+    } catch (err) {
+      console.log(err.response);
+    }
+  };
+
+  useEffect(() => {
+    getData2();
+  }, []);
+
+  useEffect(() => {
+    const newcard = Array.from(new Set(card2.map((a) => a))).map((id) => {
+      return card2.find((a) => a === id);
+    });
+    setCard3(newcard);
+  }, [card2]);
+
+  const getData3 = async () => {
+    try {
+      const response = await axios.get(URL_form7, {});
+
+      const Data = response.data.filter((Data) => 
+        card3.map((a) => Data.student == a
+        ))
+        setCard(Data);
+    } catch (err) {
+      console.log(err.response);
+    }
+  };
+
+  useEffect(() => {
+    getData3();
+  }, [card3]);
+
+
+
+  if(card.length > 0){
+
+    const resulte = card.map(card =><StudentsCard key={card.UserName} card={card}/>)
+
+     content = resulte?.length ? resulte : <p className="p-Students-Card"> لا يوجد طلاب تحت اشرافك  </p>
+
+  }else{
+    if(card.length == 0){
+      content = <p className="p-Students-Card"> لا يوجد طلاب تحت اشرافك  </p> 
+    }else{
+    const resulte =<StudentsCard key={card.UserName} card={card}/>
+    
+    content = resulte;
+    }
   }
 
     return (
@@ -144,6 +221,9 @@ const OpportunityDetails = () => {
               {OppInfo.FinishDate}
               </p>
                 {isAdded()}
+              </div>
+              <div>
+                {content}
               </div>
             </div>
             <GuideNav />

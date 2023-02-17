@@ -104,6 +104,7 @@ class Form2 (models.Model):
     
 class Form4 (models.Model):
     TrainingBody = models.ForeignKey('TrainingBody',on_delete=models.CASCADE,null=True)
+    student = models.ForeignKey('student',on_delete=models.CASCADE,null=True)
     AttendanceAccuracy  = models.CharField(max_length=3)
     GeneralAppearance = models.CharField(max_length=3)
     Enthusiasm  = models.CharField(max_length=3)
@@ -129,6 +130,7 @@ class Form4 (models.Model):
     
 class Form5 (models.Model):
     TrainingBody = models.ForeignKey('TrainingBody',on_delete=models.CASCADE,null=True)
+    student = models.ForeignKey('student',on_delete=models.CASCADE,null=True)
     AttendanceAccuracy  = models.CharField(max_length=3)
     GeneralAppearance = models.CharField(max_length=3)
     Enthusiasm  = models.CharField(max_length=3)
@@ -154,6 +156,7 @@ class Form5 (models.Model):
     
 class Form6 (models.Model):
     Supervisor = models.ForeignKey('Supervisor',on_delete=models.CASCADE,null=True)
+    student = models.ForeignKey('student',on_delete=models.CASCADE,null=True)
     Course = models.CharField(max_length=20)
     Term  = models.CharField(max_length=20)
     PunctualityFrist  = models.CharField(max_length=3)
@@ -171,6 +174,8 @@ class Form7 (models.Model):
     SeriousTraining = models.CharField(max_length=20)
     ExperienceProvided  = models.CharField(max_length=20)
     SuitableTrainingPlace  = models.CharField(max_length=3)
+    SeriousTrainer  = models.CharField(max_length=3)
+    TimeGivenTraining  = models.CharField(max_length=3)
     ExperienceTrainer   = models.CharField(max_length=3)
     HelpWorkingStaff   = models.CharField(max_length=3)
     FollowingPlan  = models.CharField(max_length=3)
@@ -188,7 +193,8 @@ class Form7 (models.Model):
        return self.student
 
 class Form9 (models.Model):
-    TrainingBody = models.ForeignKey('TrainingBody',on_delete=models.CASCADE,null=True)   
+    TrainingBody = models.ForeignKey('TrainingBody',on_delete=models.CASCADE,null=True)
+    student = models.ForeignKey('student',on_delete=models.CASCADE,null=True)   
     WeekNo  = models.CharField(max_length=20)
     StudentAttendenceSunday = models.CharField(max_length=20)
     StudentAttendenceMonday = models.CharField(max_length=20)

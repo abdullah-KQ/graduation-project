@@ -3,7 +3,7 @@ import HeaderTrainingBody from "../../HeaderTrainingBody";
 import GuideNav from "../../GuideNav";
 import WebsiteFooter from "../../../general/WebsiteFooter";
 import "./SignOut.css"
-import imgTaibah from "../../../img/Taibah Training Platform.png";
+import imgTaibah from "../../../img/TTF.jpg";
 import { useNavigate  } from "react-router-dom";
 import TrainingBodyContex from '../../../../contex/TrainingBodyContex';
 

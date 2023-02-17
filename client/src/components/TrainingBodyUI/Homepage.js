@@ -7,6 +7,7 @@ import Profile from './TrainingBodyPages/Profile'
 import AddTrainingOpp from './TrainingBodyPages/AddTrainingOpp/AddTrainingOpp';
 import Opportunity from './TrainingBodyPages/opportunity/Opportunity';
 import OpportunityDetails from './TrainingBodyPages/opportunity/OpportunityDetails';
+import FillForms from './TrainingBodyPages/FillForms/FillForms';
 import SignOut from "./TrainingBodyPages/SignOut/SignOut"
 
 const Homepage = () => {
@@ -27,6 +28,7 @@ const Homepage = () => {
         <Route path="/AddTrainingOpp" element={<AddTrainingOpp />} />
         <Route path="/opportunity" element={<Opportunity />} />
         <Route path="/opportunity/OpportunityDetails/" element={<OpportunityDetails />}/>
+        <Route path="/FillForms/*" element={<FillForms />} />
         <Route path="/SignOut" element={<SignOut />} />
 
       </Routes>

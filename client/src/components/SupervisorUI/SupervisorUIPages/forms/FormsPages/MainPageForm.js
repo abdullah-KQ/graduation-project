@@ -77,6 +77,7 @@ const MainPageForm = () => {
     e.preventDefault();
     await axios.post("form4/",{
       TrainingBody : TrainingBody.id,
+      student : Students.id,
       AttendanceAccuracy : "?",
       GeneralAppearance: "?",
       Enthusiasm: "?",
@@ -107,6 +108,7 @@ const MainPageForm = () => {
     e.preventDefault();
     await axios.post("form5/",{
       TrainingBody : TrainingBody.id,
+      student : Students.id,
       AttendanceAccuracy : "?",
       GeneralAppearance: "?",
       Enthusiasm: "?",
@@ -157,6 +159,8 @@ const MainPageForm = () => {
       SeriousTraining : "incomplete",
       ExperienceProvided: "incomplete",
       SuitableTrainingPlace: "?",
+      SeriousTrainer: "?",
+      TimeGivenTraining: "?",
       ExperienceTrainer: "?",
       HelpWorkingStaff: "?",
       FollowingPlan: "?",
@@ -179,6 +183,7 @@ const MainPageForm = () => {
     e.preventDefault();
     await axios.post("form9/",{
       TrainingBody : TrainingBody.id,
+      student : Students.id,
       WeekNo : "incomplete",
       StudentAttendenceSunday: "incomplete",
       StudentAttendenceMonday: "incomplete",

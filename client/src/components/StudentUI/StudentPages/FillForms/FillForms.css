@@ -1,0 +1,92 @@
+.main-div{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    height: fit-content;
+    margin-bottom: 30px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.Fill-Forms-box{
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    background-color:white;
+    height: fit-content;
+    width: 90%;
+    max-width: 1100px;
+    min-height: 500px;
+    margin: auto;
+    margin-left: 15%;
+    border-radius: 5px;  
+}
+
+.Fill-Forms-Card{
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    height: fit-content;
+    width: 98%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 0.1px solid black;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+.Fill-Forms-form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items:end;
+    justify-content: end;
+    margin-top: 50px;
+
+}
+
+.field {
+  padding: 5px 5px 5px 160px;
+  text-align: right;
+  margin-right: 25px;
+}
+
+.field::placeholder{
+  font-family: 'Times New Roman';
+  font-size: 20px;
+  text-align: right;
+  color: rgb(77, 70, 67);
+  opacity: 0.3;
+}
+
+.label-field{
+  margin-right: 25px;
+  width: max-content;
+  margin-top: 20px;
+  padding-left: 155px;
+}
+
+.submit_button {
+    border: 1.5px solid black;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    width: max-content;
+    color: rgb(77, 70, 67);
+    background-color: white;
+    padding: 8px 12px 8px 12px;
+    margin: 30px auto 50px auto;
+    font-size: 24px;
+    font-weight: 550;
+  }
+  
+  .submit_button:hover {
+    background-color: rgb(77, 70, 67);
+    color: white;
+    opacity: 0.75;
+    transition: opacity 0.3s;
+  }
+
+.p-Fill-Form{
+color: black;
+margin: 20px auto auto auto;
+font-size: 32px;
+
+}

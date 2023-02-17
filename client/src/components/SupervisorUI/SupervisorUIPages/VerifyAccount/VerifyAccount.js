@@ -2,7 +2,7 @@ import React from "react";
 import HeaderSupervisor from "../../HeaderSupervisor";
 import GuideNav from "../../GuideNav";
 import WebsiteFooter from "../../../general/WebsiteFooter";
-import imgTaibah from "../../../img/Taibah Training Platform.png"
+import imgTaibah from "../../../img/TTF.jpg"
 import "./VerifyAccount.css"
 
 const VerifyAccount = () => {

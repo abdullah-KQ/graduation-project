@@ -51,7 +51,7 @@ class Form2Serializers(serializers.ModelSerializer):
 class Form4Serializers(serializers.ModelSerializer):
     class Meta:
         model = Form4
-        fields =['id','TrainingBody','AttendanceAccuracy','GeneralAppearance','Enthusiasm',
+        fields =['id','TrainingBody','student','AttendanceAccuracy','GeneralAppearance','Enthusiasm',
                  'AbilityToAnalyze','AccuracyOutput','AbilityPresent','AbilityReport',
                  'RelationshipTrainer','RelationshipCoWorkers','Flexibility','AbilityLearn',
                  'AbilityDecision','GeneralPerformance','Strengths','Weaknesses',
@@ -60,7 +60,7 @@ class Form4Serializers(serializers.ModelSerializer):
 class Form5Serializers(serializers.ModelSerializer):
     class Meta:
         model = Form5
-        fields =['id','TrainingBody','AttendanceAccuracy','GeneralAppearance','Enthusiasm',
+        fields =['id','TrainingBody','student','AttendanceAccuracy','GeneralAppearance','Enthusiasm',
                  'AbilityToAnalyze','AccuracyOutput','AbilityPresent','AbilityReport',
                  'RelationshipTrainer','RelationshipCoWorkers','Flexibility','AbilityLearn',
                  'AbilityDecision','GeneralPerformance','Strengths','Weaknesses',
@@ -69,19 +69,19 @@ class Form5Serializers(serializers.ModelSerializer):
 class Form6Serializers(serializers.ModelSerializer):
     class Meta:
         model = Form6
-        fields =['id','Supervisor','Course','Term','PunctualityFrist',
+        fields =['id','Supervisor','student','Course','Term','PunctualityFrist',
                  'QualityFrist','PunctualityFinal','QualityFinal','IsItCompleted']
 
 class Form7Serializers(serializers.ModelSerializer):
     class Meta:
         model = Form7
         fields =['id','student','SeriousTraining','ExperienceProvided','SuitableTrainingPlace',
-                 'ExperienceTrainer','HelpWorkingStaff','FollowingPlan','AdvantagesProgram',
+                 'SeriousTrainer','TimeGivenTraining','ExperienceTrainer','HelpWorkingStaff','FollowingPlan','AdvantagesProgram',
                  'TheCompatibility','benefits','problems','expectations','suggestions','recommend','IsItCompleted']
         
 class Form9Serializers(serializers.ModelSerializer):
     class Meta:
         model = Form9
-        fields =['id','TrainingBody','WeekNo','StudentAttendenceSunday','StudentAttendenceMonday',
+        fields =['id','TrainingBody','student','WeekNo','StudentAttendenceSunday','StudentAttendenceMonday',
                  'StudentAttendenceTuesday','StudentAttendenceWednesday','StudentAttendenceThursday',
                  'TasksThisWeek','SoftwarUsedThisWeek','IsItCompleted']

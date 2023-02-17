@@ -4,7 +4,7 @@ import { Link,useNavigate  } from "react-router-dom";
 import axios from "../../api/axios";
 import "./LoginBox.css";
 import "../general/general.css";
-import imgTTF from "../img/Taibah Training Platform.png";
+import imgTTF from "../img/TTF.jpg";
 import  StudentContex  from "../../contex/StudentContex"
 import  SupervisorContex  from "../../contex/SupervisorContex"
 import  TrainingBodyContex  from "../../contex/TrainingBodyContex"

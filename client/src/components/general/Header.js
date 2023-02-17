@@ -1,7 +1,7 @@
 import React from "react";
 import "./HeaderStyles.css";
 import "./general.css";
-import imgTaibah from "../img/Taibah Training Platform.png";
+import imgTaibah from "../img/TTF.jpg";
 import { Link } from "react-router-dom";
 
 function Header()  {

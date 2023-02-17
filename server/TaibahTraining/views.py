@@ -525,7 +525,7 @@ def form4_list(request):
 def form4_detail(request, pk):
     
     try:
-        Users = Form4.objects.get(TrainingBody=pk)
+        Users = Form4.objects.get(student=pk)
     except Form4.DoesNotExist:
         return Response(status=status.HTTP_404_NOT_FOUND)
 
@@ -590,7 +590,7 @@ def form5_list(request):
 def form5_detail(request, pk):
     
     try:
-        Users = Form5.objects.get(TrainingBody=pk)
+        Users = Form5.objects.get(student=pk)
     except Form5.DoesNotExist:
         return Response(status=status.HTTP_404_NOT_FOUND)
 
@@ -654,7 +654,7 @@ def form6_list(request):
 def form6_detail(request, pk):
     
     try:
-        Users = Form6.objects.get(Supervisor=pk)
+        Users = Form6.objects.get(student=pk)
     except Form6.DoesNotExist:
         return Response(status=status.HTTP_404_NOT_FOUND)
 
@@ -807,7 +807,7 @@ def form9_list(request):
 def form9_detail(request, pk):
     
     try:
-        Users = Form9.objects.get(TrainingBody=pk)
+        Users = Form9.objects.get(student=pk)
     except Form9.DoesNotExist:
         return Response(status=status.HTTP_404_NOT_FOUND)
 

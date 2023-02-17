@@ -10,7 +10,7 @@ function Introduction()  {
       <div>
         <div className="Introduction" id="Introduction">
           <div className="Introduction-background">
-            <p className="Introduction-p">Taibah Training Platform</p>
+            <p className="Introduction-p">Taibah Training Finder</p>
           </div>
         </div>
         <div className="About-website" id="About-website">

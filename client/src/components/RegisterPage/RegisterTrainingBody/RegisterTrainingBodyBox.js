@@ -3,7 +3,7 @@ import { useRef, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../../general/general.css";
 import "./RegisterTrainingBody.css";
-import imgTTF from "../../img/Taibah Training Platform.png";
+import imgTTF from "../../img/TTF.jpg";
 import axios from "../../../api/axios";
 
 const USER_REGEX = /^[a-zA-Z][a-zA-Z0-9-_]{3,24}$/;

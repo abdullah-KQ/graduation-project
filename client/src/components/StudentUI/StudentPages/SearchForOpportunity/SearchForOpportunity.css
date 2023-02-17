@@ -87,6 +87,29 @@
     padding-bottom: 50px;
 }
 
+.Students-R-Card{
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    height:fit-content;
+    width: 80%;
+    background-color: white;
+    margin-top:10px ;
+    margin-left: 21%;
+    margin-right: 6%;
+    border: 0.1px solid black;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+.p-Students-Card{
+    color:black;
+    text-align: right;
+    height: fit-content;
+    font-size: 24px;
+    margin: 10px 30px auto auto;
+}
+
 @media(max-width: 1800px) {
     .Opp-box{
         margin: auto;

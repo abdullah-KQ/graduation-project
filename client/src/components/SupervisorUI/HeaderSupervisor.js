@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import "./HeaderStylesUser.css";
 import "../../components/general/general.css";
-import imgTaibah from "../img/Taibah Training Platform.png";
+import imgTaibah from "../img/TTF.jpg";
 import { Link } from "react-router-dom";
 import  SupervisorContex  from "../../contex/SupervisorContex";
 
