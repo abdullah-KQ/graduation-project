@@ -13,7 +13,6 @@ function Homepage() {
       <>
         <Header />
         <Introduction />
-        <ViewTrainingOpportunities />
         <CommonQuestions />
         <WebsiteFooter />
       </>

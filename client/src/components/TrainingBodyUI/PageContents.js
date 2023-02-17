@@ -17,26 +17,7 @@ const PageContents = () => {
         <div className="info-box">
           <div className="user-info">
             <p className="p-info">
-              : المشرفين المنتسبين 
-              <br />
-              {supervisor}
-              <br />
-              <br />
-              <Link to={"./AddSupervisor"}>
-              <button className="user-info-button"> للمزيد عن معلومات المشرفين </button>
-              </Link>
-              <br />
-              <br />
-            </p>
-            <p className="p-info">
-              :فرص التدريب
-              <br />
-              لا يتوجد فرص تدريب
-              <br />
-              <br />
-              <Link to={"./CurrentTraining"}>
-              <button className="user-info-button"> للمزيد عن فرص التدريب </button>
-              </Link>
+
             </p>
           </div>
           <div className="user-info">

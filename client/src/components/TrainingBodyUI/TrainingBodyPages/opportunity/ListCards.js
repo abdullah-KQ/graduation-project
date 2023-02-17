@@ -9,11 +9,11 @@ const ListCards = ({ card }) => {
 
     const resulte = card.map(card =><OpportunityCard key={card.Opport_name} card={card}/>)
 
-     content = resulte?.length ? resulte : <p className="p-Students-Card"> لا يوجد طلاب تحت اشرافك  </p>
+     content = resulte?.length ? resulte : <p className="p-Students-Card"> لم يتم نشر اي فرصة تدريبية  </p>
 
   }else{
     if(card.length == 0){
-      content = <p className="p-Students-Card"> لا يوجد طلاب تحت اشرافك  </p> 
+      content = <p className="p-Students-Card"> لم يتم نشر اي فرصة تدريبية  </p> 
     }else{
     const resulte =<OpportunityCard key={card.Opport_name} card={card}/>
     

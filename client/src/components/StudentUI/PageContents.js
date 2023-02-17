@@ -7,7 +7,7 @@ import StudentContex from "../../contex/StudentContex";
 const PageContents = () => {
   const {StudentInfo} =useContext(StudentContex)
 
-  const supervisor = " khaled";
+  const supervisor = " ";
   const form = " لا توجد ";
 
   return (
@@ -16,16 +16,6 @@ const PageContents = () => {
         <div className="info-box">
           <div className="user-info">
             <p className="p-info">
-              :المشرف الجامعي
-              <br />
-              {supervisor}
-              <br />
-              <br />
-              <Link to={"./AddSupervisor"}>
-              <button className="user-info-button">للمزيد من المعلومات </button>
-              </Link>
-              <br />
-              <br />
             </p>
             <p className="p-info">
               :فرص التدريب

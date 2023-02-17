@@ -30,7 +30,7 @@ const AddSuperviseStudents = () => {
   useEffect(() => {
     getData();
     if (SupervisorInfo.Verified == "false") {
-      setSuccess(true);
+      setSuccess(false);
     }
   }, []);
 

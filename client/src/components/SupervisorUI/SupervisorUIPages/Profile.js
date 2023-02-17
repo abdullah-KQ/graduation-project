@@ -19,25 +19,6 @@ const Profile = () => {
           <div className="info-box">
             <div className="user-info">
               <p className="p-info">
-                :الرقم الجامعي
-                <br />
-                {SupervisorInfo.S_id}
-                <br />
-                <br />
-                :المشرف الجامعي
-                <br />
-                {supervisor}
-                <br />
-                <br />
-                :التدريب الحالي
-                <br />
-                {CurrentTraining}
-                <br />
-                <br />
-              </p>
-            </div>
-            <div className="user-info">
-              <p className="p-info">
                 :الاسم
                 <br />
                 {SupervisorInfo.Fullname}

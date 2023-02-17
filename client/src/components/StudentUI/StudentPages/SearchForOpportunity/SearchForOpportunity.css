@@ -110,6 +110,14 @@
     margin: 10px 30px auto auto;
 }
 
+.p-issoper{
+    color:black;
+    text-align: right;
+    height: fit-content;
+    font-size: 24px;
+    margin: auto auto auto auto;
+}
+
 @media(max-width: 1800px) {
     .Opp-box{
         margin: auto;

@@ -13,7 +13,7 @@ const GuideNav = () => {
         <button className="guide-button"> ملف التعريف </button>
         </Link>
         <Link to={"../../Student/AddSupervisor/"}>
-        <button className="guide-button"> تسجيل طلب لاضافة مشرف </button>
+        <button className="guide-button"> التواصل لاضافة مشرف </button>
         </Link>
         <Link to={"../../Student/SearchForOpp/"}>
         <button className="guide-button"> البحث عن فرصة تدريبية </button>

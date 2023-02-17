@@ -125,6 +125,7 @@ const RegisterSupervisorBox = () => {
         S_id: SId,
         Department: department,
         College: college,
+        Verified:"false"
       });
       console.log(response2);
       
@@ -331,15 +332,7 @@ const RegisterSupervisorBox = () => {
             onFocus={() => setDepartmentFocus(true)}
           >
           <option value="choose"> -- اختر الكلية -- </option>
-          <option value="cs" >
-            cs
-          </option>
-          <option value="math">
-          math
-          </option>
-          <option value="cs2">
-          cs2
-          </option>
+          <option value="Computer Science and Engineering">Computer Science and Engineering</option>
           </select>
           <p
               className={
@@ -362,15 +355,9 @@ const RegisterSupervisorBox = () => {
               onFocus={() => setCollegeFocus(true)}
             >
             <option value="choose"> -- اختر القسم -- </option>
-            <option value="cs">
-              cs
-            </option>
-            <option value="cs2" >
-              cs2
-            </option>
-            <option value="cs3">
-              cs3
-            </option>
+            <option value="Computer Science">Computer Science</option>
+              <option value="Computer Engineering">Computer Engineering</option>
+              <option value="Information systems">Information systems</option>
             </select>
             <p
               className={

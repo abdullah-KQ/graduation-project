@@ -44,6 +44,7 @@ const OpportunityDetails = () => {
       const Data = response3.data.filter(
         (Supervise) => StudentInfo.Id == Supervise.student
       );
+      console.log(Data[0].Supervisor)
       setSupervisorid(Data[0].Supervisor)
 
 
@@ -57,16 +58,18 @@ const OpportunityDetails = () => {
   const handleClick = async (e) => {
     e.preventDefault();
     try{
+
       await axios.post(URL_AddOpportunity, {
         TrainingBody:TBinfo.id,
         Opportunity:OppInfo.Id,
         Supervisor:Supervisorid,
         student:StudentInfo.Id,
         IsItAccepted:"false",
+        notification: "false"
       });
       setsuccess(false)
     }catch{
-      
+
     }
     
   };
@@ -77,11 +80,15 @@ const OpportunityDetails = () => {
   
   const isAdded = ()=> {
     if(success){
-    return(          
+    return(   
+      <>
+      <p className="p-issoper"> يجب ان يكون لديك مشرف لارسال الطلب </p>       
      <button className="button-Add-Opp" onClick={handleClick}>
        للتقديم على التدريب
-     </button> )
-  }else{
+     </button>
+     </> )
+  }
+  else{
     return <p className="p-isAdded"> تم تقديم الطلب بنجاح </p>
   }
   }

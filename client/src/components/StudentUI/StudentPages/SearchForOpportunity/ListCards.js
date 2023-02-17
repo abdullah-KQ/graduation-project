@@ -6,7 +6,7 @@ const ListCards = ({ searchResulte }) => {
 
     const resulte = searchResulte.map(card =><OpportunityCard key={card.id} card={card}/>)
 
-    const content = resulte?.length ? resulte : <p className="p-Opp-Card"> no matching Supervisor  </p>
+    const content = resulte?.length ? resulte : <p className="p-Opp-Card">   يرجى البحث عن فرصة تدريبية صحيصة  </p>
   return (
     <div>
         {content}

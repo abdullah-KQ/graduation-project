@@ -65,7 +65,7 @@ const FillForms = () => {
 
   }else{
     if(card.length == 0){
-      content = <p className="p-Students-Card"> لا يوجد طلاب تحت اشرافك  </p> 
+      content = <p className="p-Students-Card"> لا توجد نماذج لتعبأتها  </p> 
     }else{
     const resulte =<StudentsCard key={card.UserName} card={card}/>
     
