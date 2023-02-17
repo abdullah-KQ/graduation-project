@@ -115,7 +115,7 @@
     text-align: right;
     height: fit-content;
     font-size: 24px;
-    margin: auto auto auto auto;
+    margin: 10px auto auto auto;
 }
 
 @media(max-width: 1800px) {

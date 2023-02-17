@@ -6,7 +6,7 @@ const GuideNav = () => {
   return (
     <div className="guide-box-m">
         <Link to={"../../../TrainingBody"}>
-        <button className="guide-button"> الرئسية </button>
+        <button className="guide-button"> الرئيسية </button>
         </Link>
         <Link to={"../../../TrainingBody/Profile"}>
         <button className="guide-button"> ملف التعريف </button>

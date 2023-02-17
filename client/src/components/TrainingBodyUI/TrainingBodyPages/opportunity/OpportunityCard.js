@@ -27,7 +27,7 @@ const StudentsCard = ({ card }) => {
   };
 
   return (
-    <div className="Students-Card">
+    <div className="Students-h-Card">
       <button className="button-Add-Opp" onClick={handleClick}>
       للمزيد من المعلومات
       </button>
