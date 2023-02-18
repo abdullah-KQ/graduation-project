@@ -401,7 +401,7 @@ def form2(request,UserName):
     Opport = get_object_or_404(Opportunity,id=opplink.Opportunity.id)
 
 
-    template_path = 'TaibahTraining/form1.html'
+    template_path = 'TaibahTraining/form2.html'
     context = {'studentinfo': studentinfo,
                'opplink':opplink,
                'Opport':Opport}
@@ -465,7 +465,7 @@ def form3(request,UserName):
     Opport = get_object_or_404(Opportunity,id=opplink.Opportunity.id)
 
 
-    template_path = 'TaibahTraining/form1.html'
+    template_path = 'TaibahTraining/form3.html'
     context = {'studentinfo': studentinfo,
                'opplink':opplink,
                'Opport':Opport}
@@ -490,7 +490,7 @@ def form4(request,UserName):
     Opport = get_object_or_404(Opportunity,id=opplink.Opportunity.id)
 
 
-    template_path = 'TaibahTraining/form1.html'
+    template_path = 'TaibahTraining/form4.html'
     context = {'studentinfo': studentinfo,
                'opplink':opplink,
                'Opport':Opport}
@@ -555,7 +555,7 @@ def form5(request,UserName):
     Opport = get_object_or_404(Opportunity,id=opplink.Opportunity.id)
 
 
-    template_path = 'TaibahTraining/form1.html'
+    template_path = 'TaibahTraining/form5.html'
     context = {'studentinfo': studentinfo,
                'opplink':opplink,
                'Opport':Opport}
@@ -619,7 +619,7 @@ def form6(request,UserName):
     Opport = get_object_or_404(Opportunity,id=opplink.Opportunity.id)
 
 
-    template_path = 'TaibahTraining/form1.html'
+    template_path = 'TaibahTraining/form6.html'
     context = {'studentinfo': studentinfo,
                'opplink':opplink,
                'Opport':Opport}
@@ -683,7 +683,7 @@ def form7(request,UserName):
     Opport = get_object_or_404(Opportunity,id=opplink.Opportunity.id)
 
 
-    template_path = 'TaibahTraining/form1.html'
+    template_path = 'TaibahTraining/form7.html'
     context = {'studentinfo': studentinfo,
                'opplink':opplink,
                'Opport':Opport}
@@ -747,7 +747,7 @@ def form8(request,UserName):
     Opport = get_object_or_404(Opportunity,id=opplink.Opportunity.id)
 
 
-    template_path = 'TaibahTraining/form1.html'
+    template_path = 'TaibahTraining/form8.html'
     context = {'studentinfo': studentinfo,
                'opplink':opplink,
                'Opport':Opport}
@@ -772,7 +772,7 @@ def form9(request,UserName):
     Opport = get_object_or_404(Opportunity,id=opplink.Opportunity.id)
 
 
-    template_path = 'TaibahTraining/form1.html'
+    template_path = 'TaibahTraining/form9.html'
     context = {'studentinfo': studentinfo,
                'opplink':opplink,
                'Opport':Opport}

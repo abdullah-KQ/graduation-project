@@ -26,14 +26,14 @@ const MainPageForm = () => {
   
 
   let url_form1 = "http://127.0.0.1:8000/form1/" + StudentInfo.UserName;
-  let url_form2 = "http://127.0.0.1:8000/form1/" + StudentInfo.UserName;
-  let url_form3 = "http://127.0.0.1:8000/form1/" + StudentInfo.UserName;
-  let url_form4 = "http://127.0.0.1:8000/form1/" + StudentInfo.UserName;
-  let url_form5 = "http://127.0.0.1:8000/form1/" + StudentInfo.UserName;
-  let url_form6 = "http://127.0.0.1:8000/form1/" + StudentInfo.UserName;
-  let url_form7 = "http://127.0.0.1:8000/form1/" + StudentInfo.UserName;
-  let url_form8 = "http://127.0.0.1:8000/form1/" + StudentInfo.UserName;
-  let url_form9 = "http://127.0.0.1:8000/form1/" + StudentInfo.UserName;
+  let url_form2 = "http://127.0.0.1:8000/form2/" + StudentInfo.UserName;
+  let url_form3 = "http://127.0.0.1:8000/form3/" + StudentInfo.UserName;
+  let url_form4 = "http://127.0.0.1:8000/form4/" + StudentInfo.UserName;
+  let url_form5 = "http://127.0.0.1:8000/form5/" + StudentInfo.UserName;
+  let url_form6 = "http://127.0.0.1:8000/form6/" + StudentInfo.UserName;
+  let url_form7 = "http://127.0.0.1:8000/form7/" + StudentInfo.UserName;
+  let url_form8 = "http://127.0.0.1:8000/form8/" + StudentInfo.UserName;
+  let url_form9 = "http://127.0.0.1:8000/form9/" + StudentInfo.UserName;
 
   const getData = async (e) => {
     try {

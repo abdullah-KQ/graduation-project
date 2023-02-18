@@ -17,23 +17,53 @@
 </style>
   </head>
   <body>
-    <div class="container" id="header_content">
-      <div class="p-p">
-        {{OpportinfoUser.UserName.Fullname}}
-    </div>
-
-
+    <div class="container" >
+    <p class="p-Fullname">
+      : {{OpportinfoUser.Fullname}}
+    </p>
+    <p class="p-Fullname-2">
+       {{OpportinfoUser.Fullname}}
+    </p>
+    <p class="p-Contact_Person">
+       {{Opport.Contact_Person}}
+    </p>
+    <p class="p-Contact_Person">
+      {{Opport.Position}}
+   </p>
+   <p class="p-Contact_Person">
+    {{OpportinfoUser.Phone_num}}
+    </p>
+    <p class="p-Contact_Person">
+      {{OpportinfoUser.Email}}
+    </p>
+    <p class="p-Contact_Person">
+      There is no fax
+    </p>
+    <p class="p-Contact_Person">
+      {{Opportinfo.Address}}
+    </p>
+    <p class="p-2-Training-no">
+      {{Opport.vacancies}}
+    </p>
+    <p class="p-2-Training-tname">
+      {{Opport.Contact_Person}}
+    </p>
+    <p class="p-2-Training-tfield">
+      {{studentinfo.College}}
+    </p>
+    <p class="p-2-Training-tplace">
+      {{Opport.Loaction}}
+    </p>
    
   </div>
   <pdf:nextpage name="pg1" />
   <div class="container"id="page2">
-
-  <div class="p-p">
-      asas
+    <p class="p-Monthly-Allowance">
+    No monthly allowance
+    </p>
+    <p class="p-Other">
+      No other features
+      </p>
   </div>
-   
-
- 
-</div>
   </body>
 </html>
