@@ -13,10 +13,10 @@ function websiteFooter() {
     </div>
     <div className="Footer-right">
       <p className="p-Footer-right">
-        TTP@gmail.com : للتواصل معنا
+        TTF@gmail.com : للتواصل معنا
       </p>
       <p className="p-Footer-right">
-        © 2022 - طيبة للتدريب الميداني | جميع الحقوق محفوظة
+        © 2023 - طيبة للتدريب الميداني | جميع الحقوق محفوظة
       </p>
     </div>
   </div>
