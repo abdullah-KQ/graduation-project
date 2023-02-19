@@ -399,12 +399,21 @@ def form2(request,UserName):
     studentinfo = get_object_or_404(student,UserName=UserName)
     opplink = get_object_or_404(AddOpportunity,student_id=studentinfo.id)
     Opport = get_object_or_404(Opportunity,id=opplink.Opportunity.id)
+    Opportinfo = get_object_or_404(TrainingBody,id=Opport.TrainingBody.id)
+    studentinfoUser = get_object_or_404(User,UserName=studentinfo.UserName.UserName)
+    form2info = get_object_or_404(Form2,student=studentinfo.id)
+    OpportinfoUser = get_object_or_404(User,UserName=Opportinfo.UserName.UserName)
+
 
 
     template_path = 'TaibahTraining/form2.html'
     context = {'studentinfo': studentinfo,
                'opplink':opplink,
-               'Opport':Opport}
+               'Opport':Opport,
+               'form2info':form2info,
+               'Opportinfo':Opportinfo,
+               'studentinfoUser':studentinfoUser,
+               'OpportinfoUser':OpportinfoUser}
     # Create a Django response object, and specify content_type as pdf
     response = HttpResponse(content_type='application/pdf')
     response['Content-Disposition'] = 'filename="report.pdf"'
@@ -463,12 +472,14 @@ def form3(request,UserName):
     studentinfo = get_object_or_404(student,UserName=UserName)
     opplink = get_object_or_404(AddOpportunity,student_id=studentinfo.id)
     Opport = get_object_or_404(Opportunity,id=opplink.Opportunity.id)
+    studentinfoUser = get_object_or_404(User,UserName=studentinfo.UserName.UserName)
 
 
     template_path = 'TaibahTraining/form3.html'
     context = {'studentinfo': studentinfo,
                'opplink':opplink,
-               'Opport':Opport}
+               'Opport':Opport,
+               'studentinfoUser':studentinfoUser}
     # Create a Django response object, and specify content_type as pdf
     response = HttpResponse(content_type='application/pdf')
     response['Content-Disposition'] = 'filename="report.pdf"'
@@ -488,12 +499,22 @@ def form4(request,UserName):
     studentinfo = get_object_or_404(student,UserName=UserName)
     opplink = get_object_or_404(AddOpportunity,student_id=studentinfo.id)
     Opport = get_object_or_404(Opportunity,id=opplink.Opportunity.id)
+    Opportinfo = get_object_or_404(TrainingBody,id=Opport.TrainingBody.id)
+    studentinfoUser = get_object_or_404(User,UserName=studentinfo.UserName.UserName)
+    form4info = get_object_or_404(Form4,student=studentinfo.id)
+    OpportinfoUser = get_object_or_404(User,UserName=Opportinfo.UserName.UserName)
+    
 
 
     template_path = 'TaibahTraining/form4.html'
     context = {'studentinfo': studentinfo,
                'opplink':opplink,
-               'Opport':Opport}
+               'Opport':Opport,
+               'form4info':form4info,
+               'Opportinfo':Opportinfo,
+               'studentinfoUser':studentinfoUser,
+               'OpportinfoUser':OpportinfoUser}
+    
     # Create a Django response object, and specify content_type as pdf
     response = HttpResponse(content_type='application/pdf')
     response['Content-Disposition'] = 'filename="report.pdf"'
@@ -553,12 +574,19 @@ def form5(request,UserName):
     studentinfo = get_object_or_404(student,UserName=UserName)
     opplink = get_object_or_404(AddOpportunity,student_id=studentinfo.id)
     Opport = get_object_or_404(Opportunity,id=opplink.Opportunity.id)
-
+    Opportinfo = get_object_or_404(TrainingBody,id=Opport.TrainingBody.id)
+    studentinfoUser = get_object_or_404(User,UserName=studentinfo.UserName.UserName)
+    form5info = get_object_or_404(Form5,student=studentinfo.id)
+    OpportinfoUser = get_object_or_404(User,UserName=Opportinfo.UserName.UserName)
 
     template_path = 'TaibahTraining/form5.html'
     context = {'studentinfo': studentinfo,
                'opplink':opplink,
-               'Opport':Opport}
+               'Opport':Opport,
+               'form5info':form5info,
+               'Opportinfo':Opportinfo,
+               'studentinfoUser':studentinfoUser,
+               'OpportinfoUser':OpportinfoUser}
     # Create a Django response object, and specify content_type as pdf
     response = HttpResponse(content_type='application/pdf')
     response['Content-Disposition'] = 'filename="report.pdf"'
@@ -681,12 +709,20 @@ def form7(request,UserName):
     studentinfo = get_object_or_404(student,UserName=UserName)
     opplink = get_object_or_404(AddOpportunity,student_id=studentinfo.id)
     Opport = get_object_or_404(Opportunity,id=opplink.Opportunity.id)
+    Opportinfo = get_object_or_404(TrainingBody,id=Opport.TrainingBody.id)
+    studentinfoUser = get_object_or_404(User,UserName=studentinfo.UserName.UserName)
+    form7info = get_object_or_404(Form7,student=studentinfo.id)
+    OpportinfoUser = get_object_or_404(User,UserName=Opportinfo.UserName.UserName)
 
 
     template_path = 'TaibahTraining/form7.html'
     context = {'studentinfo': studentinfo,
                'opplink':opplink,
-               'Opport':Opport}
+               'Opport':Opport,
+               'form7info':form7info,
+               'Opportinfo':Opportinfo,
+               'studentinfoUser':studentinfoUser,
+               'OpportinfoUser':OpportinfoUser}
     # Create a Django response object, and specify content_type as pdf
     response = HttpResponse(content_type='application/pdf')
     response['Content-Disposition'] = 'filename="report.pdf"'

@@ -3,3 +3,108 @@
     color: rgb(5, 5, 5);
     height: 1000px;
 }
+.p-StartDate{
+    padding-top: 268px;
+    padding-left: 150px;
+    font-size: 15px;
+}
+.p-FinishDate{
+    padding-top: -40px;
+    padding-left: 470px;
+    font-size: 15px;
+}
+.p-Loaction{
+    padding-top: -24px;
+    padding-left: 190px;
+    font-size: 15px;
+}
+.p-Fullname{
+    padding-top: -40px;
+    padding-left: 580px;
+    font-size: 15px;
+}
+.p-Contact_Person{
+    padding-top: -24px;
+    padding-left: 170px;
+    font-size: 15px;
+}
+.p-Position{
+    padding-top: -40px;
+    padding-left: 500px;
+    font-size: 15px;
+}
+.p-SeriousTraining{
+    padding-top: 44px;
+    padding-left:  520px;
+    font-size: 20px;
+}
+.p-ExperienceProvided{
+    padding-top: -26px;
+    padding-left:  520px;
+    font-size: 20px;
+}
+.p-SuitableTrainingPlace{
+    padding-top: -26px;
+    padding-left:  520px;
+    font-size: 20px;
+}
+.p-SeriousTrainer{
+    padding-top: -26px;
+    padding-left:  520px;
+    font-size: 20px;
+}
+.p-TimeGivenTraining{
+    padding-top:-29px;
+    padding-left:  520px;
+    font-size: 20px;
+}
+.p-ExperienceTrainer{
+    padding-top:-26px;
+    padding-left:  520px;
+    font-size: 20px;
+}
+.p-HelpWorkingStaff{
+    padding-top:-29px;
+    padding-left:  520px;
+    font-size: 20px;
+}
+.p-FollowingPlan{
+    padding-top:-26px;
+    padding-left:  520px;
+    font-size: 20px;
+}
+.p-AdvantagesProgram{
+    padding-top:-26px;
+    padding-left:  520px;
+    font-size: 20px;
+}
+.p-TheCompatibility{
+    padding-top:-26px;
+    padding-left:  520px;
+    font-size: 20px;
+}
+.p-benefits{
+    padding-top: 25px;
+    padding-left: 90px;
+    font-size: 16px;
+}
+.p-problems{
+    padding-top: 20px;
+    padding-left: 90px;
+    font-size: 16px;
+}
+.p-expectations{
+    padding-top: 20px;
+    padding-left: 90px;
+    font-size: 16px;
+}
+.p-suggestions{
+    padding-top: 20px;
+    padding-left: 90px;
+    font-size: 16px;
+}
+.p-recommend{
+    padding-top: 00px;
+    padding-left: 90px;
+    font-size: 16px;
+}

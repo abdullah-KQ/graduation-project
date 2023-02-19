@@ -3,3 +3,18 @@
     color: rgb(5, 5, 5);
     height: 1000px;
 }
+.p-Fullname{
+    padding-top: 388px;
+    padding-left: 220px;
+    font-size: 16px;
+}
+.p-Uni_id{
+    padding-top: -42px;
+    padding-left: 510px;
+    font-size: 16px;
+}
+.p-terms{
+    padding-top: 520px;
+    padding-left: 600px;
+    font-size: 16px;
+}

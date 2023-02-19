@@ -3,27 +3,87 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="http://127.0.0.1:8000/static/TaibahTraining/form2.css">
+    <link
+      rel="stylesheet"
+      href="http://127.0.0.1:8000/static/TaibahTraining/form2.css"
+    />
 
-<style>
-    @page {
-      background-image:"http://127.0.0.1:8000/static/TaibahTraining/form2_page-0001.jpg";
-      
-    }
-    @page pg1{
-       
-      background-image:"http://127.0.0.1:8000/static/TaibahTraining/form2_page-0002.jpg";
-    }
-</style>
+    <style>
+      @page {
+        background-image: "http://127.0.0.1:8000/static/TaibahTraining/form2_page-0001.jpg";
+      }
+      @page pg1 {
+        background-image: "http://127.0.0.1:8000/static/TaibahTraining/form2_page-0002.jpg";
+      }
+    </style>
   </head>
   <body>
-    <div class="container" >
-dd
-   
-  </div>
-  <pdf:nextpage name="pg1" />
-  <div class="container"id="page2">
-dd
-  </div>
+    <div class="container">
+      <p class="p-AcademicYear">
+        {{form2info.AcademicYear}}
+      </p>
+      <p class="p-Semester">
+        {{form2info.Semester}}
+      </p>
+      <p class="p-Fullname">
+        {{studentinfoUser.Fullname}}
+      </p>
+      <p class="p-Uni_id">
+        {{studentinfo.Uni_id}} 
+      </p>
+      <p class="p-Major">
+        {{form2info.Major}}
+      </p>
+      <p class="p-CGPA">
+        {{form2info.CGPA}}
+      </p>
+      <p class="p-HoursEarned">
+        {{form2info.HoursEarned}}
+      </p>
+      <p class="p-HoursRegistered">
+        {{form2info.HoursRegistered}}
+      </p>
+      <p class="p-HoursRemaining">
+        {{form2info.HoursRemaining}}
+      </p>
+      <p class="p-Phone_num">
+        {{OpportinfoUser.Phone_num}}
+      </p>
+      <p class="p-Fullname-2">
+        {{OpportinfoUser.Fullname}}
+      </p>
+      <p class="p-Fullname-3">
+        {{OpportinfoUser.Fullname}}
+      </p>
+      <p class="p-Website">
+        {{Opportinfo.Website}}
+      </p>
+      <p class="p-Address">
+        {{Opportinfo.Address}}
+      </p>
+      <p class="p-Email">
+        {{OpportinfoUser.Email}}
+      </p>
+      <p class="p-Address-2">
+        12345
+      </p>
+      <p class="p-Loaction">
+        {{Opport.Loaction}}
+      </p>
+      <p class="p-country">
+        Saudi Arabia
+      </p>
+      <p class="p-fax">
+        There is no fax
+      </p>
+      <p class="p-Phone_num-2">
+        {{OpportinfoUser.Phone_num}}
+      </p>
+      <p class="p-descriptionAboutCompany">
+        {{form2info.descriptionAboutCompany}}
+      </p>
+    </div>
+    <pdf:nextpage name="pg1" />
+    <div class="container" id="page2">dd</div>
   </body>
 </html>

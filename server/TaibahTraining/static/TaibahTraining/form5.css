@@ -3,3 +3,119 @@
     color: rgb(5, 5, 5);
     height: 1000px;
 }
+.p-Fullname{
+    padding-top: 388px;
+    padding-left: 270px;
+    font-size: 20px;
+}
+.p-Uni_id{
+    padding-top: -15px;
+    padding-left: 270px;
+    font-size: 20px;
+}
+.p-Fullname-2{
+    padding-top: -15px;
+    padding-left: 270px;
+    font-size: 20px;
+}
+.p-Description{
+    padding-top: -15px;
+    padding-left: 270px;
+    font-size: 20px;
+}
+.p-AttendanceAccuracy{
+    padding-top: 180px;
+    padding-left: 660px;
+    font-size: 20px;
+}
+.p-GeneralAppearance{
+    padding-top: -5px;
+    padding-left: 660px;
+    font-size: 20px;
+}
+.p-Enthusiasm{
+    padding-top: -10px;
+    padding-left: 660px;
+    font-size: 20px;
+}
+.p-AbilityToAnalyze{
+    padding-top: -19px;
+    padding-left: 660px;
+    font-size: 20px;
+}
+.p-AccuracyOutput{
+    padding-top: -14px;
+    padding-left: 660px;
+    font-size: 20px;
+}
+.p-AbilityPresent{
+    padding-top: -14px;
+    padding-left: 660px;
+    font-size: 20px;
+}
+.p-AbilityReport{
+    padding-top: -14px;
+    padding-left: 660px;
+    font-size: 20px;
+}
+.p-RelationshipTrainer{
+    padding-top: 235px;
+    padding-left: 660px;
+    font-size: 20px;
+}
+
+.p-RelationshipCoWorkers{
+    padding-top: -14px;
+    padding-left: 660px;
+    font-size: 20px;
+}
+.p-Flexibility{
+    padding-top: -14px;
+    padding-left: 660px;
+    font-size: 20px;
+}
+.p-AbilityLearn{
+    padding-top: -14px;
+    padding-left: 660px;
+    font-size: 20px;
+}
+.p-AbilityDecision{
+    padding-top: -14px;
+    padding-left: 660px;
+    font-size: 20px;
+}
+.p-GeneralPerformance{
+    padding-top: 67px;
+    padding-left: 380px;
+    font-size: 26px;
+}
+.p-Strengths{
+    padding-top: 90px;
+    padding-left: 80px;
+    font-size: 20px;
+}
+.p-Weaknesses{
+    padding-top: -50px;
+    padding-left: 420px;
+    font-size: 20px;
+}
+.p-AreTraineeSkills{
+    padding-top: 190px;
+    padding-left: 85px;
+    font-size: 20px;
+}
+.p-Comments{
+    padding-top: 270px;
+    padding-left: 85px;
+    font-size: 20px;
+}
+.p-Contact_Person{
+    padding-top: 162px;
+    padding-left: 240px;
+    font-size: 20px;
+}
+.p-Position{
+    padding-top: -52px;
+    padding-left: 530px;
+    font-size: 16px;
+}

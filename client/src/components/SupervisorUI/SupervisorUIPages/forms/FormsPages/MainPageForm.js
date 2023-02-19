@@ -10,12 +10,15 @@ import "../Forms.css";
 const URL_Students = "student/";
 const URL_TrainingBody = "TrainingBody/";
 const URL_AddOpportunity = "AddOpportunity/";
+const URL_user = "user/";
 
 const MainPageForm = () => {
   const { StudentInfo } = useContext(StudentContex);
   const { SupervisorInfo } = useContext(SupervisorContex);
   const [Students, setStudents] = useState("");
   const [TrainingBody, setTrainingBody] = useState("");
+  const [TrainingBodyInf, setTrainingBodyInf] = useState("");
+
 
   const [success2, setsuccess2] = useState(true)
   const [success4, setsuccess4] = useState(true)
@@ -43,6 +46,10 @@ const MainPageForm = () => {
 
       const response3 = await axios.get(URL_TrainingBody + response2.data.TrainingBody,{});
       setTrainingBody(response3.data);
+
+      const response4 = await axios.get(URL_user + response3.data.UserName,{});
+      setTrainingBodyInf(response4.data);
+
     } catch (err) {
       console.log(err.response);
     }
@@ -330,14 +337,9 @@ const MainPageForm = () => {
               {StudentInfo.Phone_num}
               <br />
               <br />
-              : اسم مسؤول التدريب
-              <br />
-              {Students.Uni_id}
-              <br />
-              <br />
               : رقم مسؤول التدريب
               <br />
-              {StudentInfo.Phone_num}
+              {TrainingBodyInf.Phone_num}
             </p>
             <p className="p-Students-Card">
               : اسم الطالب
@@ -352,12 +354,9 @@ const MainPageForm = () => {
               <br />
               : اسم جهة التدريب
               <br />
-              {StudentInfo.Fullname}
+              {TrainingBodyInf.Fullname}
               <br />
               <br />
-              : منصب مسؤول التدريب
-              <br />
-              {StudentInfo.Email}
             </p>
           </div>
           <div className="Students-Card">

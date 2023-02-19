@@ -3,3 +3,111 @@
     color: rgb(5, 5, 5);
     height: 1000px;
 }
+
+.p-AcademicYear{
+    padding-top: 358px;
+    padding-left: 190px;
+    font-size: 16px;
+    }
+
+.p-Semester{
+    padding-top: -42px;
+    padding-left: 440px;
+    font-size: 16px;
+    }
+.p-Fullname{
+    padding-top: 25px;
+    padding-left: 130px;
+    font-size: 16px;
+}
+
+.p-Uni_id{
+    padding-top: -42px;
+    padding-left: 540px;
+    font-size: 16px;
+}
+.p-Major{
+    padding-top: -8px;
+    padding-left: 135px;
+    font-size: 16px;
+}
+.p-CGPA{
+    padding-top: -42px;
+    padding-left: 470px;
+    font-size: 16px;
+}
+.p-HoursEarned{
+    padding-top: 2px;
+    padding-left: 190px;
+    font-size: 16px;
+}
+.p-HoursRegistered{
+    padding-top: -42px;
+    padding-left:  550px;
+    font-size: 16px;
+}
+.p-HoursRemaining{
+    padding-top: 13px;
+    padding-left: 310px;
+    font-size: 16px;
+}
+.p-Phone_num{
+    padding-top: 55px;
+    padding-left: 120px;
+    font-size: 16px;
+}
+.p-Fullname-2{
+    padding-top: -42px;
+    padding-left: 280px;
+    font-size: 16px;
+}
+.p-Fullname-3{
+    padding-top: 55px;
+    padding-left: 210px;
+    font-size: 16px;
+}
+.p-Website{
+    padding-top: -13px;
+    padding-left: 210px;
+    font-size: 16px;
+}
+.p-Address{
+    padding-top: -45px;
+    padding-left: 600px;
+    font-size: 16px;
+}
+.p-Email{
+    padding-top: -13px;
+    padding-left: 210px;
+    font-size: 16px;
+}
+.p-Address-2{
+    padding-top: -45px;
+    padding-left: 600px;
+    font-size: 16px;
+}
+.p-Loaction{
+    padding-top: -13px;
+    padding-left: 210px;
+    font-size: 16px;
+}
+.p-country{
+    padding-top: -45px;
+    padding-left: 600px;
+    font-size: 16px;
+}
+.p-fax{
+    padding-top: -13px;
+    padding-left: 210px;
+    font-size: 16px;
+}
+.p-Phone_num-2{
+    padding-top: -45px;
+    padding-left: 600px;
+    font-size: 16px;
+}
+.p-descriptionAboutCompany{
+    padding-top: 13px;
+    padding-left: 80px;
+    font-size: 16px;
+}
